@@ -261,11 +261,11 @@
   
   <span style="color:var(--border); font-size:1.2rem; margin:0 4px;">|</span>
   
-  <button class="filter-btn party-btn dpp" data-filter="dpp" onclick="filterPersons('dpp')">🟩 民進黨 <span class="filter-count">49</span></button>
-  <button class="filter-btn party-btn kmt" data-filter="kmt" onclick="filterPersons('kmt')">🟦 國民黨 <span class="filter-count">74</span></button>
-  <button class="filter-btn party-btn tpp" data-filter="tpp" onclick="filterPersons('tpp')">⬜ 民眾黨 <span class="filter-count">12</span></button>
-  <button class="filter-btn party-btn sdp" data-filter="sdp" onclick="filterPersons('sdp')">🟨 社民黨 <span class="filter-count">1</span></button>
-  <button class="filter-btn party-btn ind" data-filter="ind" onclick="filterPersons('ind')">⚪ 無黨籍 <span class="filter-count">9</span></button>
+  <button class="filter-btn party-btn dpp" data-filter="dpp" onclick="filterPersons('dpp')">🟩 民進黨 <span class="filter-count" id="count-dpp">0</span></button>
+  <button class="filter-btn party-btn kmt" data-filter="kmt" onclick="filterPersons('kmt')">🟦 國民黨 <span class="filter-count" id="count-kmt">0</span></button>
+  <button class="filter-btn party-btn tpp" data-filter="tpp" onclick="filterPersons('tpp')">⬜ 民眾黨 <span class="filter-count" id="count-tpp">0</span></button>
+  <button class="filter-btn party-btn sdp" data-filter="sdp" onclick="filterPersons('sdp')">🟨 社民黨 <span class="filter-count" id="count-sdp">0</span></button>
+  <button class="filter-btn party-btn ind" data-filter="ind" onclick="filterPersons('ind')">⚪ 無黨籍 <span class="filter-count" id="count-ind">0</span></button>
   
   <div style="margin-left:auto; display:flex; align-items:center; gap:8px;">
     <input type="text" id="searchInput" placeholder="🔍 搜尋姓名/黨籍/選區..." oninput="searchPersons()" style="background:var(--card); border:1px solid var(--border); color:var(--text); padding:7px 12px; border-radius:18px; font-size:.82rem; width:200px; outline:none;">
@@ -470,12 +470,12 @@
     <button id="btn-xiectl" data-cat="councilor" data-county="彰化縣" onclick="switchPerson('xiectl')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>謝典林</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Hsieh, Dian-Lin · 彰化縣議長</span></button>
     <button id="btn-houht" data-cat="councilor" data-county="臺北市" onclick="switchPerson('houht')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>侯漢廷</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Hou, Han-Ting · 台北市議員</span></button>
     <button id="btn-miaoboya" data-cat="councilor" data-county="臺北市" onclick="switchPerson('miaoboya')" data-party="sdp"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>苗博雅</span><span class="party-badge sdp">社民黨</span></div><span class="p-en">Miao, Poya · 台北市議員</span></button>
-    <button id="btn-zhongpb" data-cat="councilor" data-county="臺北市" onclick="switchPerson('zhongpb')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>鍾沛君</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Chung, Pei-Jun · 台北市議員</span></button>
-    <button id="btn-yoush" data-cat="councilor" data-county="臺北市" onclick="switchPerson('yoush')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>游淑慧</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Yu, Shu-Hui · 台北市議員</span></button>
-    <button id="btn-daiws" data-cat="councilor" data-county="新北市" onclick="switchPerson('daiws')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>戴瑋姍</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Dai, Wei-Shan · 新北市議員</span></button>
-    <button id="btn-zhuogt" data-cat="councilor" data-county="新北市" onclick="switchPerson('zhuogt')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>卓冠廷</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Zhuo, Guan-Ting · 新北市議員</span></button>
-    <button id="btn-yingxiaowei" data-cat="councilor" data-county="臺北市" onclick="switchPerson('yingxiaowei')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>應曉薇</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Ying, Hsiao-Wei · 前台北市議員</span></button>
-    <button id="btn-xushh_tp" data-cat="councilor" data-county="臺北市" onclick="switchPerson('xushh_tp')" data-party="ind"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>許淑華</span><span class="party-badge ind">無黨籍</span></div><span class="p-en">Hsu, Shu-Hua · 台北市議員</span></button>
+    <button id="btn-zhongpb" data-cat="councilor" data-county="臺北市" onclick="switchPerson('zhongpb')" data-party="kmt"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>鍾沛君</span><span class="party-badge kmt">國民黨</span></div><span class="p-en">Chung, Pei-Jun · 台北市議員</span></button>
+    <button id="btn-yoush" data-cat="councilor" data-county="臺北市" onclick="switchPerson('yoush')" data-party="kmt"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>游淑慧</span><span class="party-badge kmt">國民黨</span></div><span class="p-en">Yu, Shu-Hui · 台北市議員</span></button>
+    <button id="btn-daiws" data-cat="councilor" data-county="新北市" onclick="switchPerson('daiws')" data-party="dpp"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>戴瑋姍</span><span class="party-badge dpp">民進黨</span></div><span class="p-en">Dai, Wei-Shan · 新北市議員</span></button>
+    <button id="btn-zhuogt" data-cat="councilor" data-county="新北市" onclick="switchPerson('zhuogt')" data-party="dpp"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>卓冠廷</span><span class="party-badge dpp">民進黨</span></div><span class="p-en">Zhuo, Guan-Ting · 新北市議員</span></button>
+    <button id="btn-yingxiaowei" data-cat="councilor" data-county="臺北市" onclick="switchPerson('yingxiaowei')" data-party="kmt"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>應曉薇</span><span class="party-badge kmt">國民黨</span></div><span class="p-en">Ying, Hsiao-Wei · 前台北市議員</span></button>
+    <button id="btn-xushh_tp" data-cat="councilor" data-county="臺北市" onclick="switchPerson('xushh_tp')" data-party="dpp"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>許淑華</span><span class="party-badge dpp">民進黨</span></div><span class="p-en">Hsu, Shu-Hua · 台北市議員</span></button>
   </div>
 
 <nav class="tabs">
@@ -546,8 +546,8 @@
 <section id="rankwealth">
   <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; margin-bottom:14px; gap:10px;">
     <div>
-      <h2 style="margin:0; font-size:1.2rem; color:var(--amber);">💰 財富總額與淨資產排行榜 Wealth Leaderboard</h2>
-      <p class="empty-note" style="margin:4px 0 0 0;">彙整監察院申報之存款、股票/有價證券與事業投資。可切換「預估淨財產（扣除債務）」或「總申報資產（不扣債務）」。</p>
+      <h2 style="margin:0; font-size:1.2rem; color:var(--amber);">💰 財富總額與動產排行榜 Wealth & Movable Asset Leaderboard</h2>
+      <p class="empty-note" style="margin:4px 0 0 0;">彙整監察院申報之存款、股票/有價證券與事業投資。可切換預估淨財產或總申報資產，並按職位與22縣市進行交叉比對。</p>
     </div>
     <div style="display:flex; gap:6px;">
       <button id="wmode-net" onclick="setWealthSortMode('net')" class="cat-pill active" style="font-size:.8rem; padding:4px 10px; border-radius:6px; border:1px solid var(--amber); cursor:pointer;">💎 依淨財產排序（扣除債務）</button>
@@ -555,74 +555,117 @@
     </div>
   </div>
 
-  <div class="filter-bar" style="margin-bottom:12px;">
-    <button onclick="setRankCategory('all')" class="cat-pill active">🗂️ 全體官員 (145)</button>
-    <button onclick="setRankCategory('mayor')" class="cat-pill">🏛️ 縣市長 (23)</button>
-    <button onclick="setRankCategory('legislator')" class="cat-pill">📜 立法委員 (113)</button>
-    <button onclick="setRankCategory('councilor')" class="cat-pill">🪑 縣市議員 (9)</button>
+  <div class="rank-filter-bar" style="display:flex; gap:6px; flex-wrap:wrap; align-items:center; background:var(--card); padding:8px 12px; border-radius:12px; border:1px solid var(--border); margin-bottom:14px;">
+    <span style="font-size:.78rem; color:var(--sub); font-weight:700;">職位比較：</span>
+    <button class="rank-sub-btn active" data-rcat="all" onclick="setRankCategory('all')">🗂️ 全體官員</button>
+    <button class="rank-sub-btn" data-rcat="mayor" onclick="setRankCategory('mayor')">🏛️ 縣市長</button>
+    <button class="rank-sub-btn" data-rcat="legislator" onclick="setRankCategory('legislator')">📜 立法委員</button>
+    <button class="rank-sub-btn" data-rcat="councilor" onclick="setRankCategory('councilor')">🪑 縣市議員</button>
+
+    <span style="color:var(--border); margin:0 4px;">|</span>
+    <span style="font-size:.78rem; color:var(--sub); font-weight:700;">縣市分區：</span>
+    <select id="rankWealthCountySelect" onchange="setRankCounty(this.value)" style="background:var(--slate); border:1px solid var(--border); color:var(--text); padding:4px 10px; border-radius:12px; font-size:.78rem; font-weight:600; outline:none; cursor:pointer;">
+      <option value="all">📍 全部 22 縣市</option>
+      <option value="臺北市">臺北市</option>
+      <option value="新北市">新北市</option>
+      <option value="桃園市">桃園市</option>
+      <option value="臺中市">臺中市</option>
+      <option value="臺南市">臺南市</option>
+      <option value="高雄市">高雄市</option>
+      <option value="基隆市">基隆市</option>
+      <option value="新竹市">新竹市</option>
+      <option value="新竹縣">新竹縣</option>
+      <option value="苗栗縣">苗栗縣</option>
+      <option value="彰化縣">彰化縣</option>
+      <option value="南投縣">南投縣</option>
+      <option value="雲林縣">雲林縣</option>
+      <option value="嘉義市">嘉義市</option>
+      <option value="嘉義縣">嘉義縣</option>
+      <option value="屏東縣">屏東縣</option>
+      <option value="宜蘭縣">宜蘭縣</option>
+      <option value="花蓮縣">花蓮縣</option>
+      <option value="臺東縣">臺東縣</option>
+      <option value="澎湖縣">澎湖縣</option>
+      <option value="金門縣">金門縣</option>
+      <option value="連江縣">連江縣</option>
+    </select>
   </div>
 
   <div id="wealthRankTable"></div>
 </section>
 
 <section id="rankproperty">
-  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:16px;">
-    <h2 style="margin:0; font-size:1.2rem;">🏢 不動產（土地建物）筆數排行榜 Real Estate Leaderboard</h2>
-    <div class="rank-filter-bar" style="display:flex; gap:6px; background:var(--card); padding:4px; border-radius:20px; border:1px solid var(--border);">
-      <button class="rank-sub-btn active" data-rcat="all" onclick="setRankCategory('all')">🗂️ 全體官員</button>
-      
-      <select id="rankCountySelect" onchange="setRankCounty(this.value)" style="background:var(--slate); border:1px solid var(--border); color:var(--text); padding:4px 10px; border-radius:12px; font-size:.78rem; font-weight:600; outline:none; cursor:pointer; margin-left:6px;">
-        <option value="all">📍 全部 22 縣市</option>
-        <option value="臺北市">臺北市</option>
-        <option value="新北市">新北市</option>
-        <option value="桃園市">桃園市</option>
-        <option value="臺中市">臺中市</option>
-        <option value="臺南市">臺南市</option>
-        <option value="高雄市">高雄市</option>
-        <option value="基隆市">基隆市</option>
-        <option value="新竹市">新竹市</option>
-        <option value="新竹縣">新竹縣</option>
-        <option value="苗栗縣">苗栗縣</option>
-        <option value="彰化縣">彰化縣</option>
-        <option value="南投縣">南投縣</option>
-        <option value="雲林縣">雲林縣</option>
-        <option value="嘉義市">嘉義市</option>
-        <option value="嘉義縣">嘉義縣</option>
-        <option value="屏東縣">屏東縣</option>
-        <option value="宜蘭縣">宜蘭縣</option>
-        <option value="花蓮縣">花蓮縣</option>
-        <option value="臺東縣">臺東縣</option>
-        <option value="澎湖縣">澎湖縣</option>
-        <option value="金門縣">金門縣</option>
-        <option value="連江縣">連江縣</option>
-      </select>
-      
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:14px;">
+    <div>
+      <h2 style="margin:0; font-size:1.2rem; color:var(--amber);">🏢 不動產（土地建物）筆數排行榜 Real Estate Leaderboard</h2>
+      <p class="empty-note" style="margin:4px 0 0 0;">統計監察院申報之土地與建物筆數。支援按「職位分類（縣市長/立法委員/縣市議員）」及「22縣市排行榜」進行跨類別與全縣市對比。</p>
+    </div>
+    <div style="display:flex; gap:6px;">
+      <button id="pmode-ind" onclick="setPropViewMode('ind')" class="cat-pill active" style="font-size:.8rem; padding:4px 10px; border-radius:6px; border:1px solid var(--amber); cursor:pointer;">👤 個人官員排行榜</button>
+      <button id="pmode-county" onclick="setPropViewMode('county')" class="cat-pill" style="font-size:.8rem; padding:4px 10px; border:1px solid var(--border); background:var(--slate); color:var(--sub); cursor:pointer;">🏛️ 全台 22 縣市不動產總排行</button>
     </div>
   </div>
-  <table class="data-table">
-    <thead>
-      <tr>
-        <th style="width:70px;">排名</th>
-        <th>官員姓名</th>
-        <th>現任身分／選區</th>
-        <th>政黨</th>
-        <th>土地申報筆數</th>
-        <th>建物申報筆數</th>
-        <th>總計不動產筆數</th>
-        <th>重點分佈區域</th>
-        <th style="width:100px;">操作</th>
-      </tr>
-    </thead>
-    <tbody id="propertyRankTable"></tbody>
-  </table>
+
+  <div class="rank-filter-bar" style="display:flex; gap:6px; flex-wrap:wrap; align-items:center; background:var(--card); padding:8px 12px; border-radius:12px; border:1px solid var(--border); margin-bottom:14px;">
+    <span style="font-size:.78rem; color:var(--sub); font-weight:700;">職位比較：</span>
+    <button class="rank-sub-btn active" data-rcat="all" onclick="setRankCategory('all')">🗂️ 全體官員</button>
+    <button class="rank-sub-btn" data-rcat="mayor" onclick="setRankCategory('mayor')">🏛️ 縣市長</button>
+    <button class="rank-sub-btn" data-rcat="legislator" onclick="setRankCategory('legislator')">📜 立法委員</button>
+    <button class="rank-sub-btn" data-rcat="councilor" onclick="setRankCategory('councilor')">🪑 縣市議員</button>
+
+    <span style="color:var(--border); margin:0 4px;">|</span>
+    <span style="font-size:.78rem; color:var(--sub); font-weight:700;">縣市分區：</span>
+    <select id="rankCountySelect" onchange="setRankCounty(this.value)" style="background:var(--slate); border:1px solid var(--border); color:var(--text); padding:4px 10px; border-radius:12px; font-size:.78rem; font-weight:600; outline:none; cursor:pointer;">
+      <option value="all">📍 全部 22 縣市</option>
+      <option value="臺北市">臺北市</option>
+      <option value="新北市">新北市</option>
+      <option value="桃園市">桃園市</option>
+      <option value="臺中市">臺中市</option>
+      <option value="臺南市">臺南市</option>
+      <option value="高雄市">高雄市</option>
+      <option value="基隆市">基隆市</option>
+      <option value="新竹市">新竹市</option>
+      <option value="新竹縣">新竹縣</option>
+      <option value="苗栗縣">苗栗縣</option>
+      <option value="彰化縣">彰化縣</option>
+      <option value="南投縣">南投縣</option>
+      <option value="雲林縣">雲林縣</option>
+      <option value="嘉義市">嘉義市</option>
+      <option value="嘉義縣">嘉義縣</option>
+      <option value="屏東縣">屏東縣</option>
+      <option value="宜蘭縣">宜蘭縣</option>
+      <option value="花蓮縣">花蓮縣</option>
+      <option value="臺東縣">臺東縣</option>
+      <option value="澎湖縣">澎湖縣</option>
+      <option value="金門縣">金門縣</option>
+      <option value="連江縣">連江縣</option>
+    </select>
+  </div>
+
+  <div id="propertyRankTable"></div>
+  <div id="countyRankTable" style="display:none;"></div>
 </section>
 
 <section id="topstocks">
-  <p class="empty-note" style="margin-bottom:14px; background:rgba(245,158,11,0.08); padding:10px 14px; border-left:3px solid var(--amber); border-radius:6px; color:var(--text);"><strong>📊 100% 全員覆蓋說明：</strong> 本單元已完整納入全站 <strong>145 位官員（23 位縣市長、113 位立法委員、9 位縣市議員）</strong> 之監察院財產申報（股票與有價證券）數據。若官員申報有價證券總額，本站均納入分析與跨人物比對。</p>
+  <div style="margin-bottom:14px;">
+    <h2 style="margin:0; font-size:1.2rem; color:var(--amber);">📈 熱門持股與台積電專題分析 Top Stocks Leaderboard</h2>
+    <p class="empty-note" style="margin:4px 0 0 0;">已完整納入全站 202 位官員（23位縣市長、113位立法委員、65+位22縣市議員）之動產（股票/有價證券）申報數據。</p>
+  </div>
+
+  <div class="rank-filter-bar" style="display:flex; gap:6px; flex-wrap:wrap; align-items:center; background:var(--card); padding:8px 12px; border-radius:12px; border:1px solid var(--border); margin-bottom:14px;">
+    <span style="font-size:.78rem; color:var(--sub); font-weight:700;">職位分類：</span>
+    <button class="stock-sub-btn active" data-scat="all" onclick="setStockCategory('all')">🗂️ 全體官員</button>
+    <button class="stock-sub-btn" data-scat="mayor" onclick="setStockCategory('mayor')">🏛️ 縣市長</button>
+    <button class="stock-sub-btn" data-scat="legislator" onclick="setStockCategory('legislator')">📜 立法委員</button>
+    <button class="stock-sub-btn" data-scat="councilor" onclick="setStockCategory('councilor')">🪑 縣市議員</button>
+  </div>
+
   <h3 style="color:var(--amber); font-size:1rem; margin:20px 0 10px;">個股持有金額排行（前20大單筆持股）</h3>
   <div id="topStocksList"></div>
-  <h3 style="color:var(--amber); font-size:1rem; margin:28px 0 10px;">誰持有台積電？（跨人物同一檔股票對照）</h3>
+
+  <h3 style="color:var(--amber); font-size:1rem; margin:28px 0 10px;">誰持有台積電？（跨縣市與跨職位台積電持股名單）</h3>
   <div id="tsmcHoldersList"></div>
+
   <h3 style="color:var(--amber); font-size:1rem; margin:28px 0 10px;">每人持股前三大（依申報金額）</h3>
   <div id="perPersonTop3"></div>
 </section>
@@ -4258,7 +4301,7 @@ huang: {
 },
 
   zhongpb: {
-    county: "臺北市",
+    county: "臺北市", party: "中國國民黨",
   "name": "鍾沛君",
   "nameEn": "Chung, Pei-Jun",
   "party": "中國國民黨",
@@ -4311,7 +4354,7 @@ huang: {
 },
 
   yoush: {
-    county: "臺北市",
+    county: "臺北市", party: "中國國民黨",
   "name": "游淑慧",
   "nameEn": "Yu, Shu-Hui",
   "party": "中國國民黨",
@@ -4364,7 +4407,7 @@ huang: {
 },
 
   daiws: {
-    county: "新北市",
+    county: "新北市", party: "民主進步黨",
   "name": "戴瑋姍",
   "nameEn": "Dai, Wei-Shan",
   "party": "民主進步黨",
@@ -4408,7 +4451,7 @@ huang: {
 },
 
   zhuogt: {
-    county: "新北市",
+    county: "新北市", party: "民主進步黨",
   "name": "卓冠廷",
   "nameEn": "Zhuo, Guan-Ting",
   "party": "民主進步黨",
@@ -4461,7 +4504,7 @@ huang: {
 },
 
   yingxiaowei: {
-    county: "臺北市",
+    county: "臺北市", party: "中國國民黨",
   "name": "應曉薇",
   "nameEn": "Ying, Hsiao-Wei",
   "party": "中國國民黨",
@@ -4514,7 +4557,7 @@ huang: {
 },
 
   xushh_tp: {
-    county: "臺北市",
+    county: "臺北市", party: "民主進步黨",
   "name": "許淑華",
   "nameEn": "Hsu, Shu-Hua (Taipei)",
   "party": "民主進步黨",
@@ -4995,6 +5038,123 @@ function renderRankings(){
         </tbody>
       </table>`;
   }
+}
+
+
+var currentPropViewMode = 'ind';
+function setPropViewMode(mode){
+  currentPropViewMode = mode;
+  const btnInd = document.getElementById('pmode-ind');
+  const btnCounty = document.getElementById('pmode-county');
+  const indTable = document.getElementById('propertyRankTable');
+  const countyTable = document.getElementById('countyRankTable');
+
+  if(mode === 'ind'){
+    if(btnInd) btnInd.className = 'cat-pill active';
+    if(btnCounty) btnCounty.className = 'cat-pill';
+    if(indTable) indTable.style.display = 'block';
+    if(countyTable) countyTable.style.display = 'none';
+  } else {
+    if(btnInd) btnInd.className = 'cat-pill';
+    if(btnCounty) btnCounty.className = 'cat-pill active';
+    if(indTable) indTable.style.display = 'none';
+    if(countyTable) countyTable.style.display = 'block';
+    renderCountyRankings();
+  }
+}
+
+function renderCountyRankings(){
+  const countyTable = document.getElementById('countyRankTable');
+  if(!countyTable) return;
+
+  const countyStats = {};
+  const keys = Object.keys(DATA);
+
+  keys.forEach(k => {
+    const d = DATA[k];
+    const btn = document.getElementById('btn-' + k);
+    const county = d.county || ((btn && typeof btn.getAttribute === 'function') ? btn.getAttribute('data-county') : '') || (d.district ? d.district.substring(0, 3) : '') || '全台地區';
+
+    if(!countyStats[county]){
+      countyStats[county] = { county, count: 0, totalLand: 0, totalBldg: 0, totalProp: 0, topPerson: '', maxProp: -1, totalDep: 0, totalSec: 0 };
+    }
+
+    const f = d.filings && d.filings.length ? d.filings[0] : {};
+    let landCount = 0, bldgCount = 0;
+    if(f.realEstate && f.realEstate.length){
+      f.realEstate.forEach(reItem => {
+        const loc = reItem.loc || '';
+        const lm = loc.match(/土地\s*(\d+)\s*筆/);
+        const bm = loc.match(/建物\s*(\d+)\s*筆/);
+        if(lm) landCount += parseInt(lm[1]);
+        if(bm) bldgCount += parseInt(bm[1]);
+        if(!lm && !bm){
+          if(loc.includes('建物')) bldgCount += 1;
+          else landCount += 1;
+        }
+      });
+    }
+    if(landCount === 0 && bldgCount === 0 && f.summary){
+      const lm = f.summary.match(/土地\s*(\d+)\s*筆/);
+      const bm = f.summary.match(/建物\s*(\d+)\s*筆/);
+      if(lm) landCount = parseInt(lm[1]);
+      if(bm) bldgCount = parseInt(bm[1]);
+    }
+
+    const totalProp = landCount + bldgCount;
+    countyStats[county].count += 1;
+    countyStats[county].totalLand += landCount;
+    countyStats[county].totalBldg += bldgCount;
+    countyStats[county].totalProp += totalProp;
+    countyStats[county].totalDep += (f.depositsTotal || 0);
+    countyStats[county].totalSec += (f.securitiesTotal || f.stocksTotal || 0);
+
+    if(totalProp > countyStats[county].maxProp){
+      countyStats[county].maxProp = totalProp;
+      countyStats[county].topPerson = d.name + ' (' + totalProp + '筆)';
+    }
+  });
+
+  const sortedCounties = Object.values(countyStats).sort((a,b) => (b.totalProp / (b.count||1)) - (a.totalProp / (a.count||1)));
+
+  countyTable.innerHTML = `
+    <table class="data-table" style="width:100%; font-size:.82rem;">
+      <thead>
+        <tr>
+          <th style="width:60px;">排名</th>
+          <th>縣市選區名稱</th>
+          <th style="text-align:right;">收錄官員數</th>
+          <th style="text-align:right;">不動產總筆數</th>
+          <th style="text-align:right; color:var(--amber); font-weight:700;">人均不動產筆數</th>
+          <th style="text-align:right;">人均申報存款 (NT$)</th>
+          <th>代表性地王官員</th>
+          <th style="width:90px;">操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sortedCounties.map((c, i) => `
+          <tr style="cursor:pointer;" onclick="filterPersonsByCounty('${c.county}')">
+            <td><span style="color:var(--amber); font-weight:700;">${i+1}</span> ${i===0?'🥇':i===1?'🥈':i===2?'🥉':''}</td>
+            <td><strong>🏛️ ${c.county}</strong></td>
+            <td style="text-align:right;">${c.count} 位</td>
+            <td style="text-align:right;">${c.totalProp} 筆</td>
+            <td style="text-align:right; font-weight:700; color:var(--amber);">${(c.totalProp / (c.count||1)).toFixed(1)} 筆 / 人</td>
+            <td style="text-align:right;">${money(Math.round(c.totalDep / (c.count||1)))}</td>
+            <td><span style="color:var(--sage); font-weight:600;">${c.topPerson}</span></td>
+            <td><button onclick="filterPersonsByCounty('${c.county}')" style="background:var(--slate); border:1px solid var(--border); color:var(--text); padding:3px 6px; border-radius:4px; font-size:.75rem;">查看該縣市</button></td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+var currentStockCategory = 'all';
+function setStockCategory(cat){
+  currentStockCategory = cat;
+  document.querySelectorAll('.stock-sub-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-scat') === cat);
+  });
+  renderTopStocks();
 }
 
 function renderTopStocks(){
@@ -5598,8 +5758,12 @@ function selectComparePair(keyA, keyB){
 
 function updateCompareView(){
   populateCompareSelects();
-  const keyA = document.getElementById('comparePersonA').value;
-  const keyB = document.getElementById('comparePersonB').value;
+  const elemA = document.getElementById('comparePersonA');
+  const elemB = document.getElementById('comparePersonB');
+  let keyA = elemA ? elemA.value : 'jiang';
+  let keyB = elemB ? elemB.value : 'huang';
+  if(!DATA[keyA]) keyA = 'jiang';
+  if(!DATA[keyB]) keyB = 'huang';
   const dA = DATA[keyA], dB = DATA[keyB];
   const fA = dA.filings[0], fB = dB.filings[0];
 
@@ -5752,18 +5916,30 @@ function searchPersons(){
 function updateCounts(){
   const allBtns = Array.from(document.querySelectorAll('.person-switch button'));
   const total = allBtns.length;
-  const mayor = allBtns.filter(b => b.getAttribute('data-cat') === 'mayor').length;
-  const regional = allBtns.filter(b => b.getAttribute('data-cat') === 'legislator' && b.getAttribute('data-legtype') === 'regional').length;
-  const atlarge = allBtns.filter(b => b.getAttribute('data-cat') === 'legislator' && b.getAttribute('data-legtype') === 'at-large').length;
-  const indigenous = allBtns.filter(b => b.getAttribute('data-cat') === 'legislator' && b.getAttribute('data-legtype') === 'indigenous').length;
-  const councilor = allBtns.filter(b => b.getAttribute('data-cat') === 'councilor').length;
+  const mayor = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-cat') === 'mayor' : false).length;
+  const regional = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? (b.getAttribute('data-cat') === 'legislator' && b.getAttribute('data-legtype') === 'regional') : false).length;
+  const atlarge = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? (b.getAttribute('data-cat') === 'legislator' && b.getAttribute('data-legtype') === 'at-large') : false).length;
+  const indigenous = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? (b.getAttribute('data-cat') === 'legislator' && b.getAttribute('data-legtype') === 'indigenous') : false).length;
+  const councilor = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-cat') === 'councilor' : false).length;
 
-  const countAll = document.getElementById('count-all'); if(countAll) countAll.innerText = total;
-  const countMayor = document.getElementById('count-mayor'); if(countMayor) countMayor.innerText = mayor;
-  const countReg = document.getElementById('count-regional'); if(countReg) countReg.innerText = regional;
-  const countAtl = document.getElementById('count-atlarge'); if(countAtl) countAtl.innerText = atlarge;
-  const countInd = document.getElementById('count-indigenous'); if(countInd) countInd.innerText = indigenous;
-  const countCoun = document.getElementById('count-councilor'); if(countCoun) countCoun.innerText = councilor;
+  const dpp = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-party') === 'dpp' : false).length;
+  const kmt = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-party') === 'kmt' : false).length;
+  const tpp = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-party') === 'tpp' : false).length;
+  const sdp = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-party') === 'sdp' : false).length;
+  const ind = allBtns.filter(b => (b && typeof b.getAttribute === 'function') ? b.getAttribute('data-party') === 'ind' : false).length;
+
+  const setT = (id, val) => { const el = document.getElementById(id); if(el) el.innerText = val; };
+  setT('count-all', total);
+  setT('count-mayor', mayor);
+  setT('count-regional', regional);
+  setT('count-atlarge', atlarge);
+  setT('count-indigenous', indigenous);
+  setT('count-councilor', councilor);
+  setT('count-dpp', dpp);
+  setT('count-kmt', kmt);
+  setT('count-tpp', tpp);
+  setT('count-sdp', sdp);
+  setT('count-ind', ind);
 }
 
 function populateCompareSelects(){
@@ -5835,6 +6011,10 @@ var currentRankCounty = 'all';
 
 function setRankCounty(county){
   currentRankCounty = county;
+  const sel1 = document.getElementById('rankCountySelect');
+  const sel2 = document.getElementById('rankWealthCountySelect');
+  if(sel1) sel1.value = county;
+  if(sel2) sel2.value = county;
   renderRankings();
 }
 
