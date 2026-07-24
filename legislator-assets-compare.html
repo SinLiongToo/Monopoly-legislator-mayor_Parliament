@@ -18558,9 +18558,10 @@ function setStockCategory(cat){
 function renderTopStocks(){
   const rows = [];
   const keys = Object.keys(DATA);
+  const filteredKeys = keys.filter(key => isCategoryMatch(key, DATA[key], currentStockCategory));
 
-  // 1. Gather all stock entries across ALL 145 officials
-  keys.forEach(key => {
+  // 1. Gather all stock entries for officials matching currentStockCategory
+  filteredKeys.forEach(key => {
     const d = DATA[key];
     const f = d.filings && d.filings.length ? d.filings[0] : {};
     
@@ -18576,39 +18577,43 @@ function renderTopStocks(){
     }
   });
 
-  // Top 20 holdings ranking
+  // Top 20 holdings ranking for selected category
   const top20 = rows.slice().sort((a,b) => b.amount - a.amount).slice(0, 20);
   const topStocksList = document.getElementById('topStocksList');
   if(topStocksList){
-    topStocksList.innerHTML = `
-      <table class="data-table" style="width:100%; font-size:.82rem;">
-        <thead>
-          <tr>
-            <th style="width:60px;">排名</th>
-            <th>持股標的／申報項目</th>
-            <th>官員姓名</th>
-            <th>黨籍</th>
-            <th>所有人</th>
-            <th style="text-align:right;">申報金額 (NT$)</th>
-            <th style="width:90px;">操作</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${top20.map((r,i) => `
-            <tr style="cursor:pointer;" onclick="goToProfile('${r.key}')">
-              <td><span style="color:var(--amber); font-weight:700;">${i+1}</span></td>
-              <td><strong>${r.stock}</strong></td>
-              <td><span style="color:var(--sage); font-weight:700;">${r.person}</span></td>
-              <td><span class="party-badge ${r.party.includes('國民')?'kmt':r.party.includes('民進')?'dpp':r.party.includes('民眾')?'tpp':r.party.includes('社民')?'sdp':'ind'}">${r.party}</span></td>
-              <td>${r.owner}</td>
-              <td style="text-align:right; font-weight:700; color:#52b788;">${money(r.amount)}</td>
-              <td><button onclick="goToProfile('${r.key}')" style="background:var(--slate); border:1px solid var(--border); color:var(--text); padding:3px 6px; border-radius:4px; font-size:.75rem;">查看卡片</button></td>
-            </tr>`).join('')}
-        </tbody>
-      </table>`;
+    if(top20.length){
+      topStocksList.innerHTML = `
+        <table class="data-table" style="width:100%; font-size:.82rem;">
+          <thead>
+            <tr>
+              <th style="width:60px;">排名</th>
+              <th>持股標的／申報項目</th>
+              <th>官員姓名</th>
+              <th>黨籍</th>
+              <th>所有人</th>
+              <th style="text-align:right;">申報金額 (NT$)</th>
+              <th style="width:90px;">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${top20.map((r,i) => `
+              <tr style="cursor:pointer;" onclick="goToProfile('${r.key}')">
+                <td><span style="color:var(--amber); font-weight:700;">${i+1}</span></td>
+                <td><strong>${r.stock}</strong></td>
+                <td><span style="color:var(--sage); font-weight:700;">${r.person}</span></td>
+                <td><span class="party-badge ${r.party.includes('國民')?'kmt':r.party.includes('民進')?'dpp':r.party.includes('民眾')?'tpp':r.party.includes('社民')?'sdp':'ind'}">${r.party}</span></td>
+                <td>${r.owner}</td>
+                <td style="text-align:right; font-weight:700; color:#52b788;">${money(r.amount)}</td>
+                <td><button onclick="goToProfile('${r.key}')" style="background:var(--slate); border:1px solid var(--border); color:var(--text); padding:3px 6px; border-radius:4px; font-size:.75rem;">查看卡片</button></td>
+              </tr>`).join('')}
+          </tbody>
+        </table>`;
+    } else {
+      topStocksList.innerHTML = `<p class="empty-note">此職位分類下目前無符合之個股申報紀錄。</p>`;
+    }
   }
 
-  // TSMC cross-reference list
+  // TSMC cross-reference list for selected category
   const tsmc = rows.filter(r => r.stock.includes('台積電')).sort((a,b) => b.amount - a.amount);
   const tsmcList = document.getElementById('tsmcHoldersList');
   if(tsmcList){
@@ -18639,11 +18644,11 @@ function renderTopStocks(){
         </table>
         <p class="empty-note" style="margin-top:8px;">共 ${tsmc.length} 筆台積電（2330）公開持股申報紀錄。依法以面額（每股10元）申報。</p>`;
     } else {
-      tsmcList.innerHTML = `<p class="empty-note">目前摘錄之持股資料中未見台積電持股記錄。</p>`;
+      tsmcList.innerHTML = `<p class="empty-note">所選職位分類下目前未見台積電持股記錄。</p>`;
     }
   }
 
-  // Per-person top 3 holdings — 100% COVERAGE for all 145 officials
+  // Per-person top 3 holdings for selected category
   const byPerson = {};
   rows.forEach(r => {
     if(!byPerson[r.key]) byPerson[r.key] = [];
@@ -18652,7 +18657,7 @@ function renderTopStocks(){
 
   const perPersonTop3 = document.getElementById('perPersonTop3');
   if(perPersonTop3){
-    perPersonTop3.innerHTML = `<div class="compare-grid">` + keys.map(key => {
+    perPersonTop3.innerHTML = `<div class="compare-grid">` + filteredKeys.map(key => {
       const d = DATA[key];
       const f = d.filings && d.filings.length ? d.filings[0] : {};
       let body = '';
