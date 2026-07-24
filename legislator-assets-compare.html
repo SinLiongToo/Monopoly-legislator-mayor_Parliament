@@ -1521,7 +1521,8 @@
   <h3 style="color:var(--amber); font-size:1rem; margin:20px 0 10px;">個股持有金額排行（前20大單筆持股）</h3>
   <div id="topStocksList"></div>
 
-  <h3 style="color:var(--amber); font-size:1rem; margin:28px 0 10px;">誰持有台積電？（跨縣市與跨職位台積電持股名單）</h3>
+  <h3 style="color:var(--amber); font-size:1rem; margin:28px 0 10px;">誰持有台積電？（各政黨台積電持股總量與名單）</h3>
+  <div id="partyTsmcComparison" style="margin-bottom:16px;"></div>
   <div id="tsmcHoldersList"></div>
 
   <h3 style="color:var(--amber); font-size:1rem; margin:28px 0 10px;">每人持股前三大（依申報金額）</h3>
@@ -21037,8 +21038,62 @@ function renderTopStocks(){
     }
   }
 
-  // TSMC cross-reference list for selected category
+  // TSMC cross-reference list & party comparison calculation
   const tsmc = rows.filter(r => r.stock.includes('台積電')).sort((a,b) => b.amount - a.amount);
+
+  const partyTsmcMap = {
+    dpp: { name: '🟩 民主進步黨', cls: 'dpp', count: 0, totalShares: 0, totalAmount: 0, topPerson: '無' },
+    kmt: { name: '🟦 中國國民黨', cls: 'kmt', count: 0, totalShares: 0, totalAmount: 0, topPerson: '無' },
+    tpp: { name: '⬜ 台灣民眾黨', cls: 'tpp', count: 0, totalShares: 0, totalAmount: 0, topPerson: '無' },
+    sdp: { name: '🟨 社會民主黨', cls: 'sdp', count: 0, totalShares: 0, totalAmount: 0, topPerson: '無' },
+    ind: { name: '⚪ 無黨籍 / 其他', cls: 'ind', count: 0, totalShares: 0, totalAmount: 0, topPerson: '無' }
+  };
+
+  const partyMaxAmount = { dpp: 0, kmt: 0, tpp: 0, sdp: 0, ind: 0 };
+
+  tsmc.forEach(r => {
+    let pKey = 'ind';
+    if(r.party.includes('民進') || r.party.includes('民主')) pKey = 'dpp';
+    else if(r.party.includes('國民')) pKey = 'kmt';
+    else if(r.party.includes('民眾')) pKey = 'tpp';
+    else if(r.party.includes('社民')) pKey = 'sdp';
+
+    const p = partyTsmcMap[pKey];
+    p.count += 1;
+    const sharesNum = parseInt((r.shares || '').replace(/[^0-9]/g, '')) || Math.round((r.amount || 0) / 10);
+    p.totalShares += sharesNum;
+    p.totalAmount += (r.amount || 0);
+
+    if((r.amount || 0) > partyMaxAmount[pKey]){
+      partyMaxAmount[pKey] = r.amount || 0;
+      p.topPerson = r.person + ' (' + money(r.amount) + ')';
+    }
+  });
+
+  const partyCompContainer = document.getElementById('partyTsmcComparison');
+  if(partyCompContainer){
+    const partyList = Object.values(partyTsmcMap).sort((a,b) => b.totalShares - a.totalShares);
+    partyCompContainer.innerHTML = `
+      <div style="background:var(--card); padding:14px 16px; border-radius:12px; border:1px solid var(--border); margin-bottom:14px;">
+        <h4 style="color:var(--amber); font-size:.9rem; margin-bottom:10px;">📊 各政黨台積電 (2330) 持股總股數與申報金額比較</h4>
+        <div class="compare-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap:10px;">
+          ${partyList.map(p => `
+            <div style="background:var(--slate); padding:10px 12px; border-radius:8px; border:1px solid var(--border);">
+              <div style="font-weight:700; font-size:.85rem; display:flex; justify-content:space-between; align-items:center;">
+                <span>${p.name}</span>
+                <span style="color:var(--amber); font-size:.78rem;">${p.count} 位官員申報</span>
+              </div>
+              <div style="font-size:1.15rem; font-weight:800; color:#52b788; margin:6px 0 2px;">
+                ${p.totalShares.toLocaleString()} 股
+              </div>
+              <div style="font-size:.78rem; color:var(--sub);">申報總金額：${money(p.totalAmount)}</div>
+              <div style="font-size:.75rem; color:var(--sage); margin-top:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">黨內持股王：${p.topPerson}</div>
+            </div>
+          `).join('')}
+        </div>
+      </div>`;
+  }
+
   const tsmcList = document.getElementById('tsmcHoldersList');
   if(tsmcList){
     if(tsmc.length){
