@@ -1488,6 +1488,34 @@
     <button class="stock-sub-btn" data-scat="mayor" onclick="setStockCategory('mayor')">🏛️ 縣市長</button>
     <button class="stock-sub-btn" data-scat="legislator" onclick="setStockCategory('legislator')">📜 立法委員</button>
     <button class="stock-sub-btn" data-scat="councilor" onclick="setStockCategory('councilor')">🪑 縣市議員</button>
+
+    <span style="color:var(--border); font-size:1.2rem; margin:0 4px;">|</span>
+    <span style="font-size:.78rem; color:var(--sub); font-weight:700;">縣市分區：</span>
+    <select id="rankStockCountySelect" onchange="setRankCounty(this.value)" style="background:var(--navy); border:1px solid var(--border); color:var(--text); padding:4px 10px; border-radius:12px; font-size:.8rem; font-weight:600; outline:none; cursor:pointer;">
+      <option value="all">📍 22縣市 (全體)</option>
+      <option value="臺北市">🏛️ 臺北市</option>
+      <option value="新北市">🏛️ 新北市</option>
+      <option value="桃園市">🏛️ 桃園市</option>
+      <option value="臺中市">🏛️ 臺中市</option>
+      <option value="臺南市">🏛️ 臺南市</option>
+      <option value="高雄市">🏛️ 高雄市</option>
+      <option value="基隆市">📍 基隆市</option>
+      <option value="新竹市">📍 新竹市</option>
+      <option value="新竹縣">📍 新竹縣</option>
+      <option value="苗栗縣">📍 苗栗縣</option>
+      <option value="彰化縣">📍 彰化縣</option>
+      <option value="南投縣">📍 南投縣</option>
+      <option value="雲林縣">📍 雲林縣</option>
+      <option value="嘉義市">📍 嘉義市</option>
+      <option value="嘉義縣">📍 嘉義縣</option>
+      <option value="屏東縣">📍 屏東縣</option>
+      <option value="宜蘭縣">📍 宜蘭縣</option>
+      <option value="花蓮縣">📍 花蓮縣</option>
+      <option value="臺東縣">📍 臺東縣</option>
+      <option value="澎湖縣">📍 澎湖縣</option>
+      <option value="金門縣">📍 金門縣</option>
+      <option value="連江縣">📍 連江縣</option>
+    </select>
   </div>
 
   <h3 style="color:var(--amber); font-size:1rem; margin:20px 0 10px;">個股持有金額排行（前20大單筆持股）</h3>
@@ -20666,10 +20694,13 @@ function setRankCounty(county){
   const sel1 = document.getElementById('rankCountySelect');
   const sel2 = document.getElementById('rankWealthCountySelect');
   const sel3 = document.getElementById('countyFilterSelect');
+  const sel4 = document.getElementById('rankStockCountySelect');
   if(sel1) sel1.value = county;
   if(sel2) sel2.value = county;
   if(sel3) sel3.value = county;
+  if(sel4) sel4.value = county;
   renderRankings();
+  renderTopStocks();
 }
 
 function isCategoryMatch(k, d, cat){
@@ -20951,7 +20982,7 @@ function setStockCategory(cat){
 function renderTopStocks(){
   const rows = [];
   const keys = Object.keys(DATA);
-  const filteredKeys = keys.filter(key => isCategoryMatch(key, DATA[key], currentStockCategory));
+  const filteredKeys = keys.filter(key => isCategoryMatch(key, DATA[key], currentStockCategory) && isCountyMatch(key, DATA[key], currentRankCounty));
 
   // 1. Gather all stock entries for officials matching currentStockCategory
   filteredKeys.forEach(key => {
