@@ -1,4 +1,4 @@
-# 🏛️ 台灣官員財產申報資料整理與比較平台 (Taiwan Officials Property Declaration Archive & Comparison)
+# 🎲 台灣官員財產申報資料大富翁 (Taiwan Officials Property Declaration Monopoly)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Pages](https://img.shields.io/badge/Deployment-GitHub%20Pages-blue.svg)](https://pages.github.com/)
