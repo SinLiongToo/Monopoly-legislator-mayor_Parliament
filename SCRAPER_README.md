@@ -1,96 +1,73 @@
 # 🎲 台灣官員財產申報 - 全自動下載、解析、網頁整合與 GitHub Pages 發布全流程指南
 
-本專案提供完全自動化的雙管道資料處理管線（Dual Data Pipeline），遵循以下作業步驟：
+本專案提供完全自動化的三管道資料處理管線（Triple Data Pipeline），遵循以下作業步驟：
 
 ```mermaid
 flowchart TD
-    subgraph 管道A [管道 A：監察院廉政專刊 (最高權威)]
-        A1["1. download_gazettes.py 5<br/>自動下載 PDF 與第1頁貼標"] --> A2["2. polite_scraper_parser.py<br/>解析正文與存款並更新 HTML"]
-    end
-    
-    subgraph 管道B [管道 B：中選會競選專區 (補充來源)]
-        B1["1. fetch_cec_declarations.py<br/>下載議員候選人申報 PDF"] --> B2["2. parse_cec_declarations.py<br/>解析中選會表格並更新 HTML"]
+    subgraph 管道A [管道 A：監察院 PRISO 申報名冊索引 (最高全覆蓋)]
+        A1["1. fetch_priso_declarations.py<br/>自動讀取 1024 位官員產出 PRISO 索引"] --> A2["2. parse_priso_declarations.py<br/>解析 PRISO 名冊並全量寫入網頁"]
     end
 
-    A2 --> C["3. Git Commit & Push<br/>發布至 GitHub Pages"]
-    B2 --> C
+    subgraph 管道B [管道 B：監察院廉政專刊 PDF (最高權威)]
+        B1["1. download_gazettes.py 1 2<br/>高速抓取全站 204 本專刊 PDF"] --> B2["2. polite_scraper_parser.py<br/>解析正文存款並更新 HTML"]
+    end
+    
+    subgraph 管道C [管道 C：中選會競選專區 (補充來源)]
+        C1["1. fetch_cec_declarations.py<br/>下載議員候選人申報 PDF"] --> C2["2. parse_cec_declarations.py<br/>解析中選會表格並更新 HTML"]
+    end
+
+    subgraph 盤點 [盤點報告產出]
+        D1["python audit_actual_html_data.py<br/>全自動掃描 index.html 產生 actual_report.md"]
+    end
+
+    A2 --> E["Git Commit & Push<br/>發布至 GitHub Pages"]
+    B2 --> E
+    C2 --> E
+    D1 --> E
 ```
 
 ---
 
-## 🛠️ 雙管道詳細使用手冊與實戰範例
+## 🐍 Python 全套工具腳本完整分類對照表 (Complete Python Tools Registry)
 
-### 💡 實務常見疑問：為什麼部分六都議員（如李宗霖、張博洋）目前看起來是預設資料？
-* **原因說明**：監察院廉政專刊每期發行的頁數有限，每位六都議員申報發行的專刊期數不同。目前本機預設下載了 20 本專刊 PDF。如**李宗霖**（台南市議員）、**張博洋**（高雄市議員）的申報刊登於其他期數的專刊內。
-* **解決與升級方式**：
-  只要在 Terminal 執行 `python download_gazettes.py 5` 抓取更多頁數（約 100 本 PDF），再執行 `python polite_scraper_parser.py`，程式就會**自動尋找包含李宗霖與張博洋的專刊 PDF，將其 100% 替換升級為真實核對數據**！
-
----
-
-### 🔹 管道 A：監察院《廉政專刊》全自動下載與解析手冊
-
-適用對象：**全台 22 縣市長、113 位立法委員、直轄市（六都）議員與正副議長**
-
-1. **下載專刊 PDF（自動帶期數標籤與去重）**：
-   ```bash
-   # 預設抓取前 4 頁（包含約 80 本廉政專刊 PDF，自動帶期數標籤與去重）
-   python download_gazettes.py
-
-   # 自訂抓取頁數（例如抓取前 5 頁共 100 本 PDF，舊檔自動跳過）
-   python download_gazettes.py 5
-   ```
-
-2. **解析 PDF 並全自動寫入網頁**：
-   ```bash
-   # 全量解析 ./downloads/ 目錄內所有 PDF，並將最新存款數據寫入 index.html
-   python polite_scraper_parser.py
-
-   # 指定特定 1~2 位官員解析（例如：李宗霖、張博洋）
-   python polite_scraper_parser.py 李宗霖 張博洋
-
-   # ⚡ 免讀 PDF 秒級獨立更新 HTML（直接讀取 JSON 於 0.2 秒完成網頁同步）
-   python polite_scraper_parser.py --html-only
-   ```
+| 腳本名稱 | 核心用途與功能說明 | 預設輸入與輸出 | 常用執行指令範例 |
+| :--- | :--- | :--- | :--- |
+| **`fetch_priso_declarations.py`** | **監察院 PRISO 申報名冊索引下載器**<br/>讀取 1,024 位官員名冊，自動產出監察院 PRISO (priso.cy.gov.tw) 官方檢索索引。 | **輸入**：`target_officers.json`<br/>**輸出**：`priso_declarations_index.json` | `python fetch_priso_declarations.py` |
+| **`parse_priso_declarations.py`** | **監察院 PRISO 名冊解析與網頁同步工具**<br/>解析 PRISO 檢索索引，遵循最高權威優先原則，全量補齊與寫入 `index.html`。 | **輸入**：`priso_declarations_index.json`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python parse_priso_declarations.py` |
+| **`download_gazettes.py`** | **監察院專刊 PDF 自動下載器**<br/>連線監察院官方網頁下載專刊 PDF，並自動開啟 PDF 第 1 頁識別期數貼標與去重。<br/>**支援 PageSize=200 高速抓取與任意頁數區間！** | **輸入**：監察院電子書網頁<br/>**輸出**：`./downloads/廉政專刊_第XXX期.pdf` | `python download_gazettes.py 1 2`<br/>*(專小大容量一次抓取全站 204 本專刊)* |
+| **`polite_scraper_parser.py`** | **監察院 PDF 解析與網頁同步主引擎**<br/>萃取 1,030 位官員/立委之真實存款、不動產筆數、股票明細與債務，並自動同步寫入網頁。 | **輸入**：`./downloads/*.pdf`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python polite_scraper_parser.py`<br/>`python polite_scraper_parser.py --html-only` |
+| **`fetch_cec_declarations.py`** | **中選會競選申報 PDF 自動下載器**<br/>連線至中選會選務資料庫，搜尋全台議員/候選人競選財產申報 PDF。 | **輸入**：中選會選務資料庫<br/>**輸出**：`./downloads_cec/中選會_縣市_姓名.pdf` | `python fetch_cec_declarations.py` |
+| **`parse_cec_declarations.py`** | **中選會 PDF 解析與網頁同步工具**<br/>解析中選會表格，遵循「監察院最高權威優先原則」與 `Smart Merge` 防 0 元覆蓋合併數據。 | **輸入**：`./downloads_cec/*.pdf`<br/>**輸出**：`index.html` | `python parse_cec_declarations.py` |
 
 ---
 
-### 🔹 管道 B：中選會 (CEC) 全自動下載與解析手冊
+## 🛠️ 三大管道使用手冊與實戰範例
 
-適用對象：**全台 22 縣市所有公職人員選舉候選人與縣市議員**
+### 🔹 管道 A：監察院 PRISO 系統名冊對齊與補齊手冊
+```bash
+python fetch_priso_declarations.py
+python parse_priso_declarations.py
+```
 
-1. **下載中選會申報 PDF**：
-   ```bash
-   # 從中選會競選公開專區下載議員申報 PDF 存至 ./downloads_cec/
-   python fetch_cec_declarations.py
-   ```
+### 🔹 管道 B：監察院《廉政專刊》全自動下載與解析手冊
+```bash
+python download_gazettes.py 1 2
+python polite_scraper_parser.py
+```
 
-2. **解析中選會 PDF 並全自動寫入網頁**：
-   ```bash
-   # 解析 ./downloads_cec/ 內所有中選會 PDF，並寫入網頁且標註來源為【中選會】
-   python parse_cec_declarations.py
-   ```
-
----
-
-### 👑 雙管道資料衝突與權威優先序法則 (Data Priority Hierarchy)
-
-當同一位官員/民代在《監察院廉政專刊》與《中選會候選人申報》兩邊均有申報紀錄時，系統遵循以下權威優先法則：
-
-1. **第一優先（最高權威）：監察院廉政專刊原始 PDF 申報**
-   * 監察院專刊為公職人員就職後每年例行定期申報之最高法律權威記錄。
-   * 若兩者均有資料，JSON 檔與網頁資料一律以 **《監察院廉政專刊》** 之數據與期數標籤為主。
-2. **第二優先（補強與非直轄市議員）：中選會候選人財產申報**
-   * 中選會資料為參選競選期間之公開申報。僅在監察院專刊無其 PDF 紀錄（如非直轄市縣市議員）時作為主要數據填入。
-3. **防止 0 元覆蓋與聰明數據合併機制 (Smart Merge)**：
-   * 腳本內建 `Smart Merge` 機制，絕不允許備用來源將監察院已核對之真實存款與資產金額覆蓋成 0 元。
+### 🔹 管道 C：中選會 (CEC) 全自動下載與解析手冊
+```bash
+python fetch_cec_declarations.py
+python parse_cec_declarations.py
+```
 
 ---
 
-### 🚀 步驟 3：Git 一鍵發布至 GitHub Pages
+### 🚀 Git 一鍵發布至 GitHub Pages
 
 完成資料更新後，執行以下指令完成全網公開發布：
 ```bash
 git add .
-git commit -m "Update property declarations with exact gazette issue tags and non-zero deposit figures"
+git commit -m "Complete all 1,024 officials declarations with PRISO official index and Control Yuan Gazettes"
 git push origin main
 ```

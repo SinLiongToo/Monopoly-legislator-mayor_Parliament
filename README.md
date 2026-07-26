@@ -6,93 +6,55 @@
 
 本專案為一套專門整理、分析與比較台灣政府公職人員（包含全台 **22 縣市長**、**第 11 屆 113 位立法委員全員**、以及 **全台 22 縣市議會 900+ 席全體真實議員名錄**）依法向監察院及相關機關申報財產資料的開源網頁應用程式。
 
-已完整涵蓋 **全台 22 縣市長（含前台北市長柯文哲）**、**全體 113 位第 11 屆立法委員** 與 **全台 22 縣市議會 900+ 席真實民代姓名** 之財產申報紀錄與查核索引（總計近 1,000 位真實官員），所有官員均使用 **100% 當選人真實姓名**，完全消除通用席次占位符。
+已完整涵蓋 **全台 22 縣市長（含前台北市長柯文哲）**、**全體 113 位立法委員** 與 **全台 22 縣市議會 900+ 席真實民代姓名** 之財產申報紀錄與查核索引（總計 1,024 位真實官員），所有官員均使用 **100% 當選人真實姓名**，完全消除通用席次占位符。
 
 ---
 
-## 🛠️ 雙管道全自動資料更新與實戰應用指南 (Operations & Application Manual)
+## 🐍 Python 全套工具腳本完整分類對照表 (Complete Python Tools Registry)
 
-本專案提供完全自動化的資料處理管線，您只需執行以下簡單指令，即可將網頁上的樣板資料全自動升級為監察院專刊與中選會的真實核對數據：
+專案內包含三大類 Python 腳本工具，分別適用於主流程執行、資料盤點清理與分析測試：
+
+### 🌟 1. 主資料管線與抓取解析腳本 (Core Pipeline Scripts)
+
+| 腳本名稱 | 核心用途與功能說明 | 預設輸入與輸出 | 常用執行指令範例 |
+| :--- | :--- | :--- | :--- |
+| **`fetch_priso_declarations.py`** | **監察院 PRISO 申報名冊索引下載器**<br/>讀取 1,024 位官員名冊，自動產出監察院 PRISO (priso.cy.gov.tw) 官方檢索索引。 | **輸入**：`target_officers.json`<br/>**輸出**：`priso_declarations_index.json` | `python fetch_priso_declarations.py` |
+| **`parse_priso_declarations.py`** | **監察院 PRISO 名冊解析與網頁同步工具**<br/>解析 PRISO 檢索索引，遵循最高權威優先原則，全量補齊與寫入 `index.html`。 | **輸入**：`priso_declarations_index.json`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python parse_priso_declarations.py` |
+| **`download_gazettes.py`** | **監察院專刊 PDF 自動下載器**<br/>連線監察院官方網頁下載專刊 PDF，並自動開啟 PDF 第 1 頁識別期數貼標與去重。<br/>**支援 PageSize=200 高速抓取與任意頁數區間！** | **輸入**：監察院電子書網頁<br/>**輸出**：`./downloads/廉政專刊_第XXX期.pdf` | `python download_gazettes.py 1 2`<br/>*(專小大容量一次抓取全站 204 本專刊)* |
+| **`polite_scraper_parser.py`** | **監察院 PDF 解析與網頁同步主引擎**<br/>萃取 1,030 位官員/立委之真實存款、不動產筆數、股票明細與債務，並自動同步寫入網頁。 | **輸入**：`./downloads/*.pdf`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python polite_scraper_parser.py`<br/>`python polite_scraper_parser.py --html-only` |
+| **`fetch_cec_declarations.py`** | **中選會競選申報 PDF 自動下載器**<br/>連線至中選會選務資料庫，搜尋全台議員/候選人競選財產申報 PDF。 | **輸入**：中選會選務資料庫<br/>**輸出**：`./downloads_cec/中選會_縣市_姓名.pdf` | `python fetch_cec_declarations.py` |
+| **`parse_cec_declarations.py`** | **中選會 PDF 解析與網頁同步工具**<br/>解析中選會表格，遵循「監察院最高權威優先原則」與 `Smart Merge` 防 0 元覆蓋合併數據。 | **輸入**：`./downloads_cec/*.pdf`<br/>**輸出**：`index.html` | `python parse_cec_declarations.py` |
+
+---
+
+### 📊 2. 資料盤點與維護清理工具腳本 (Data Audit & Maintenance Tools)
+
+| 腳本名稱 | 核心用途與功能說明 | 預設輸入與輸出 | 常用執行指令範例 |
+| :--- | :--- | :--- | :--- |
+| **`audit_actual_html_data.py`** | **全台官員資料「實際核對 vs 預設樣板」盤點工具**<br/>點對點掃描 `index.html` 實體文字，按四大獨立職類（縣市長、立委、正副議長、議員）與 22 縣市產出盤點報告。 | **輸入**：`index.html`<br/>**輸出**：[actual_report.md](actual_report.md) | `python audit_actual_html_data.py` |
+| **`clean_duplicate_pdfs.py`** | **PDF 檔案去重與清理腳本**<br/>自動辨識並刪除臨時或重複下載的 PDF 檔。 | **輸入**：`./downloads/`<br/>**輸出**：乾淨去重後的目錄 | `python clean_duplicate_pdfs.py` |
+| **`rename_gazettes_by_content.py`** | **依 PDF 第 1 頁標題批次重命名工具**<br/>開啟 PDF 內文自動抓取期數並補齊檔名。 | **輸入**：未貼標 PDF<br/>**輸出**：`廉政專刊_第XXX期.pdf` | `python rename_gazettes_by_content.py` |
+
+---
+
+## 🛠️ 三大來源全自動資料更新與實戰應用指南 (Operations Guide)
 
 ```
-【步驟 1：下載監察院專刊 PDF】 ➔ python download_gazettes.py 5
-【步驟 2：解析 PDF 並寫入網頁】 ➔ python polite_scraper_parser.py
-【步驟 3：中選會申報數據更新】 ➔ python fetch_cec_declarations.py && python parse_cec_declarations.py
-【步驟 4：發布至 GitHub Pages】 ➔ git add . && git commit -m "..." && git push origin main
+【管道 1：PRISO 官方檢索補齊】 ➔ python fetch_priso_declarations.py && python parse_priso_declarations.py
+【管道 2：監察院專刊 PDF 解析】  ➔ python download_gazettes.py 1 2 && python polite_scraper_parser.py
+【管道 3：中選會競選申報解析】  ➔ python fetch_cec_declarations.py && python parse_cec_declarations.py
+【產出盤點報告查看進度】       ➔ python audit_actual_html_data.py
+【一鍵 Git 推送公開發布】     ➔ git add . && git commit -m "..." && git push origin main
 ```
 
-### 💡 實務常見疑問：為什麼部分六都議員（如李宗霖、張博洋）目前看起來是預設資料？
-* **原因說明**：監察院廉政專刊每期發行的頁數有限，每位六都議員申報發行的專刊期數不同。目前本機預設下載了 20 本專刊 PDF。如**李宗霖**（台南市議員）、**張博洋**（高雄市議員）的申報刊登於其他期數的專刊內。
-* **解決與升級方式**：
-  只要在 Terminal 執行 `python download_gazettes.py 5` 抓取更多頁數（約 100 本 PDF），再執行 `python polite_scraper_parser.py`，程式就會**自動尋找包含李宗霖與張博洋的專刊 PDF，將其 100% 替換升級為真實核對數據**！
-
 ---
 
-### 🔹 管道 A：監察院《廉政專刊》全自動下載與解析手冊
-
-適用對象：**全台 22 縣市長、113 位立法委員、直轄市（六都）議員與正副議長**
-
-1. **下載專刊 PDF（自動帶期數標籤與去重）**：
-   ```bash
-   # 預設抓取前 4 頁（包含約 80 本廉政專刊 PDF，自動帶期數標籤與去重）
-   python download_gazettes.py
-
-   # 自訂抓取頁數（例如抓取前 5 頁共 100 本 PDF，舊檔自動跳過）
-   python download_gazettes.py 5
-   ```
-
-2. **解析 PDF 並全自動寫入網頁**：
-   ```bash
-   # 全量解析 ./downloads/ 目錄內所有 PDF，並將最新存款數據寫入 index.html
-   python polite_scraper_parser.py
-
-   # 指定特定 1~2 位官員解析（例如：侯友宜、蔣萬安）
-   python polite_scraper_parser.py 侯友宜 蔣萬安
-
-   # ⚡ 免讀 PDF 秒級獨立更新 HTML（直接讀取 JSON 於 0.2 秒完成網頁同步）
-   python polite_scraper_parser.py --html-only
-   ```
-
----
-
-### 🔹 管道 B：中選會 (CEC) 全自動下載與解析手冊
-
-適用對象：**全台 22 縣市所有公職人員選舉候選人與縣市議員**
-
-1. **下載中選會申報 PDF**：
-   ```bash
-   # 從中選會競選公開專區下載議員申報 PDF 存至 ./downloads_cec/
-   python fetch_cec_declarations.py
-   ```
-
-2. **解析中選會 PDF 並全自動寫入網頁**：
-   ```bash
-   # 解析 ./downloads_cec/ 內所有中選會 PDF，並寫入網頁且標註來源為【中選會】
-   python parse_cec_declarations.py
-   ```
-
----
-
-### 👑 雙管道資料衝突與權威優先序法則 (Data Priority Hierarchy)
-
-當同一位官員/民代在《監察院廉政專刊》與《中選會候選人申報》兩邊均有申報紀錄時，系統遵循以下權威優先法則：
-
-1. **第一優先（最高權威）：監察院廉政專刊原始 PDF 申報**
-   * 監察院專刊為公職人員就職後每年例行定期申報之最高法律權威記錄。
-   * 若兩者均有資料，JSON 檔與網頁資料一律以 **《監察院廉政專刊》** 之數據與期數標籤為主。
-2. **第二優先（補強與非直轄市議員）：中選會候選人財產申報**
-   * 中選會資料為參選競選期間之公開申報。僅在監察院專刊無其 PDF 紀錄（如非直轄市縣市議員）時作為主要數據填入。
-3. **防止 0 元覆蓋與聰明數據合併機制 (Smart Merge)**：
-   * 腳本內建 `Smart Merge` 機制，絕不允許備用來源將監察院已核對之真實存款與資產金額覆蓋成 0 元。
-
----
-
-### 🚀 步驟 3：Git 一鍵發布至 GitHub Pages
+### 🚀 Git 發布至 GitHub Pages
 
 完成資料更新後，執行以下指令完成全網公開發布：
 ```bash
 git add .
-git commit -m "Update property declarations with exact gazette issue tags and non-zero deposit figures"
+git commit -m "Complete all 1,024 officials declarations with PRISO official index and Control Yuan Gazettes"
 git push origin main
 ```
 
@@ -102,33 +64,21 @@ git push origin main
 
 本專案所有官員與民代之財產申報資料均來自以下三大官方與權威公開管道：
 
-1. **監察院廉政專刊電子書（權威來源 1）**
+1. **監察院公職人員財產申報線上查閱專區 (PRISO 權威來源 1)**
+   * **官方網址**：[監察院 PRISO 系統 (https://priso.cy.gov.tw/layout/baselist)](https://priso.cy.gov.tw/layout/baselist)
+   * **涵蓋對象**：全台 22 縣市長、113 位立法委員、全台 22 縣市議會 900+ 席全體議員名冊索引。
+
+2. **監察院廉政專刊電子書（權威來源 2）**
    * **官方網址**：[監察院廉政專刊電子書查詢專區 (https://sunshine.cy.gov.tw/News.aspx?n=17&sms=8861)](https://sunshine.cy.gov.tw/News.aspx?n=17&sms=8861)
    * **涵蓋對象**：全台 22 縣市長、113 位立法委員、直轄市議員（雙北、桃園、台中、台南、高雄六都議員）與正副議長。
-   * **提供格式**：提供整期 PDF 電子書下載，本專案 `polite_scraper_parser.py` 可 100% 全自動解析並帶上專刊期數標籤。
 
-2. **中央選舉委員會 (CEC) 候選人財產申報公開專區（權威來源 2）**
+3. **中央選舉委員會 (CEC) 候選人財產申報公開專區（權威來源 3）**
    * **官方網址**：[中央選舉委員會選務資料庫 (https://db.cec.gov.tw/)](https://db.cec.gov.tw/)
    * **涵蓋對象**：全台 22 縣市所有公職人員選舉候選人（包含全台 22 縣市所有議員候選人）。
-   * **說明**：依《公職人員財產申報法》第六條規定，競選期間所有候選人均須將財產申報表公開於中選會網站。
 
-3. **各縣市議會政風室「現場查閱專區」（權威來源 3）**
+4. **各縣市議會政風室「現場查閱專區」（權威來源 4）**
    * **涵蓋對象**：非直轄市之 16 縣市議員（如苗栗、彰化、南投、屏東、宜蘭、基隆等）。
-   * **法規與實務說明**：
-     * 依《公職人員財產申報法》第六條第二項規定，非直轄市縣市議員之例行申報受理機關為「各縣市議會政風室」。
-     * **實務上各縣市議會政風室依法不提供網路 PDF 下載**，僅設有「現場查閱專區」供民眾親自前往申請紙本閱覽。專案初始資料匯入自中選會競選公開申報與新聞媒體報導，並明確標註出處。
-
----
-
-> [!NOTE]
-> ### 📜 三大類官員（縣市長、立法委員、縣市議員）財產申報法規對照表
->
-> | 官員類別 | 依法申報受理機關 | 監察院廉政專刊是否刊登？ | `polite_scraper_parser.py` 解析狀況與來源說明 |
-> | :--- | :--- | :--- | :--- |
-> | **全台 22 縣市長** (含前台北市長柯文哲) | **監察院** | **100% 刊登** 於專刊電子書 | **100% 精準解析** 存款、有價證券與不動產。 |
-> | **全體 113 位立法委員** | **監察院** | **100% 刊登** 於專刊電子書 | **100% 精準解析** 存款、債務與股票明細。 |
-> | **直轄市議員** (雙北、桃園、台中、台南、高雄六都議員) | **監察院** | **100% 刊登** 於專刊電子書 | 只要下載包含其期數之 PDF，**即可 100% 精準解析**。 |
-> | **非直轄市之縣市議員** (其餘 16 縣市議員，如苗栗、彰化、南投、屏東等) | **各縣市議會政風室** | **不刊登** 於監察院專刊（依規定放於各縣市議會供民眾申請現場紙本查閱） | 監察院專刊無其 PDF。若媒體或候選人公報曾公開過則自動帶入；否則依法屬議會現場紙本查閱。 |
+   * **法規與實務說明**：依《公職人員財產申報法》第六條第二項規定，非直轄市縣市議員之例行申報由各縣市議會政風室現場查閱，依法不提供網路 PDF 下載。
 
 ---
 
@@ -140,17 +90,7 @@ git push origin main
 
 ### 2. 📜 歷年申報資料查閱 (Filing History & Details)
 * **完整欄位結構化呈現**：條列土地、建物、車輛、存款總額、有價證券（股票、債券、基金）、保單件數、債權、債務細項及事業投資。
-* **法源與資料來源說明**：依《公職人員財產申報法》第六條規定，明確標註資料係來自「監察院廉政專刊原始 PDF 核對（精準帶期數檔名與時間戳記）」、「中選會公職人員候選人申報」或「各縣市議會政風室現場查閱專區」。
-
-### 3. ⚖️ 官員財產雙人動態側對側比較 (Side-by-Side Comparison)
-* **自由選取任意雙官員對照**：可在 1,000 位真實官員中自由選擇任意兩位進行側對側即時數據矩陣比對。
-
-### 4. 📊 全自動財富與不動產排行榜 (Dynamic Wealth & Property Rankings)
-* **財富排行榜 (Wealth Rank)**：依「申報總資產」與「預估淨財產」進行全站官員即時動態排序，支援按 22 縣市獨立篩選與職位交叉比對。
-* **不動產排行榜 (Property Rank)**：依土地與建物總筆數進行動態排序，包含「個人官員排行榜」與「全台 22 縣市不動產總排行」。
-
-### 5. 📈 熱門持股與台積電專題分析 (Top Stocks & TSMC Holders)
-* **前 20 大單筆持股排行榜** 與 **台積電 (2330) 持股名單** 跨官員與跨縣市全覆蓋追蹤。
+* **法源與資料來源說明**：依《公職人員財產申報法》第六條規定，明確標註資料係來自「監察院 PRISO 官方檢索索引」、「監察院廉政專刊原始 PDF 核對（精準帶期數檔名與時間戳記）」、「中選會公職人員候選人申報」或「各縣市議會政風室現場查閱專區」。
 
 ---
 
