@@ -1,0 +1,37 @@
+# Python Cache & Environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# PDF Downloads Directory (Large PDF files)
+downloads/
+downloads_cec/
+
+# Temporary Log & Debug Dump Files
+*.log
+*.txt
+*.tmp
+
+# Scratch & One-off Debug Scripts
+check_hou_311.py
+clean_canonical.py
+clean_duplicate_pdfs.py
+cleanup_directory_final.py
+debug_hou_parse.py
+debug_hou_save.py
+find_hou_in_all_pdfs.py
+get_task_out.py
+inspect_*.py
+print_hou_result.py
+rename_gazettes_by_content.py
+run_and_save_log.py
+save_parse_coverage.py
+test_*.py
+verify_22_counties.py
+write_res.py
+build_target_officers.py

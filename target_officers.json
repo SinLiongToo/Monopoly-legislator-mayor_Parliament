@@ -1,0 +1,6182 @@
+[
+  {
+    "name": "台積電 (2330)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_2"
+  },
+  {
+    "name": "國泰金 (2882)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenqm"
+  },
+  {
+    "name": "鴻海 (2317)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "gaoha"
+  },
+  {
+    "name": "家族三大有線電視股票",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xieyf"
+  },
+  {
+    "name": "強生生技",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "han"
+  },
+  {
+    "name": "晶豪科 (3006)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "fu"
+  },
+  {
+    "name": "張善政",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangsz"
+  },
+  {
+    "name": "蔣萬安",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "jiang"
+  },
+  {
+    "name": "盧秀燕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "lu"
+  },
+  {
+    "name": "謝國樑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xiegl"
+  },
+  {
+    "name": "柯文哲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "ko"
+  },
+  {
+    "name": "謝典林",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "苗博雅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "miaoboya"
+  },
+  {
+    "name": "鍾沛君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhongpb"
+  },
+  {
+    "name": "游淑慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "yoush"
+  },
+  {
+    "name": "戴瑋姍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "daiws"
+  },
+  {
+    "name": "卓冠廷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhuogt"
+  },
+  {
+    "name": "應曉薇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "yingxiaowei"
+  },
+  {
+    "name": "許淑華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xushh_tp"
+  },
+  {
+    "name": "葉林傳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_2"
+  },
+  {
+    "name": "張斯綱",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_9"
+  },
+  {
+    "name": "黃瀞瑩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_10"
+  },
+  {
+    "name": "陳怡君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_11"
+  },
+  {
+    "name": "徐巧芯",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_13"
+  },
+  {
+    "name": "簡舒培",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_14"
+  },
+  {
+    "name": "李明賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_15"
+  },
+  {
+    "name": "林亮君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_16"
+  },
+  {
+    "name": "陳宥丞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_17"
+  },
+  {
+    "name": "趙怡翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_18"
+  },
+  {
+    "name": "詹為元",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_19"
+  },
+  {
+    "name": "柳采葳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_20"
+  },
+  {
+    "name": "汪志冰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_21"
+  },
+  {
+    "name": "林延鳳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_22"
+  },
+  {
+    "name": "陳賢蔚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_23"
+  },
+  {
+    "name": "顏若芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_24"
+  },
+  {
+    "name": "林珍羽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_25"
+  },
+  {
+    "name": "張文潔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_26"
+  },
+  {
+    "name": "洪健益",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_27"
+  },
+  {
+    "name": "許家蓓",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_28"
+  },
+  {
+    "name": "郭昭巖",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_29"
+  },
+  {
+    "name": "劉耀仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_31"
+  },
+  {
+    "name": "鐘小平",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_32"
+  },
+  {
+    "name": "徐立信",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_33"
+  },
+  {
+    "name": "吳志剛",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_34"
+  },
+  {
+    "name": "王欣儀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_36"
+  },
+  {
+    "name": "耿葳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_37"
+  },
+  {
+    "name": "陳錦祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_38"
+  },
+  {
+    "name": "楊植斗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_39"
+  },
+  {
+    "name": "王閔生",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_40"
+  },
+  {
+    "name": "趙家蓉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_41"
+  },
+  {
+    "name": "李芳儒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_42"
+  },
+  {
+    "name": "李傅中武",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_43"
+  },
+  {
+    "name": "陳政忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_44"
+  },
+  {
+    "name": "陳重文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_45"
+  },
+  {
+    "name": "林世宗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_46"
+  },
+  {
+    "name": "闕枚莎",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_47"
+  },
+  {
+    "name": "吳世正",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_48"
+  },
+  {
+    "name": "王孝維",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_49"
+  },
+  {
+    "name": "何孟樺",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_50"
+  },
+  {
+    "name": "秦慧珠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_51"
+  },
+  {
+    "name": "陳炳甫",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_52"
+  },
+  {
+    "name": "曾獻瑩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_53"
+  },
+  {
+    "name": "洪婉臻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_54"
+  },
+  {
+    "name": "張志豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_55"
+  },
+  {
+    "name": "魏佑任",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_56"
+  },
+  {
+    "name": "郭音蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_57"
+  },
+  {
+    "name": "游淑貞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_58"
+  },
+  {
+    "name": "蔡寶雅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_59"
+  },
+  {
+    "name": "黃平洋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_60"
+  },
+  {
+    "name": "謝佩芬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺北_61"
+  },
+  {
+    "name": "陳鴻源",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_2"
+  },
+  {
+    "name": "陳乃瑜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_6"
+  },
+  {
+    "name": "白珮茹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_7"
+  },
+  {
+    "name": "張嘉玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_8"
+  },
+  {
+    "name": "黃淑君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_9"
+  },
+  {
+    "name": "彭一書",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_10"
+  },
+  {
+    "name": "呂家愷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_11"
+  },
+  {
+    "name": "廖宜琨",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_12"
+  },
+  {
+    "name": "劉美芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_13"
+  },
+  {
+    "name": "曾煥嘉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_14"
+  },
+  {
+    "name": "李宇翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_19"
+  },
+  {
+    "name": "翁震州",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_20"
+  },
+  {
+    "name": "林秉宥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_21"
+  },
+  {
+    "name": "蔡健棠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_22"
+  },
+  {
+    "name": "戴湘儀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_23"
+  },
+  {
+    "name": "陳世軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_24"
+  },
+  {
+    "name": "張錦豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_25"
+  },
+  {
+    "name": "周雅玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_26"
+  },
+  {
+    "name": "鄭宇恩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_27"
+  },
+  {
+    "name": "陳偉杰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_28"
+  },
+  {
+    "name": "蔡錦賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_29"
+  },
+  {
+    "name": "李翁月娥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_30"
+  },
+  {
+    "name": "王威元",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_31"
+  },
+  {
+    "name": "黃桂蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_32"
+  },
+  {
+    "name": "李余典",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_33"
+  },
+  {
+    "name": "陳啟能",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_34"
+  },
+  {
+    "name": "李倩萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_35"
+  },
+  {
+    "name": "彭佳芸",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_36"
+  },
+  {
+    "name": "顏蔚慈",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_37"
+  },
+  {
+    "name": "邱婷蔚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_38"
+  },
+  {
+    "name": "黃心華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_39"
+  },
+  {
+    "name": "陳儀君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_40"
+  },
+  {
+    "name": "劉哲彰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_41"
+  },
+  {
+    "name": "陳永福",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_42"
+  },
+  {
+    "name": "游輝宬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_43"
+  },
+  {
+    "name": "金瑞龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_44"
+  },
+  {
+    "name": "陳錦錠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_45"
+  },
+  {
+    "name": "張維倩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_46"
+  },
+  {
+    "name": "連斐璠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_47"
+  },
+  {
+    "name": "羅文崇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_48"
+  },
+  {
+    "name": "許昭興",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_49"
+  },
+  {
+    "name": "林金結",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_50"
+  },
+  {
+    "name": "洪佳君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_51"
+  },
+  {
+    "name": "黃永昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_52"
+  },
+  {
+    "name": "蘇泓欽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_53"
+  },
+  {
+    "name": "林銘仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_54"
+  },
+  {
+    "name": "周勝考",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_55"
+  },
+  {
+    "name": "林國春",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_56"
+  },
+  {
+    "name": "山田摩衣",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_57"
+  },
+  {
+    "name": "黃俊哲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_58"
+  },
+  {
+    "name": "石一佑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_59"
+  },
+  {
+    "name": "楊春妹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_60"
+  },
+  {
+    "name": "吳張瑪莉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_61"
+  },
+  {
+    "name": "蘇錦雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_62"
+  },
+  {
+    "name": "馬見 Lahuy Ipin",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_63"
+  },
+  {
+    "name": "游輝冗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_64"
+  },
+  {
+    "name": "廖裕德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_65"
+  },
+  {
+    "name": "曾智勇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新北_66"
+  },
+  {
+    "name": "李曉鐘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_2"
+  },
+  {
+    "name": "朱珍瑤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_6"
+  },
+  {
+    "name": "彭俊豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_7"
+  },
+  {
+    "name": "魏筠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_8"
+  },
+  {
+    "name": "謝美英",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_9"
+  },
+  {
+    "name": "張桂綿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_11"
+  },
+  {
+    "name": "徐其萬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_12"
+  },
+  {
+    "name": "游吾和",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_13"
+  },
+  {
+    "name": "劉勝全",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_14"
+  },
+  {
+    "name": "錢龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_15"
+  },
+  {
+    "name": "郭麗華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_16"
+  },
+  {
+    "name": "黃敬平",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_17"
+  },
+  {
+    "name": "陳韋曄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_18"
+  },
+  {
+    "name": "舒翠玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_19"
+  },
+  {
+    "name": "王珮毓",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_20"
+  },
+  {
+    "name": "黃崇真",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_21"
+  },
+  {
+    "name": "張肇良",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_22"
+  },
+  {
+    "name": "李家興",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_23"
+  },
+  {
+    "name": "周玉琴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_24"
+  },
+  {
+    "name": "鄭淑方",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_26"
+  },
+  {
+    "name": "許更生",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_27"
+  },
+  {
+    "name": "吳進昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_28"
+  },
+  {
+    "name": "劉曾玉村",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_29"
+  },
+  {
+    "name": "梁為超",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_30"
+  },
+  {
+    "name": "葉明月",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_31"
+  },
+  {
+    "name": "賈舟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_32"
+  },
+  {
+    "name": "劉仁照",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_33"
+  },
+  {
+    "name": "許家睿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_34"
+  },
+  {
+    "name": "呂林小鳳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_35"
+  },
+  {
+    "name": "段樹文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_36"
+  },
+  {
+    "name": "蔡永芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_37"
+  },
+  {
+    "name": "楊朝偉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_38"
+  },
+  {
+    "name": "卓德樹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_39"
+  },
+  {
+    "name": "陳雅倫",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_40"
+  },
+  {
+    "name": "李宗豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_41"
+  },
+  {
+    "name": "孫韻婷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_42"
+  },
+  {
+    "name": "林政賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_43"
+  },
+  {
+    "name": "陳美梅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_44"
+  },
+  {
+    "name": "黃婉如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_45"
+  },
+  {
+    "name": "李光達",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_46"
+  },
+  {
+    "name": "黃家齊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_47"
+  },
+  {
+    "name": "詹江村",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_48"
+  },
+  {
+    "name": "余信憲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_49"
+  },
+  {
+    "name": "簡志偉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_50"
+  },
+  {
+    "name": "陳瑛",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_51"
+  },
+  {
+    "name": "蘇幸立",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_52"
+  },
+  {
+    "name": "川升",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_53"
+  },
+  {
+    "name": "歐明憲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_55"
+  },
+  {
+    "name": "羅文欽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_56"
+  },
+  {
+    "name": "萬美玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_57"
+  },
+  {
+    "name": "蘇家明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_58"
+  },
+  {
+    "name": "簡智翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_59"
+  },
+  {
+    "name": "林俐玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_60"
+  },
+  {
+    "name": "張勝富",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_61"
+  },
+  {
+    "name": "楊梅清",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_62"
+  },
+  {
+    "name": "徐景文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_桃園_63"
+  },
+  {
+    "name": "黃守達",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_4"
+  },
+  {
+    "name": "陳雅惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_8"
+  },
+  {
+    "name": "李中",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_9"
+  },
+  {
+    "name": "鄭功進",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_10"
+  },
+  {
+    "name": "陳文政",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_11"
+  },
+  {
+    "name": "陳政顯",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_12"
+  },
+  {
+    "name": "賴佳微",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_13"
+  },
+  {
+    "name": "蔡耀頡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_14"
+  },
+  {
+    "name": "張玉嬿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_15"
+  },
+  {
+    "name": "賴義鍠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_16"
+  },
+  {
+    "name": "曾威",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_17"
+  },
+  {
+    "name": "林昊佑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_18"
+  },
+  {
+    "name": "吳瓊華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_19"
+  },
+  {
+    "name": "張家鞍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_20"
+  },
+  {
+    "name": "蔡成圭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_21"
+  },
+  {
+    "name": "冉齡軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_22"
+  },
+  {
+    "name": "謝志忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_23"
+  },
+  {
+    "name": "張瀞分",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_24"
+  },
+  {
+    "name": "陳本添",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_25"
+  },
+  {
+    "name": "邱愛珊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_26"
+  },
+  {
+    "name": "周永鴻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_27"
+  },
+  {
+    "name": "蕭隆澤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_28"
+  },
+  {
+    "name": "徐瑄豊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_29"
+  },
+  {
+    "name": "楊典忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_30"
+  },
+  {
+    "name": "王立任",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_31"
+  },
+  {
+    "name": "陳廷秀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_32"
+  },
+  {
+    "name": "林孟令",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_33"
+  },
+  {
+    "name": "吳佩燁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_34"
+  },
+  {
+    "name": "曾朝榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_35"
+  },
+  {
+    "name": "謝家宜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_36"
+  },
+  {
+    "name": "賴順仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_37"
+  },
+  {
+    "name": "沈佑蓮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_38"
+  },
+  {
+    "name": "黃馨慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_39"
+  },
+  {
+    "name": "張廖乃綸",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_40"
+  },
+  {
+    "name": "楊大鋐",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_41"
+  },
+  {
+    "name": "林祈烽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_42"
+  },
+  {
+    "name": "鄭樂民",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_43"
+  },
+  {
+    "name": "林佩涵",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_44"
+  },
+  {
+    "name": "施志昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_45"
+  },
+  {
+    "name": "李榮鴻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_46"
+  },
+  {
+    "name": "楊啟邦",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_47"
+  },
+  {
+    "name": "吳敏濟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_48"
+  },
+  {
+    "name": "朱元宏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_49"
+  },
+  {
+    "name": "古秀英",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_51"
+  },
+  {
+    "name": "吳顯森",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_52"
+  },
+  {
+    "name": "林榮進",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_53"
+  },
+  {
+    "name": "蔡雅玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_54"
+  },
+  {
+    "name": "陳清龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_57"
+  },
+  {
+    "name": "羅永珍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_58"
+  },
+  {
+    "name": "賴朝國",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_59"
+  },
+  {
+    "name": "張滄沂",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_61"
+  },
+  {
+    "name": "李天生",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_62"
+  },
+  {
+    "name": "林德宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_63"
+  },
+  {
+    "name": "段緯宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_64"
+  },
+  {
+    "name": "張芬郁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺中_65"
+  },
+  {
+    "name": "林志展",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_2"
+  },
+  {
+    "name": "朱正軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_5"
+  },
+  {
+    "name": "謝舒凡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_6"
+  },
+  {
+    "name": "郭信良",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_7"
+  },
+  {
+    "name": "蔡淑惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_8"
+  },
+  {
+    "name": "林燕祝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_9"
+  },
+  {
+    "name": "方一峰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_10"
+  },
+  {
+    "name": "尤榮智",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_11"
+  },
+  {
+    "name": "蔡秋蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_12"
+  },
+  {
+    "name": "陳昆和",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_13"
+  },
+  {
+    "name": "曾培雅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_14"
+  },
+  {
+    "name": "蔡宗豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_15"
+  },
+  {
+    "name": "沈震東",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_16"
+  },
+  {
+    "name": "陳怡珍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_17"
+  },
+  {
+    "name": "周嘉韋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_18"
+  },
+  {
+    "name": "許至椿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_19"
+  },
+  {
+    "name": "邱昭勝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_20"
+  },
+  {
+    "name": "黃麗招",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_21"
+  },
+  {
+    "name": "李中岑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_22"
+  },
+  {
+    "name": "郭鴻儀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_23"
+  },
+  {
+    "name": "鄭佳欣",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_24"
+  },
+  {
+    "name": "吳禹寰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_25"
+  },
+  {
+    "name": "陳皇宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_26"
+  },
+  {
+    "name": "盧崑福",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_27"
+  },
+  {
+    "name": "林美燕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_28"
+  },
+  {
+    "name": "李啟維",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_29"
+  },
+  {
+    "name": "周麗津",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_30"
+  },
+  {
+    "name": "蔡筱薇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_31"
+  },
+  {
+    "name": "曾之婕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_32"
+  },
+  {
+    "name": "李宗霖",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_33"
+  },
+  {
+    "name": "李鎮國",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_34"
+  },
+  {
+    "name": "楊中成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_35"
+  },
+  {
+    "name": "黃肇輝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_36"
+  },
+  {
+    "name": "陳秋萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_37"
+  },
+  {
+    "name": "吳通龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_38"
+  },
+  {
+    "name": "陳秋宏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_39"
+  },
+  {
+    "name": "張世賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_41"
+  },
+  {
+    "name": "趙昆原",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_42"
+  },
+  {
+    "name": "穎艾達利",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_43"
+  },
+  {
+    "name": "谷暮哈就",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_44"
+  },
+  {
+    "name": "施余興望",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_45"
+  },
+  {
+    "name": "施余金華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_46"
+  },
+  {
+    "name": "蔡黃秋蓮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_47"
+  },
+  {
+    "name": "許又仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_48"
+  },
+  {
+    "name": "謝財旺",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_49"
+  },
+  {
+    "name": "林志聰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_50"
+  },
+  {
+    "name": "王家貞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_51"
+  },
+  {
+    "name": "蔡旺詮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_52"
+  },
+  {
+    "name": "沈家鳳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_53"
+  },
+  {
+    "name": "周奕齊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_54"
+  },
+  {
+    "name": "李偉智",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_55"
+  },
+  {
+    "name": "陳碧玉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_56"
+  },
+  {
+    "name": "余柷青",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺南_57"
+  },
+  {
+    "name": "張博洋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_6"
+  },
+  {
+    "name": "湯詠瑜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_7"
+  },
+  {
+    "name": "陳美雅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_8"
+  },
+  {
+    "name": "黃柏霖",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_9"
+  },
+  {
+    "name": "郭建盟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_10"
+  },
+  {
+    "name": "黃文益",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_11"
+  },
+  {
+    "name": "蔡武宏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_12"
+  },
+  {
+    "name": "陳麗娜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_13"
+  },
+  {
+    "name": "李眉蓁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_14"
+  },
+  {
+    "name": "陳玫娟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_15"
+  },
+  {
+    "name": "黃香菽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_16"
+  },
+  {
+    "name": "鄭孟洳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_17"
+  },
+  {
+    "name": "何權峰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_18"
+  },
+  {
+    "name": "邱俊憲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_19"
+  },
+  {
+    "name": "簡煥宗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_20"
+  },
+  {
+    "name": "李喬如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_21"
+  },
+  {
+    "name": "蔡金晏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_22"
+  },
+  {
+    "name": "許采蓁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_23"
+  },
+  {
+    "name": "鍾易仲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_24"
+  },
+  {
+    "name": "劉德林",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_25"
+  },
+  {
+    "name": "李雅靜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_26"
+  },
+  {
+    "name": "陳慧文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_27"
+  },
+  {
+    "name": "黃飛鳳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_28"
+  },
+  {
+    "name": "江瑞鴻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_29"
+  },
+  {
+    "name": "邱水文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_31"
+  },
+  {
+    "name": "曾麗燕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_32"
+  },
+  {
+    "name": "朱信強",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_33"
+  },
+  {
+    "name": "林富寶",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_34"
+  },
+  {
+    "name": "黃秋媖",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_35"
+  },
+  {
+    "name": "方信淵",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_36"
+  },
+  {
+    "name": "宋立彬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_37"
+  },
+  {
+    "name": "陳明澤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_38"
+  },
+  {
+    "name": "黃明太",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_39"
+  },
+  {
+    "name": "李亞築",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_40"
+  },
+  {
+    "name": "吳利成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_41"
+  },
+  {
+    "name": "許慧玉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_42"
+  },
+  {
+    "name": "邱于軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_43"
+  },
+  {
+    "name": "王耀裕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_44"
+  },
+  {
+    "name": "黃天煌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_45"
+  },
+  {
+    "name": "李雨庭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_46"
+  },
+  {
+    "name": "鄭安秝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_47"
+  },
+  {
+    "name": "洪村銘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_48"
+  },
+  {
+    "name": "韓賜村",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_49"
+  },
+  {
+    "name": "陳善慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_51"
+  },
+  {
+    "name": "陳幸富",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_52"
+  },
+  {
+    "name": "高忠德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_53"
+  },
+  {
+    "name": "范織欽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_54"
+  },
+  {
+    "name": "王義雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_55"
+  },
+  {
+    "name": "陸淑美",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_56"
+  },
+  {
+    "name": "陳振中",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_57"
+  },
+  {
+    "name": "蔡清華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_58"
+  },
+  {
+    "name": "林義迪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_59"
+  },
+  {
+    "name": "嚴朱麗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_60"
+  },
+  {
+    "name": "陳致中",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_61"
+  },
+  {
+    "name": "鄭光峰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_62"
+  },
+  {
+    "name": "吳銘賜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_63"
+  },
+  {
+    "name": "林智鴻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_高雄_65"
+  },
+  {
+    "name": "楊秀玉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_2"
+  },
+  {
+    "name": "藍敏晃",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_5"
+  },
+  {
+    "name": "韓世賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_6"
+  },
+  {
+    "name": "許睿慈",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_7"
+  },
+  {
+    "name": "張顥瀚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_8"
+  },
+  {
+    "name": "陳宜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_9"
+  },
+  {
+    "name": "何淑萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_10"
+  },
+  {
+    "name": "曾紀嚴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_11"
+  },
+  {
+    "name": "張芳麗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_12"
+  },
+  {
+    "name": "施偉賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_13"
+  },
+  {
+    "name": "郭美秀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_14"
+  },
+  {
+    "name": "張耿輝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_15"
+  },
+  {
+    "name": "蔡旺璉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_16"
+  },
+  {
+    "name": "曾怡芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_17"
+  },
+  {
+    "name": "柳秀莉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_18"
+  },
+  {
+    "name": "林旻勳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_19"
+  },
+  {
+    "name": "陳冠羽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_20"
+  },
+  {
+    "name": "吳驊珈",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_21"
+  },
+  {
+    "name": "秦鉦",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_22"
+  },
+  {
+    "name": "鄭愷玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_23"
+  },
+  {
+    "name": "俞叁發",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_24"
+  },
+  {
+    "name": "黃姵瑄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_25"
+  },
+  {
+    "name": "陳明建",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_26"
+  },
+  {
+    "name": "陳軍佐",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_27"
+  },
+  {
+    "name": "莊榮欽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_28"
+  },
+  {
+    "name": "江鑑育",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_29"
+  },
+  {
+    "name": "張錦煌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_30"
+  },
+  {
+    "name": "王醒之",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_基隆_31"
+  },
+  {
+    "name": "余邦彥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_2"
+  },
+  {
+    "name": "劉康彥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_5"
+  },
+  {
+    "name": "曾資程",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_6"
+  },
+  {
+    "name": "鄭美娟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_7"
+  },
+  {
+    "name": "宋品瑩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_8"
+  },
+  {
+    "name": "張祖琰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_9"
+  },
+  {
+    "name": "段孝芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_10"
+  },
+  {
+    "name": "黃文政",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_11"
+  },
+  {
+    "name": "鍾淑英",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_12"
+  },
+  {
+    "name": "蔡惠婷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_13"
+  },
+  {
+    "name": "陳治雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_14"
+  },
+  {
+    "name": "吳旭智",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_15"
+  },
+  {
+    "name": "蕭志潔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_16"
+  },
+  {
+    "name": "黃美慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_17"
+  },
+  {
+    "name": "楊玲宜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_18"
+  },
+  {
+    "name": "孫鍚洲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_19"
+  },
+  {
+    "name": "陳慶齡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_20"
+  },
+  {
+    "name": "吳國寶",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_21"
+  },
+  {
+    "name": "林盈徹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_22"
+  },
+  {
+    "name": "陳啟源",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_23"
+  },
+  {
+    "name": "廖子齊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_24"
+  },
+  {
+    "name": "徐美惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_25"
+  },
+  {
+    "name": "林慈愛",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_26"
+  },
+  {
+    "name": "劉崇顯",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_27"
+  },
+  {
+    "name": "彭昆耀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_28"
+  },
+  {
+    "name": "鄭成光",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_29"
+  },
+  {
+    "name": "羅文熾",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_30"
+  },
+  {
+    "name": "黃美心",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_31"
+  },
+  {
+    "name": "賀玉燕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_32"
+  },
+  {
+    "name": "李妍慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_33"
+  },
+  {
+    "name": "田雅芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_34"
+  },
+  {
+    "name": "王炳漢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_2"
+  },
+  {
+    "name": "朱健銘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_4"
+  },
+  {
+    "name": "蔡志環",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_5"
+  },
+  {
+    "name": "林禹佑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_6"
+  },
+  {
+    "name": "陳凱榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_8"
+  },
+  {
+    "name": "張珈源",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_9"
+  },
+  {
+    "name": "蔡蕥鍹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_10"
+  },
+  {
+    "name": "林碩彥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_11"
+  },
+  {
+    "name": "鄭美琴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_12"
+  },
+  {
+    "name": "林增堂",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_13"
+  },
+  {
+    "name": "上官秋燕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_14"
+  },
+  {
+    "name": "彭余美玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_15"
+  },
+  {
+    "name": "楊昌德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_16"
+  },
+  {
+    "name": "鄭朝鐘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_17"
+  },
+  {
+    "name": "馮守亮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_18"
+  },
+  {
+    "name": "徐瑜新",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_19"
+  },
+  {
+    "name": "羅仕琦",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_20"
+  },
+  {
+    "name": "嚴永秋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_21"
+  },
+  {
+    "name": "范曰富",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_22"
+  },
+  {
+    "name": "何智達",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_23"
+  },
+  {
+    "name": "吳傳地",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_24"
+  },
+  {
+    "name": "黃豪杰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_25"
+  },
+  {
+    "name": "齊占翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_26"
+  },
+  {
+    "name": "陳栢誠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_27"
+  },
+  {
+    "name": "吳菊花",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_28"
+  },
+  {
+    "name": "羅吉祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_29"
+  },
+  {
+    "name": "陳正順",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_30"
+  },
+  {
+    "name": "張益生",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_31"
+  },
+  {
+    "name": "林秉君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_32"
+  },
+  {
+    "name": "劉德樑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_33"
+  },
+  {
+    "name": "邱振瑋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_34"
+  },
+  {
+    "name": "王辰翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_35"
+  },
+  {
+    "name": "陳見賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_新竹_36"
+  },
+  {
+    "name": "張淑芬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_2"
+  },
+  {
+    "name": "孫素娥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_5"
+  },
+  {
+    "name": "禹耀東",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_6"
+  },
+  {
+    "name": "鄭碧玉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_7"
+  },
+  {
+    "name": "余文忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_8"
+  },
+  {
+    "name": "楊明燁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_9"
+  },
+  {
+    "name": "許櫻萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_10"
+  },
+  {
+    "name": "曾空性",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_11"
+  },
+  {
+    "name": "張志宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_12"
+  },
+  {
+    "name": "徐筱菁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_13"
+  },
+  {
+    "name": "黃芳椿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_14"
+  },
+  {
+    "name": "黎尚安",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_15"
+  },
+  {
+    "name": "羅貴星",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_16"
+  },
+  {
+    "name": "周玉滿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_17"
+  },
+  {
+    "name": "張顧苧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_18"
+  },
+  {
+    "name": "翁杰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_19"
+  },
+  {
+    "name": "徐永晃",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_20"
+  },
+  {
+    "name": "林寶珠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_21"
+  },
+  {
+    "name": "廖英利",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_22"
+  },
+  {
+    "name": "葉忠倫",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_23"
+  },
+  {
+    "name": "邱毓興",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_24"
+  },
+  {
+    "name": "廖秀紅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_25"
+  },
+  {
+    "name": "陳光軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_26"
+  },
+  {
+    "name": "黃聲濁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_27"
+  },
+  {
+    "name": "蕭詠萱",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_28"
+  },
+  {
+    "name": "徐功凡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_29"
+  },
+  {
+    "name": "溫宜靜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_30"
+  },
+  {
+    "name": "楊恭林",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_31"
+  },
+  {
+    "name": "劉美苑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_32"
+  },
+  {
+    "name": "陳春暖",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_33"
+  },
+  {
+    "name": "黃月娥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_34"
+  },
+  {
+    "name": "楊文昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_35"
+  },
+  {
+    "name": "劉秋東",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_36"
+  },
+  {
+    "name": "韓茂賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_37"
+  },
+  {
+    "name": "李聰祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_苗栗_38"
+  },
+  {
+    "name": "許原龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_2"
+  },
+  {
+    "name": "白玉如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_5"
+  },
+  {
+    "name": "黃千宴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_6"
+  },
+  {
+    "name": "溫芝樺",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_7"
+  },
+  {
+    "name": "許雅琳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_8"
+  },
+  {
+    "name": "李成濟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_9"
+  },
+  {
+    "name": "楊子賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_10"
+  },
+  {
+    "name": "黃柏瑜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_11"
+  },
+  {
+    "name": "顧黃水花",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_12"
+  },
+  {
+    "name": "林茂明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_13"
+  },
+  {
+    "name": "陳銌銌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_14"
+  },
+  {
+    "name": "吳韋達",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_15"
+  },
+  {
+    "name": "張錦昆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_16"
+  },
+  {
+    "name": "劉惠娟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_17"
+  },
+  {
+    "name": "涂俊任",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_18"
+  },
+  {
+    "name": "張欣倩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_19"
+  },
+  {
+    "name": "陳秋蓉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_20"
+  },
+  {
+    "name": "詹木根",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_21"
+  },
+  {
+    "name": "鄭俊雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_22"
+  },
+  {
+    "name": "黃正盛",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_23"
+  },
+  {
+    "name": "柯振杯",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_24"
+  },
+  {
+    "name": "林宗翰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_25"
+  },
+  {
+    "name": "周君綾",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_26"
+  },
+  {
+    "name": "賴清美",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_27"
+  },
+  {
+    "name": "王國忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_28"
+  },
+  {
+    "name": "涂淑媚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_29"
+  },
+  {
+    "name": "楊妙月",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_30"
+  },
+  {
+    "name": "藍駿宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_31"
+  },
+  {
+    "name": "郭燕陵",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_32"
+  },
+  {
+    "name": "陳玉姬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_33"
+  },
+  {
+    "name": "洪本成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_34"
+  },
+  {
+    "name": "劉珊伶",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_35"
+  },
+  {
+    "name": "張春洋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_36"
+  },
+  {
+    "name": "蕭妤亘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_37"
+  },
+  {
+    "name": "鄭宇焱",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_38"
+  },
+  {
+    "name": "許書維",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_40"
+  },
+  {
+    "name": "吳淑娟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_41"
+  },
+  {
+    "name": "李浩誠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_42"
+  },
+  {
+    "name": "洪子超",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_43"
+  },
+  {
+    "name": "張國棟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_44"
+  },
+  {
+    "name": "陳一惇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_45"
+  },
+  {
+    "name": "謝衣鳳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_46"
+  },
+  {
+    "name": "洪騰明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_47"
+  },
+  {
+    "name": "蔡家豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_48"
+  },
+  {
+    "name": "林深",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_49"
+  },
+  {
+    "name": "尤瑞春",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_50"
+  },
+  {
+    "name": "葉國雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_51"
+  },
+  {
+    "name": "陳重嘉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_52"
+  },
+  {
+    "name": "張雪如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_53"
+  },
+  {
+    "name": "陳榮妹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_彰化_54"
+  },
+  {
+    "name": "張秀枝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_4"
+  },
+  {
+    "name": "史雪燕",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_5"
+  },
+  {
+    "name": "洪浩原",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_6"
+  },
+  {
+    "name": "簡千翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_8"
+  },
+  {
+    "name": "林儒暘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_9"
+  },
+  {
+    "name": "宋懷琳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_10"
+  },
+  {
+    "name": "曾振炎",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_11"
+  },
+  {
+    "name": "吳棋楠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_12"
+  },
+  {
+    "name": "簡賜勝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_13"
+  },
+  {
+    "name": "李洲忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_14"
+  },
+  {
+    "name": "唐曉棻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_15"
+  },
+  {
+    "name": "廖梓佑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_16"
+  },
+  {
+    "name": "蔡銘軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_17"
+  },
+  {
+    "name": "莊士傑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_18"
+  },
+  {
+    "name": "陳淑惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_19"
+  },
+  {
+    "name": "王秋淑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_20"
+  },
+  {
+    "name": "謝明謀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_21"
+  },
+  {
+    "name": "黃春麟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_22"
+  },
+  {
+    "name": "吳國昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_23"
+  },
+  {
+    "name": "戴世銓",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_24"
+  },
+  {
+    "name": "黃世芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_25"
+  },
+  {
+    "name": "陳宜君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_26"
+  },
+  {
+    "name": "蘇昱誠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_27"
+  },
+  {
+    "name": "林芳伃",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_28"
+  },
+  {
+    "name": "蔡孟娥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_29"
+  },
+  {
+    "name": "陳玉鈴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_30"
+  },
+  {
+    "name": "張婉慈",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_31"
+  },
+  {
+    "name": "石慶龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_32"
+  },
+  {
+    "name": "全民朝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_33"
+  },
+  {
+    "name": "林婷立",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_34"
+  },
+  {
+    "name": "張嚴文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_35"
+  },
+  {
+    "name": "蕭志全",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_36"
+  },
+  {
+    "name": "游輝紅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_南投_37"
+  },
+  {
+    "name": "沈宗隆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_4"
+  },
+  {
+    "name": "李明哲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_5"
+  },
+  {
+    "name": "鍾明馨",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_6"
+  },
+  {
+    "name": "王又民",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_7"
+  },
+  {
+    "name": "黃勝賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_8"
+  },
+  {
+    "name": "陳芳盈",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_9"
+  },
+  {
+    "name": "曾博舟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_10"
+  },
+  {
+    "name": "江文登",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_11"
+  },
+  {
+    "name": "張庭綺",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_12"
+  },
+  {
+    "name": "林岳璋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_13"
+  },
+  {
+    "name": "賴淑娞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_14"
+  },
+  {
+    "name": "顏忠義",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_15"
+  },
+  {
+    "name": "王秋足",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_16"
+  },
+  {
+    "name": "簡慈坊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_17"
+  },
+  {
+    "name": "吳滄得",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_18"
+  },
+  {
+    "name": "蔡東富",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_19"
+  },
+  {
+    "name": "黃美瑤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_20"
+  },
+  {
+    "name": "陳乙辰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_21"
+  },
+  {
+    "name": "張維心",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_22"
+  },
+  {
+    "name": "林文彬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_23"
+  },
+  {
+    "name": "黃淑鈴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_24"
+  },
+  {
+    "name": "廖偉晴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_25"
+  },
+  {
+    "name": "游淑雲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_26"
+  },
+  {
+    "name": "楊國寬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_27"
+  },
+  {
+    "name": "洪如萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_28"
+  },
+  {
+    "name": "許留賓",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_29"
+  },
+  {
+    "name": "吳蕙蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_30"
+  },
+  {
+    "name": "張頭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_31"
+  },
+  {
+    "name": "顏嘉半",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_33"
+  },
+  {
+    "name": "蔡孟真",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_34"
+  },
+  {
+    "name": "黃文祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_35"
+  },
+  {
+    "name": "蕭慧敏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_36"
+  },
+  {
+    "name": "蔡岳儒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_37"
+  },
+  {
+    "name": "張勝智",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_38"
+  },
+  {
+    "name": "陳茂源",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_39"
+  },
+  {
+    "name": "李建昇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_41"
+  },
+  {
+    "name": "梁銘煌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_42"
+  },
+  {
+    "name": "蘇俊豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_雲林_43"
+  },
+  {
+    "name": "張榮藏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_2"
+  },
+  {
+    "name": "鄭光宏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_4"
+  },
+  {
+    "name": "張敏琪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_5"
+  },
+  {
+    "name": "傅大偉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_6"
+  },
+  {
+    "name": "陳家平",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_7"
+  },
+  {
+    "name": "郭定緯",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_8"
+  },
+  {
+    "name": "黃思婷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_9"
+  },
+  {
+    "name": "黃露慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_10"
+  },
+  {
+    "name": "黃盈智",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_11"
+  },
+  {
+    "name": "凌子楚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_12"
+  },
+  {
+    "name": "李奕德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_13"
+  },
+  {
+    "name": "蔡永泉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_14"
+  },
+  {
+    "name": "孫貫志",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_15"
+  },
+  {
+    "name": "黃敏修",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_16"
+  },
+  {
+    "name": "林煒軒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_17"
+  },
+  {
+    "name": "蔡文旭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_18"
+  },
+  {
+    "name": "王浩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_19"
+  },
+  {
+    "name": "李忠曆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_20"
+  },
+  {
+    "name": "蘇澤峰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_21"
+  },
+  {
+    "name": "戴寧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_22"
+  },
+  {
+    "name": "蔡榮豐",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_23"
+  },
+  {
+    "name": "林緗亭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_4"
+  },
+  {
+    "name": "黃榮利",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_5"
+  },
+  {
+    "name": "賴瓊如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_6"
+  },
+  {
+    "name": "黃惠汝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_7"
+  },
+  {
+    "name": "王啟澧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_8"
+  },
+  {
+    "name": "楊秀琴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_9"
+  },
+  {
+    "name": "葉孟龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_10"
+  },
+  {
+    "name": "林秀琴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_11"
+  },
+  {
+    "name": "陳文玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_12"
+  },
+  {
+    "name": "劉雅文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_13"
+  },
+  {
+    "name": "黃啟豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_14"
+  },
+  {
+    "name": "簡嘉億",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_15"
+  },
+  {
+    "name": "林淑完",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_16"
+  },
+  {
+    "name": "劉世雪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_17"
+  },
+  {
+    "name": "李國勝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_18"
+  },
+  {
+    "name": "黃嫈茱",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_19"
+  },
+  {
+    "name": "姜梅紅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_20"
+  },
+  {
+    "name": "蔡奇璋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_21"
+  },
+  {
+    "name": "陳鳳梅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_22"
+  },
+  {
+    "name": "蔡瑋傑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_23"
+  },
+  {
+    "name": "黃金茂",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_24"
+  },
+  {
+    "name": "翁聰賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_25"
+  },
+  {
+    "name": "羅士洋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_26"
+  },
+  {
+    "name": "黑啟明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_27"
+  },
+  {
+    "name": "莊信宗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_28"
+  },
+  {
+    "name": "江季珍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_29"
+  },
+  {
+    "name": "陳柏麟",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_30"
+  },
+  {
+    "name": "武清山",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_31"
+  },
+  {
+    "name": "蔡信陸",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_32"
+  },
+  {
+    "name": "林沐惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_33"
+  },
+  {
+    "name": "邱銀海",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_34"
+  },
+  {
+    "name": "葉平安",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_35"
+  },
+  {
+    "name": "許有疆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_36"
+  },
+  {
+    "name": "何子凡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_嘉義_37"
+  },
+  {
+    "name": "李世斌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_4"
+  },
+  {
+    "name": "曾義雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_5"
+  },
+  {
+    "name": "唐玉琴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_6"
+  },
+  {
+    "name": "陳揚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_7"
+  },
+  {
+    "name": "黃明賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_8"
+  },
+  {
+    "name": "蘇資婷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_9"
+  },
+  {
+    "name": "蔣家晃",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_10"
+  },
+  {
+    "name": "林明順",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_11"
+  },
+  {
+    "name": "鄭清原",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_12"
+  },
+  {
+    "name": "張平紅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_13"
+  },
+  {
+    "name": "梁育慈",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_14"
+  },
+  {
+    "name": "陳明達",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_15"
+  },
+  {
+    "name": "王景山",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_16"
+  },
+  {
+    "name": "葉明博",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_17"
+  },
+  {
+    "name": "吳亮慶",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_18"
+  },
+  {
+    "name": "徐榮耀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_19"
+  },
+  {
+    "name": "林郁虹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_20"
+  },
+  {
+    "name": "許馨勻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_21"
+  },
+  {
+    "name": "潘長成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_22"
+  },
+  {
+    "name": "洪明江",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_23"
+  },
+  {
+    "name": "周碧雲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_24"
+  },
+  {
+    "name": "林蔡鳳梅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_25"
+  },
+  {
+    "name": "方文正",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_26"
+  },
+  {
+    "name": "郭再添",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_27"
+  },
+  {
+    "name": "許柯秀忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_28"
+  },
+  {
+    "name": "劉淼松",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_29"
+  },
+  {
+    "name": "周陳文彬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_30"
+  },
+  {
+    "name": "羅平道",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_31"
+  },
+  {
+    "name": "李世淦",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_32"
+  },
+  {
+    "name": "陳宗興",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_33"
+  },
+  {
+    "name": "潘芳泉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_34"
+  },
+  {
+    "name": "張榮志",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_35"
+  },
+  {
+    "name": "王薇茗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_36"
+  },
+  {
+    "name": "張利惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_37"
+  },
+  {
+    "name": "車牧勒薩以",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_38"
+  },
+  {
+    "name": "陸月嬌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_39"
+  },
+  {
+    "name": "何長成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_40"
+  },
+  {
+    "name": "潘連周",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_41"
+  },
+  {
+    "name": "許展維",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_42"
+  },
+  {
+    "name": "鄭雙銓",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_43"
+  },
+  {
+    "name": "劉育豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_44"
+  },
+  {
+    "name": "李香蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_45"
+  },
+  {
+    "name": "陳哲閎",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_46"
+  },
+  {
+    "name": "曾福金",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_47"
+  },
+  {
+    "name": "林玉花",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_48"
+  },
+  {
+    "name": "越秋香",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_49"
+  },
+  {
+    "name": "杜仁勇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_50"
+  },
+  {
+    "name": "林采穎",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_51"
+  },
+  {
+    "name": "戴見福",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_52"
+  },
+  {
+    "name": "賴文成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_53"
+  },
+  {
+    "name": "周陳秀霞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_屏東_54"
+  },
+  {
+    "name": "陳漢鍾",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_2"
+  },
+  {
+    "name": "黃定和",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_4"
+  },
+  {
+    "name": "張簡邦偉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_5"
+  },
+  {
+    "name": "林麗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_6"
+  },
+  {
+    "name": "莊淑如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_7"
+  },
+  {
+    "name": "楊順木",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_8"
+  },
+  {
+    "name": "林錫明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_9"
+  },
+  {
+    "name": "黃建勇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_10"
+  },
+  {
+    "name": "劉添梧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_11"
+  },
+  {
+    "name": "呂惠卿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_12"
+  },
+  {
+    "name": "陳鴻禧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_13"
+  },
+  {
+    "name": "林義剛",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_14"
+  },
+  {
+    "name": "林詩萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_15"
+  },
+  {
+    "name": "賴良洲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_16"
+  },
+  {
+    "name": "吳宏謀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_17"
+  },
+  {
+    "name": "黃浴沂",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_19"
+  },
+  {
+    "name": "簡松樹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_20"
+  },
+  {
+    "name": "林義成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_21"
+  },
+  {
+    "name": "沈德茂",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_22"
+  },
+  {
+    "name": "邱素梅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_23"
+  },
+  {
+    "name": "楊弘旻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_24"
+  },
+  {
+    "name": "蔡文益",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_25"
+  },
+  {
+    "name": "陳文昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_26"
+  },
+  {
+    "name": "謝岳中",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_27"
+  },
+  {
+    "name": "陳玉萍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_28"
+  },
+  {
+    "name": "游祥德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_29"
+  },
+  {
+    "name": "游吉祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_30"
+  },
+  {
+    "name": "沈志弘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_31"
+  },
+  {
+    "name": "孫湯玉惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_32"
+  },
+  {
+    "name": "林智勇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_宜蘭_33"
+  },
+  {
+    "name": "潘月霞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_2"
+  },
+  {
+    "name": "楊華美",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_5"
+  },
+  {
+    "name": "張美慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_6"
+  },
+  {
+    "name": "徐子芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_7"
+  },
+  {
+    "name": "謝國榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_8"
+  },
+  {
+    "name": "吳東昇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_9"
+  },
+  {
+    "name": "韓林梅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_10"
+  },
+  {
+    "name": "林宗昆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_11"
+  },
+  {
+    "name": "黃馨",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_12"
+  },
+  {
+    "name": "張懷文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_13"
+  },
+  {
+    "name": "徐雪玉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_14"
+  },
+  {
+    "name": "鄭乾龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_15"
+  },
+  {
+    "name": "林源富",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_16"
+  },
+  {
+    "name": "周駿宥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_17"
+  },
+  {
+    "name": "葉理察",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_18"
+  },
+  {
+    "name": "邱光明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_19"
+  },
+  {
+    "name": "鄭寶秀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_20"
+  },
+  {
+    "name": "黃玲蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_21"
+  },
+  {
+    "name": "鍾素政",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_22"
+  },
+  {
+    "name": "詹金富",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_23"
+  },
+  {
+    "name": "蔡依靜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_24"
+  },
+  {
+    "name": "李正文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_25"
+  },
+  {
+    "name": "笛布斯·顗賚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_27"
+  },
+  {
+    "name": "哈尼·阿美士",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_28"
+  },
+  {
+    "name": "簡智隆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_29"
+  },
+  {
+    "name": "程美蓮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_30"
+  },
+  {
+    "name": "金淑敏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_31"
+  },
+  {
+    "name": "林玉芬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_32"
+  },
+  {
+    "name": "賴國祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_花蓮_33"
+  },
+  {
+    "name": "林綜興",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_2"
+  },
+  {
+    "name": "張國洲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_4"
+  },
+  {
+    "name": "陳銘風",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_5"
+  },
+  {
+    "name": "李建智",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_6"
+  },
+  {
+    "name": "周達三",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_7"
+  },
+  {
+    "name": "王文怡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_8"
+  },
+  {
+    "name": "黃簡東明",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_9"
+  },
+  {
+    "name": "章正輝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_10"
+  },
+  {
+    "name": "簡維國",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_11"
+  },
+  {
+    "name": "張全馨",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_12"
+  },
+  {
+    "name": "許進榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_13"
+  },
+  {
+    "name": "楊招信",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_14"
+  },
+  {
+    "name": "蔡玉玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_15"
+  },
+  {
+    "name": "陳宏宗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_16"
+  },
+  {
+    "name": "潘貴蘭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_17"
+  },
+  {
+    "name": "張順成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_18"
+  },
+  {
+    "name": "古志成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_19"
+  },
+  {
+    "name": "嚴惠美",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_20"
+  },
+  {
+    "name": "陳政宗",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_21"
+  },
+  {
+    "name": "方賢仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_22"
+  },
+  {
+    "name": "楊清順",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_23"
+  },
+  {
+    "name": "鄭崗山",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_24"
+  },
+  {
+    "name": "劉純歌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_25"
+  },
+  {
+    "name": "黃碧妹",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_26"
+  },
+  {
+    "name": "張順福",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_27"
+  },
+  {
+    "name": "林威志",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_28"
+  },
+  {
+    "name": "江堅壽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_29"
+  },
+  {
+    "name": "陸景福",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_臺東_30"
+  },
+  {
+    "name": "藍凱元",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_2"
+  },
+  {
+    "name": "張再興",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_4"
+  },
+  {
+    "name": "蘇陳綉色",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_5"
+  },
+  {
+    "name": "胡松榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_6"
+  },
+  {
+    "name": "陳海山",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_7"
+  },
+  {
+    "name": "劉陳昭玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_8"
+  },
+  {
+    "name": "歐中鈣",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_9"
+  },
+  {
+    "name": "許國政",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_10"
+  },
+  {
+    "name": "莊光大",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_11"
+  },
+  {
+    "name": "吳政杰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_12"
+  },
+  {
+    "name": "許育愷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_13"
+  },
+  {
+    "name": "宋國進",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_14"
+  },
+  {
+    "name": "魏長源",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_15"
+  },
+  {
+    "name": "李添進",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_16"
+  },
+  {
+    "name": "夏晨榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_17"
+  },
+  {
+    "name": "陳佩真",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_18"
+  },
+  {
+    "name": "張仁和",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_澎湖_19"
+  },
+  {
+    "name": "歐陽儀雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_2"
+  },
+  {
+    "name": "許玉昭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_4"
+  },
+  {
+    "name": "石永城",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_5"
+  },
+  {
+    "name": "唐麗輝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_6"
+  },
+  {
+    "name": "李養生",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_7"
+  },
+  {
+    "name": "周子傑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_8"
+  },
+  {
+    "name": "張雲量",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_9"
+  },
+  {
+    "name": "陳泱滬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_10"
+  },
+  {
+    "name": "蔡水游",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_11"
+  },
+  {
+    "name": "謝東龍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_12"
+  },
+  {
+    "name": "王秀玉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_13"
+  },
+  {
+    "name": "陳錦偉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_14"
+  },
+  {
+    "name": "張雲德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_15"
+  },
+  {
+    "name": "楊育菡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_16"
+  },
+  {
+    "name": "洪鴻斌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_17"
+  },
+  {
+    "name": "李應文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_18"
+  },
+  {
+    "name": "洪成發",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_金門_19"
+  },
+  {
+    "name": "曹爾章",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_3"
+  },
+  {
+    "name": "陳書建",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_4"
+  },
+  {
+    "name": "曹丞君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_5"
+  },
+  {
+    "name": "周瑞國",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_6"
+  },
+  {
+    "name": "袁孝文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_7"
+  },
+  {
+    "name": "陳貽斌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_8"
+  },
+  {
+    "name": "曹以標",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "coun_連江_9"
+  },
+  {
+    "name": "戴錫欽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "daixiqin"
+  },
+  {
+    "name": "蔣根煌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "jianggh"
+  },
+  {
+    "name": "江怡臻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "jiangyz"
+  },
+  {
+    "name": "元大台灣50 (0050)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "邱奕勝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "qiuyisheng"
+  },
+  {
+    "name": "凌濤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "lingtao"
+  },
+  {
+    "name": "于北辰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "yubeichen"
+  },
+  {
+    "name": "中華電 (2412)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃瓊慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "huangqionghui"
+  },
+  {
+    "name": "國泰永續高股息 (00878)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "張清照",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangqingzhao"
+  },
+  {
+    "name": "顏莉敏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "yanlimin"
+  },
+  {
+    "name": "江肇國",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "jiangzhaoguo"
+  },
+  {
+    "name": "聯電 (2303)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "邱莉莉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "qiulili"
+  },
+  {
+    "name": "蔡育輝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "caiyuhui"
+  },
+  {
+    "name": "李宗翰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "lizonghan"
+  },
+  {
+    "name": "康裕成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "kangyucheng"
+  },
+  {
+    "name": "曾俊傑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "cengjunjie"
+  },
+  {
+    "name": "中信金 (2891)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "白喬茵",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "baiqiaoyin"
+  },
+  {
+    "name": "童子瑋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "tongziwei"
+  },
+  {
+    "name": "聯發科 (2454)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "張之豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangzhihao"
+  },
+  {
+    "name": "宋瑋莉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "songweili"
+  },
+  {
+    "name": "基隆客運 (非上市)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "許修睿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xuxiurui"
+  },
+  {
+    "name": "施乃如",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "shinairu"
+  },
+  {
+    "name": "李國璋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "liguozhang"
+  },
+  {
+    "name": "張鎮榮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangzhenrong"
+  },
+  {
+    "name": "歐陽霆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "ouyangting"
+  },
+  {
+    "name": "李文斌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "liwenbin"
+  },
+  {
+    "name": "長榮 (2603)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "曾玟學",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "cengwenxue"
+  },
+  {
+    "name": "陳品安",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenpinan"
+  },
+  {
+    "name": "莊陞漢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhuangshenghan"
+  },
+  {
+    "name": "彰銀 (2801)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "曹嘉豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "caojiahao"
+  },
+  {
+    "name": "何勝豐",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "heshengfeng"
+  },
+  {
+    "name": "南投客運 (非上市)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "潘一全",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "panyiquan"
+  },
+  {
+    "name": "沈夙崢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "shensuzheng"
+  },
+  {
+    "name": "元大高股息 (0056)",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃凱",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "huangkai"
+  },
+  {
+    "name": "蔡咏鍀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "caiyongde"
+  },
+  {
+    "name": "張維崢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangweizheng"
+  },
+  {
+    "name": "陳姿妏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenziwen"
+  },
+  {
+    "name": "張秀華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangxiuhua"
+  },
+  {
+    "name": "張明達",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangmingda"
+  },
+  {
+    "name": "陳怡岳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenyiyue"
+  },
+  {
+    "name": "詹琬蓁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhanwanzhen"
+  },
+  {
+    "name": "周典論",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhoudianlun"
+  },
+  {
+    "name": "盧文瑞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "luwenrui"
+  },
+  {
+    "name": "方一祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "fangyixiang"
+  },
+  {
+    "name": "張勝德",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangshengde"
+  },
+  {
+    "name": "謝燦輝",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xiecanhui"
+  },
+  {
+    "name": "張峻",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangjun"
+  },
+  {
+    "name": "胡仁順",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "hurenshun"
+  },
+  {
+    "name": "魏嘉賢",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "weijiaxian"
+  },
+  {
+    "name": "吳秀華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wuxiuhua"
+  },
+  {
+    "name": "黃治淮",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "huangzhihuai"
+  },
+  {
+    "name": "陳毓仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenyuren"
+  },
+  {
+    "name": "呂黃春金",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "luhuangchunjin"
+  },
+  {
+    "name": "洪允典",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "hongyundian"
+  },
+  {
+    "name": "金門酒廠/在地企業",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "董森堡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "dongsenbao"
+  },
+  {
+    "name": "張永江",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangyongjiang"
+  },
+  {
+    "name": "馬祖酒廠/在地事業",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林明揚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "linmingyang"
+  },
+  {
+    "name": "高嘉瑜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "gaojiayui"
+  },
+  {
+    "name": "侯友宜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "houyi"
+  },
+  {
+    "name": "陳其邁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenqm"
+  },
+  {
+    "name": "高虹安",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "gaoha"
+  },
+  {
+    "name": "楊文科",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "yangwk"
+  },
+  {
+    "name": "謝衣鳯",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xieyf"
+  },
+  {
+    "name": "韓國瑜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "han"
+  },
+  {
+    "name": "黃國昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "huangkc"
+  },
+  {
+    "name": "馬文君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "ma"
+  },
+  {
+    "name": "翁曉玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "weng"
+  },
+  {
+    "name": "傅崐萁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "fu"
+  },
+  {
+    "name": "王惠美",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wanghm"
+  },
+  {
+    "name": "鍾東錦",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhongdj"
+  },
+  {
+    "name": "張麗善",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhangls"
+  },
+  {
+    "name": "黃敏惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "huangmh"
+  },
+  {
+    "name": "翁章梁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wengzl"
+  },
+  {
+    "name": "周春米",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "zhoucm"
+  },
+  {
+    "name": "林姿妙",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "linzm"
+  },
+  {
+    "name": "徐榛蔚",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xuzhw"
+  },
+  {
+    "name": "饒慶鈴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "raoql"
+  },
+  {
+    "name": "陳光復",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenggf"
+  },
+  {
+    "name": "陳福海",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenfh"
+  },
+  {
+    "name": "王忠銘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wangzm"
+  },
+  {
+    "name": "張嘉郡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "changcj"
+  },
+  {
+    "name": "許宇甄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xuqx"
+  },
+  {
+    "name": "蘇清泉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "suqq"
+  },
+  {
+    "name": "陳菁徽",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "chenjh"
+  },
+  {
+    "name": "王育敏",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wangyc"
+  },
+  {
+    "name": "高金素梅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "gaojy"
+  },
+  {
+    "name": "范雲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "fanyun"
+  },
+  {
+    "name": "侯漢廷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "houht"
+  },
+  {
+    "name": "謝龍介",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xie"
+  },
+  {
+    "name": "黃偉哲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "huang"
+  },
+  {
+    "name": "顏寬恒",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "王鴻薇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wanghw"
+  },
+  {
+    "name": "林沛祥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "李彥秀",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "羅智強",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "賴士葆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "鄭正鈐",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "羅明才",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "柯志恩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "江啟臣",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "張智倫",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "葉元之",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "洪孟楷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "牛煦庭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳玉珍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "涂權吉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "魯明哲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "呂玉玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "邱若華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "廖先翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林德福",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林思銘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "徐欣瑩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "楊瓊瓔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "廖偉翔",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃健豪",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "羅廷瑋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "游顥",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "丁學忠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃建賓",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "鄭天財",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃仁",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "盧縣一",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "葛如鈞",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "吳宗憲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林倩綺",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳永康",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "孔文吉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "蔡其昌",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林俊憲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "賴瑞隆",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "沈伯洋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "洪申翰",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "王世堅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃捷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "吳思瑤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "吳沛憶",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林淑芬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "李坤城",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "吳秉叡",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "蘇巧慧",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "張宏陸",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "吳琪銘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳俊宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳秀寳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃秀芳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳素月",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "何欣純",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "郭國文",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳亭妃",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林宜瑾",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "賴惠員",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "王定宇",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "邱議瑩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "邱志偉",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "李柏毅",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林岱樺",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "李昆澤",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "許智傑",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "鍾佳濱",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "徐富癸",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳冠廷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "蔡易餘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "王美惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "楊曜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "伍麗華",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳瑩",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林月琴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "張雅琳",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "羅美玲",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "王正旭",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "柯建銘",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "沈發惠",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "莊瑞雄",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳培瑜",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "郭昱晴",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "陳昭姿",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "黃珊珊",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "張啓楷",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林國成",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "麥玉珍",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "林憶君",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "吳春城",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "劉書彬",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "游錫堃",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "source"
+  },
+  {
+    "name": "佀廣洋",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "wan"
+  },
+  {
+    "name": "謝龍介之子",
+    "county": "全台",
+    "position": "公職人員",
+    "key": "xie"
+  }
+]
