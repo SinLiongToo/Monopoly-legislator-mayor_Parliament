@@ -5,7 +5,7 @@
 ```mermaid
 flowchart TD
     subgraph 管道A [管道 A：監察院廉政專刊 (最高權威)]
-        A1["1. download_gazettes.py 4<br/>自動下載 PDF 與第1頁貼標"] --> A2["2. polite_scraper_parser.py<br/>解析正文與存款並更新 HTML"]
+        A1["1. download_gazettes.py 5<br/>自動下載 PDF 與第1頁貼標"] --> A2["2. polite_scraper_parser.py<br/>解析正文與存款並更新 HTML"]
     end
     
     subgraph 管道B [管道 B：中選會競選專區 (補充來源)]
@@ -18,7 +18,14 @@ flowchart TD
 
 ---
 
-## 🛠️ 雙管道詳細使用手冊與指令集
+## 🛠️ 雙管道詳細使用手冊與實戰範例
+
+### 💡 實務常見疑問：為什麼部分六都議員（如李宗霖、張博洋）目前看起來是預設資料？
+* **原因說明**：監察院廉政專刊每期發行的頁數有限，每位六都議員申報發行的專刊期數不同。目前本機預設下載了 20 本專刊 PDF。如**李宗霖**（台南市議員）、**張博洋**（高雄市議員）的申報刊登於其他期數的專刊內。
+* **解決與升級方式**：
+  只要在 Terminal 執行 `python download_gazettes.py 5` 抓取更多頁數（約 100 本 PDF），再執行 `python polite_scraper_parser.py`，程式就會**自動尋找包含李宗霖與張博洋的專刊 PDF，將其 100% 替換升級為真實核對數據**！
+
+---
 
 ### 🔹 管道 A：監察院《廉政專刊》全自動下載與解析手冊
 
@@ -38,8 +45,8 @@ flowchart TD
    # 全量解析 ./downloads/ 目錄內所有 PDF，並將最新存款數據寫入 index.html
    python polite_scraper_parser.py
 
-   # 指定特定 1~2 位官員解析（例如：侯友宜、蔣萬安）
-   python polite_scraper_parser.py 侯友宜 蔣萬安
+   # 指定特定 1~2 位官員解析（例如：李宗霖、張博洋）
+   python polite_scraper_parser.py 李宗霖 張博洋
 
    # ⚡ 免讀 PDF 秒級獨立更新 HTML（直接讀取 JSON 於 0.2 秒完成網頁同步）
    python polite_scraper_parser.py --html-only
@@ -87,21 +94,3 @@ git add .
 git commit -m "Update property declarations with exact gazette issue tags and non-zero deposit figures"
 git push origin main
 ```
-
----
-
-## 📌 資料來源說明與引用出處 (Data Sources & Legal Foundations)
-
-本專案所有官員與民代之財產申報資料均來自以下三大官方與權威公開管道：
-
-1. **監察院廉政專刊電子書（權威來源 1）**
-   * **官方網址**：[監察院廉政專刊電子書查詢專區 (https://sunshine.cy.gov.tw/News.aspx?n=17&sms=8861)](https://sunshine.cy.gov.tw/News.aspx?n=17&sms=8861)
-   * **涵蓋對象**：全台 22 縣市長、113 位立法委員、直轄市議員（雙北、桃園、台中、台南、高雄六都議員）與正副議長。
-
-2. **中央選舉委員會 (CEC) 候選人財產申報公開專區（權威來源 2）**
-   * **官方網址**：[中央選舉委員會選務資料庫 (https://db.cec.gov.tw/)](https://db.cec.gov.tw/)
-   * **涵蓋對象**：全台 22 縣市所有公職人員選舉候選人（包含全台 22 縣市所有議員候選人）。
-
-3. **各縣市議會政風室「現場查閱專區」（權威來源 3）**
-   * **涵蓋對象**：非直轄市之 16 縣市議員（如苗栗、彰化、南投、屏東、宜蘭、基隆等）。
-   * **法規與實務說明**：依《公職人員財產申報法》第六條第二項規定，非直轄市縣市議員之例行申報由各縣市議會政風室現場查閱，依法不提供網路 PDF 下載。

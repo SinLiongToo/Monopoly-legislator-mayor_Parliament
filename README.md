@@ -10,18 +10,23 @@
 
 ---
 
-## 🛠️ 雙管道全自動資料更新使用手冊 (Data Pipeline Operations Guide)
+## 🛠️ 雙管道全自動資料更新與實戰應用指南 (Operations & Application Manual)
 
-專案提供 100% 自動化的雙管道資料處理、解析與 GitHub Pages 自動部署流程：
+本專案提供完全自動化的資料處理管線，您只需執行以下簡單指令，即可將網頁上的樣板資料全自動升級為監察院專刊與中選會的真實核對數據：
 
 ```
-【管道 A：監察院廉政專刊】 ➔ download_gazettes.py ➔ polite_scraper_parser.py
-【管道 B：中選會競選專區】 ➔ fetch_cec_declarations.py ➔ parse_cec_declarations.py
-                                                                ↓
-                                                         [寫入 index.html]
-                                                                ↓
-                                                     [git push 發布至 GitHub Pages]
+【步驟 1：下載監察院專刊 PDF】 ➔ python download_gazettes.py 5
+【步驟 2：解析 PDF 並寫入網頁】 ➔ python polite_scraper_parser.py
+【步驟 3：中選會申報數據更新】 ➔ python fetch_cec_declarations.py && python parse_cec_declarations.py
+【步驟 4：發布至 GitHub Pages】 ➔ git add . && git commit -m "..." && git push origin main
 ```
+
+### 💡 實務常見疑問：為什麼部分六都議員（如李宗霖、張博洋）目前看起來是預設資料？
+* **原因說明**：監察院廉政專刊每期發行的頁數有限，每位六都議員申報發行的專刊期數不同。目前本機預設下載了 20 本專刊 PDF。如**李宗霖**（台南市議員）、**張博洋**（高雄市議員）的申報刊登於其他期數的專刊內。
+* **解決與升級方式**：
+  只要在 Terminal 執行 `python download_gazettes.py 5` 抓取更多頁數（約 100 本 PDF），再執行 `python polite_scraper_parser.py`，程式就會**自動尋找包含李宗霖與張博洋的專刊 PDF，將其 100% 替換升級為真實核對數據**！
+
+---
 
 ### 🔹 管道 A：監察院《廉政專刊》全自動下載與解析手冊
 
