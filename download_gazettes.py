@@ -17,6 +17,7 @@ if sys.platform == 'win32':
 
 BASE_GAZETTE_URL = "https://sunshine.cy.gov.tw/News.aspx?n=17&sms=8861"
 DOWNLOAD_DIR = "./downloads"
+DEFAULT_PAGE_SIZE = 200  # 高速大容量分頁，一頁即可載入 200+ 本專刊目錄！
 
 def fetch_page_html(url: str) -> str:
     headers = {
@@ -29,7 +30,7 @@ def fetch_page_html(url: str) -> str:
     ctx.verify_mode = ssl.CERT_NONE
 
     req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, context=ctx, timeout=15) as resp:
+    with urllib.request.urlopen(req, context=ctx, timeout=20) as resp:
         return resp.read().decode('utf-8', errors='ignore')
 
 def download_gazette_pdf(file_url: str, suggested_filename: str) -> Optional[str]:
@@ -42,7 +43,7 @@ def download_gazette_pdf(file_url: str, suggested_filename: str) -> Optional[str
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
 
-    delay = random.uniform(2.0, 4.0)
+    delay = random.uniform(1.5, 3.0)
     print(f"[禮貌下載] 準備下載 {suggested_filename}... (等待 {delay:.2f} 秒)")
     time.sleep(delay)
 
@@ -51,7 +52,6 @@ def download_gazette_pdf(file_url: str, suggested_filename: str) -> Optional[str
         with urllib.request.urlopen(req, context=ctx, timeout=60) as resp:
             data = resp.read()
             
-            # 先將檔案寫入臨時檔
             temp_path = filepath + ".tmp"
             with open(temp_path, "wb") as f:
                 f.write(data)
@@ -82,7 +82,6 @@ def download_gazette_pdf(file_url: str, suggested_filename: str) -> Optional[str
                 print(f"  └─ ⚡ [專刊去重] 【{exact_filename}】已存在，跳過重複下載。")
                 return exact_filepath
 
-            # 更名為最終精準標籤檔名
             os.rename(temp_path, exact_filepath)
             print(f"  └─ 🎉 [成功下載與精準期數命名] ➔ 【{exact_filename}】 (大小: {len(data):,} bytes)")
             return exact_filepath
@@ -90,25 +89,25 @@ def download_gazette_pdf(file_url: str, suggested_filename: str) -> Optional[str
         print(f"  └─ ❌ [下載失敗] {suggested_filename}: {e}")
         return None
 
-def download_multi_pages(start_page: int = 1, end_page: int = 4):
+def download_multi_pages(start_page: int = 1, end_page: int = 2):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     print("==========================================================")
-    print(f" 📚 監察院《廉政專刊》全自動「帶期數標籤」下載器 (第 {start_page} 頁 ～ 第 {end_page} 頁)")
+    print(f" 🚀 監察院《廉政專刊》高速大容量「PageSize=200」下載器")
+    print(f" 📚 抓取範圍：第 {start_page} 頁 ～ 第 {end_page} 頁 (每頁 200 本 PDF)")
     print("==========================================================")
 
     download_queue = []
     seen_urls: Set[str] = set()
 
     for page_num in range(start_page, end_page + 1):
-        # 關鍵修復：監察院官方網頁分頁參數必須帶上 &PageSize=20
-        page_url = f"{BASE_GAZETTE_URL}&page={page_num}&PageSize=20"
-        print(f"\n[步驟 1/2] 解析第 {page_num}/{end_page} 頁目錄: {page_url}")
+        page_url = f"{BASE_GAZETTE_URL}&page={page_num}&PageSize={DEFAULT_PAGE_SIZE}"
+        print(f"\n[步驟 1/2] 高速解析第 {page_num}/{end_page} 頁大目錄: {page_url}")
 
         try:
             html = fetch_page_html(page_url)
             a_tags = re.findall(r'<a[^>]+href=["\']([^"\']*Download\.ashx[^"\']+)["\'][^>]*>([\s\S]*?)</a>', html)
 
-            print(f"  └─ 第 {page_num} 頁發現 {len(a_tags)} 個專刊檔案連結")
+            print(f"  └─ ⚡ 第 {page_num} 頁一口氣抓取到 {len(a_tags)} 個專刊檔案連結！")
 
             for link, title_text in a_tags:
                 full_url = urllib.parse.urljoin(BASE_GAZETTE_URL, link)
@@ -137,7 +136,7 @@ def download_multi_pages(start_page: int = 1, end_page: int = 4):
         except Exception as e:
             print(f"  └─ ❌ 抓取第 {page_num} 頁失敗: {e}")
 
-    print(f"\n[步驟 2/2] 開始下載 {len(download_queue)} 個檔案（將自動分析第1頁並給予精準【廉政專刊_第XXX期.pdf】標籤）...\n")
+    print(f"\n[步驟 2/2] 開始下載 {len(download_queue)} 個專刊檔案（自動識別第1頁貼標【廉政專刊_第XXX期.pdf】）...\n")
     success_count = 0
 
     for idx, (suggested_filename, download_url) in enumerate(download_queue, 1):
@@ -147,13 +146,13 @@ def download_multi_pages(start_page: int = 1, end_page: int = 4):
             success_count += 1
 
     print("\n==========================================================")
-    print(f" 🎉 [完成！] 共成功下載並貼標 {success_count} 本《廉政專刊》PDF 檔案！")
+    print(f" 🎉 [完成！] 共成功處理與貼標 {success_count} 本《廉政專刊》PDF 檔案！")
     print(f" 📂 儲存目錄：{os.path.abspath(DOWNLOAD_DIR)}")
     print("==========================================================")
 
 def main():
     start_page = 1
-    end_page = 4
+    end_page = 2
 
     if len(sys.argv) == 2 and sys.argv[1].isdigit():
         end_page = int(sys.argv[1])
