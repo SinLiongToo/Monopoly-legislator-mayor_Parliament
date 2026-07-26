@@ -90,18 +90,19 @@ def download_gazette_pdf(file_url: str, suggested_filename: str) -> Optional[str
         print(f"  └─ ❌ [下載失敗] {suggested_filename}: {e}")
         return None
 
-def download_multi_pages(max_pages: int = 4):
+def download_multi_pages(start_page: int = 1, end_page: int = 4):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     print("==========================================================")
-    print(f" 📚 監察院《廉政專刊》全自動「直接帶期數標籤」下載器 (檢查 {max_pages} 頁)")
+    print(f" 📚 監察院《廉政專刊》全自動「帶期數標籤」下載器 (第 {start_page} 頁 ～ 第 {end_page} 頁)")
     print("==========================================================")
 
     download_queue = []
     seen_urls: Set[str] = set()
 
-    for page_num in range(1, max_pages + 1):
-        page_url = f"{BASE_GAZETTE_URL}&page={page_num}" if page_num > 1 else BASE_GAZETTE_URL
-        print(f"\n[步驟 1/2] 解析第 {page_num}/{max_pages} 頁目錄: {page_url}")
+    for page_num in range(start_page, end_page + 1):
+        # 關鍵修復：監察院官方網頁分頁參數必須帶上 &PageSize=20
+        page_url = f"{BASE_GAZETTE_URL}&page={page_num}&PageSize=20"
+        print(f"\n[步驟 1/2] 解析第 {page_num}/{end_page} 頁目錄: {page_url}")
 
         try:
             html = fetch_page_html(page_url)
@@ -151,11 +152,16 @@ def download_multi_pages(max_pages: int = 4):
     print("==========================================================")
 
 def main():
-    pages = 4
-    if len(sys.argv) > 1 and sys.argv[1].isdigit():
-        pages = int(sys.argv[1])
-    
-    download_multi_pages(pages)
+    start_page = 1
+    end_page = 4
+
+    if len(sys.argv) == 2 and sys.argv[1].isdigit():
+        end_page = int(sys.argv[1])
+    elif len(sys.argv) >= 3 and sys.argv[1].isdigit() and sys.argv[2].isdigit():
+        start_page = int(sys.argv[1])
+        end_page = int(sys.argv[2])
+
+    download_multi_pages(start_page, end_page)
 
 if __name__ == "__main__":
     main()
