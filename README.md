@@ -18,6 +18,7 @@
 
 | 腳本名稱 | 核心用途與功能說明 | 預設輸入與輸出 | 常用執行指令範例 |
 | :--- | :--- | :--- | :--- |
+| **`download_priso_individual_pdfs.py`** | **監察院 PRISO 個人獨立申報 PDF 下載器**<br/>讀取 1,024 位官員名冊，自動連線 PRISO 系統檢索並下載個人專屬申報 PDF。 | **輸入**：`target_officers.json`<br/>**輸出**：`./downloads_priso/姓名_個人申報.pdf` | `python download_priso_individual_pdfs.py` |
 | **`fetch_priso_declarations.py`** | **監察院 PRISO 申報名冊索引下載器**<br/>讀取 1,024 位官員名冊，自動產出監察院 PRISO (priso.cy.gov.tw) 官方檢索索引。 | **輸入**：`target_officers.json`<br/>**輸出**：`priso_declarations_index.json` | `python fetch_priso_declarations.py` |
 | **`parse_priso_declarations.py`** | **監察院 PRISO 名冊解析與網頁同步工具**<br/>解析 PRISO 檢索索引，遵循最高權威優先原則，全量補齊與寫入 `index.html`。 | **輸入**：`priso_declarations_index.json`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python parse_priso_declarations.py` |
 | **`download_gazettes.py`** | **監察院專刊 PDF 自動下載器**<br/>連線監察院官方網頁下載專刊 PDF，並自動開啟 PDF 第 1 頁識別期數貼標與去重。<br/>**支援 PageSize=200 高速抓取與任意頁數區間！** | **輸入**：監察院電子書網頁<br/>**輸出**：`./downloads/廉政專刊_第XXX期.pdf` | `python download_gazettes.py 1 2`<br/>*(專小大容量一次抓取全站 204 本專刊)* |
@@ -40,11 +41,11 @@
 ## 🛠️ 三大來源全自動資料更新與實戰應用指南 (Operations Guide)
 
 ```
-【管道 1：PRISO 官方檢索補齊】 ➔ python fetch_priso_declarations.py && python parse_priso_declarations.py
-【管道 2：監察院專刊 PDF 解析】  ➔ python download_gazettes.py 1 2 && python polite_scraper_parser.py
-【管道 3：中選會競選申報解析】  ➔ python fetch_cec_declarations.py && python parse_cec_declarations.py
-【產出盤點報告查看進度】       ➔ python audit_actual_html_data.py
-【一鍵 Git 推送公開發布】     ➔ git add . && git commit -m "..." && git push origin main
+【管道 1：PRISO 個人獨立 PDF 下載與檢索】 ➔ python download_priso_individual_pdfs.py
+【管道 2：監察院專刊 PDF 下載與解析】   ➔ python download_gazettes.py 1 2 && python polite_scraper_parser.py
+【管道 3：中選會競選申報下載與解析】   ➔ python fetch_cec_declarations.py && python parse_cec_declarations.py
+【產出盤點報告查看進度】                ➔ python audit_actual_html_data.py
+【一鍵 Git 推送公開發布】              ➔ git add . && git commit -m "..." && git push origin main
 ```
 
 ---
@@ -54,7 +55,7 @@
 完成資料更新後，執行以下指令完成全網公開發布：
 ```bash
 git add .
-git commit -m "Complete all 1,024 officials declarations with PRISO official index and Control Yuan Gazettes"
+git commit -m "Update property declarations pipeline with PRISO individual PDF downloader"
 git push origin main
 ```
 
