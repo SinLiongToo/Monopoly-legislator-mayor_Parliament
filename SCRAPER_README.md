@@ -4,12 +4,12 @@
 
 ```mermaid
 flowchart TD
-    subgraph 管道A [管道 A：監察院 PRISO 申報名冊索引 (最高全覆蓋)]
-        A1["1. fetch_priso_declarations.py<br/>自動讀取 1024 位官員產出 PRISO 索引"] --> A2["2. parse_priso_declarations.py<br/>解析 PRISO 名冊並全量寫入網頁"]
+    subgraph 管道A [管道 A：監察院 PRISO 個人獨立申報 PDF (專屬解析)]
+        A1["1. download_priso_individual_pdfs.py<br/>下載官員個人專屬申報 PDF"] --> A2["2. parse_priso_individual_pdfs.py<br/>專屬解析 PRISO 個人 PDF 並寫入網頁"]
     end
 
     subgraph 管道B [管道 B：監察院廉政專刊 PDF (最高權威)]
-        B1["1. download_gazettes.py 1 2<br/>高速抓取全站 204 本專刊 PDF"] --> B2["2. polite_scraper_parser.py<br/>解析正文存款並更新 HTML"]
+        B1["1. download_gazettes.py 1 2<br/>高速抓取全站 204 本專刊 PDF"] --> B2["2. polite_scraper_parser.py<br/>解析大冊正文存款並更新 HTML"]
     end
     
     subgraph 管道C [管道 C：中選會競選專區 (補充來源)]
@@ -32,6 +32,8 @@ flowchart TD
 
 | 腳本名稱 | 核心用途與功能說明 | 預設輸入與輸出 | 常用執行指令範例 |
 | :--- | :--- | :--- | :--- |
+| **`download_priso_individual_pdfs.py`** | **監察院 PRISO 個人獨立申報 PDF 下載器**<br/>讀取 1,024 位官員名冊，自動連線 PRISO 系統檢索並下載個人專屬申報 PDF。 | **輸入**：`target_officers.json`<br/>**輸出**：`./downloads_priso/姓名_個人申報.pdf` | `python download_priso_individual_pdfs.py` |
+| **`parse_priso_individual_pdfs.py`** | **監察院 PRISO 個人獨立 PDF 專用解析引擎**<br/>專門解析 PRISO 個人 PDF 內文格式，萃取真實存款金額與不動產筆數，並自動寫入 `index.html`。 | **輸入**：`./downloads_priso/*.pdf`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python parse_priso_individual_pdfs.py` |
 | **`fetch_priso_declarations.py`** | **監察院 PRISO 申報名冊索引下載器**<br/>讀取 1,024 位官員名冊，自動產出監察院 PRISO (priso.cy.gov.tw) 官方檢索索引。 | **輸入**：`target_officers.json`<br/>**輸出**：`priso_declarations_index.json` | `python fetch_priso_declarations.py` |
 | **`parse_priso_declarations.py`** | **監察院 PRISO 名冊解析與網頁同步工具**<br/>解析 PRISO 檢索索引，遵循最高權威優先原則，全量補齊與寫入 `index.html`。 | **輸入**：`priso_declarations_index.json`<br/>**輸出**：`updated_declarations.json` & `index.html` | `python parse_priso_declarations.py` |
 | **`download_gazettes.py`** | **監察院專刊 PDF 自動下載器**<br/>連線監察院官方網頁下載專刊 PDF，並自動開啟 PDF 第 1 頁識別期數貼標與去重。<br/>**支援 PageSize=200 高速抓取與任意頁數區間！** | **輸入**：監察院電子書網頁<br/>**輸出**：`./downloads/廉政專刊_第XXX期.pdf` | `python download_gazettes.py 1 2`<br/>*(專小大容量一次抓取全站 204 本專刊)* |
@@ -43,10 +45,10 @@ flowchart TD
 
 ## 🛠️ 三大管道使用手冊與實戰範例
 
-### 🔹 管道 A：監察院 PRISO 系統名冊對齊與補齊手冊
+### 🔹 管道 A：監察院 PRISO 個人獨立 PDF 下載與專用解析手冊
 ```bash
-python fetch_priso_declarations.py
-python parse_priso_declarations.py
+python download_priso_individual_pdfs.py
+python parse_priso_individual_pdfs.py
 ```
 
 ### 🔹 管道 B：監察院《廉政專刊》全自動下載與解析手冊
@@ -68,6 +70,6 @@ python parse_cec_declarations.py
 完成資料更新後，執行以下指令完成全網公開發布：
 ```bash
 git add .
-git commit -m "Complete all 1,024 officials declarations with PRISO official index and Control Yuan Gazettes"
+git commit -m "Add parse_priso_individual_pdfs.py dedicated parser for PRISO individual PDFs"
 git push origin main
 ```
