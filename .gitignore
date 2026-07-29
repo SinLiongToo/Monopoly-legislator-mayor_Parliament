@@ -40,3 +40,6 @@ test_*.py
 verify_22_counties.py
 write_res.py
 build_target_officers.py
+
+# HTML Scratch / Intermediate Files
+paquery_search_result.html
