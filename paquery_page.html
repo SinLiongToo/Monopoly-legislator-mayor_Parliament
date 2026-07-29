@@ -1,0 +1,575 @@
+
+<!DOCTYPE html>
+
+<html id="FormHtml" xmlns="http://www.w3.org/1999/xhtml" lang="zh-tw">
+<head id="Head1"><script src='https://sunshine.cy.gov.tw/Scripts/jquery-3.7.1.min.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<script src='https://sunshine.cy.gov.tw/Scripts/jquery.cookie.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<script src='https://sunshine.cy.gov.tw/Scripts/jUtil.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAo1MAXwJfl0q3fNU_5QyogEgyecOICpWs&libraries=places,drawing' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<script src='https://sunshine.cy.gov.tw/Scripts/jGMap.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<script src='https://sunshine.cy.gov.tw/Scripts/fancybox/jquery.fancybox.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<link rel='stylesheet' type='text/css'  href='https://sunshine.cy.gov.tw/Scripts/fancybox/jquery.fancybox.css'> 
+<script src='https://sunshine.cy.gov.tw/Scripts/hamalightGallery/hamalightGallery.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<link rel='stylesheet' type='text/css'  href='https://sunshine.cy.gov.tw/Scripts/hamalightGallery/css/hamalightGallery.css'> 
+<script  src='https://sunshine.cy.gov.tw/Scripts/Chart/chart.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/Scripts/Chart/chartjs-plugin-datalabels.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/Scripts/chart.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/Scripts/jquery.mousewheel.min.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/Scripts/jquery.touchwipe.min.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/js/airdatepicker/datepicker.min.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/js/airdatepicker/datepicker.zh-tw.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script  src='https://sunshine.cy.gov.tw/js/airdatepicker/datepicker.en.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<link rel='stylesheet' type='text/css'  href='https://sunshine.cy.gov.tw/js/airdatepicker/datepicker.min.css'> 
+<script nonce="UKDk8euUAEawMIckCi1JMA==">var CCMS_WWWURL='https://sunshine.cy.gov.tw';var CCMS_LanguageSN=1;var CCMS_SitesSN_Encryption='1';</script><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="og:image" content="https://sunshine.cy.gov.tw/images/share_og_img.jpg" />
+<meta property="og:description" content=""/>
+<meta name="DC.Title" content="政治獻金專戶公告資料 " />
+<meta name="DC.Subject" content="陽光法令主題網中文版" />
+<meta name="DC.Creator" content="" />
+<meta name="DC.Publisher" content="" />
+<meta name="DC.Date" content="2019-01-04" />
+<meta name="DC.Type" content="" />
+<meta name="DC.Identifier" content="" />
+<meta name="DC.Description" content="" />
+<meta name="DC.Contributor" content="" />
+<meta name="DC.Format" content="" />
+<meta name="DC.Relation" content="" />
+<meta name="DC.Source" content="" />
+<meta name="DC.Language" content="" />
+<meta name="DC.Coverage.t.min" content="2019-01-04" />
+<meta name="DC.Coverage.t.max" content="2019-01-04" />
+<meta name="DC.Rights" content="" />
+<meta name="Category.Theme" content="" />
+<meta name="Category.Cake" content="" />
+<meta name="Category.Service" content="" />
+<meta name="DC.Keywords" content="陽光法令主題網" />
+<title>
+	陽光法令主題網中文版-政治獻金專戶公告資料 
+</title><link id="likCssGlobal" href="/css/global.css" rel="stylesheet" type="text/css" /><link id="likCssPage" href="/css/page.css" rel="stylesheet" type="text/css" /><link id="likPrint" href="/css/print.css" rel="stylesheet" type="text/css" media="print" /><link id="lnkCssSysDetail" href="/css/sys_detail.css" rel="stylesheet" type="text/css" /> 
+    <script type="text/javascript" nonce="UKDk8euUAEawMIckCi1JMA==">
+   $(function () {
+       if($('#ContentPlaceHolder_PageContent_title_ddlAccountType').val() == "擬參選人") 
+       {
+           $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", false).show(); 
+           $('#lbElectionType').show();  
+       } 
+       else 
+       {
+           $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", true).hide(); 
+           $('#lbElectionType').hide();  
+       } 
+
+       $('#ContentPlaceHolder_PageContent_title_ddlAccountType').bind('change',
+       function () {
+           if($(this).val() == "擬參選人") 
+           {
+               $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", false).show(); 
+               $('#lbElectionType').show();  
+           } 
+           else 
+           {
+               $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", true).hide(); 
+               $('#lbElectionType').hide();  
+           } 
+       });
+
+       var rblQType = $("input[name*=QType]:radio");
+       rblQType.change(function () {
+           if ($(this).val() == 'rbCategory') { 
+               $('#ContentPlaceHolder_PageContent_title_txtCategory').prop("disabled", false)
+               $('#ContentPlaceHolder_PageContent_title_txtKeyword').prop("disabled", true)
+               if($('#ContentPlaceHolder_PageContent_title_ddlAccountType').val() == "擬參選人") 
+               {
+                   $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", false).show();  
+                   $('#lbElectionType').show();
+               }
+               else 
+               {
+                   $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", true).hide();
+                   $('#lbElectionType').hide();
+               } 
+
+           }
+           else {
+               $('#ContentPlaceHolder_PageContent_title_txtCategory').val("");
+               $('#ContentPlaceHolder_PageContent_title_txtCategory').prop("disabled", true)
+               $('#ContentPlaceHolder_PageContent_title_txtKeyword').prop("disabled", false)
+               $('#ContentPlaceHolder_PageContent_title_ddlElectionType').prop("disabled", true).hide(); 
+               $('#lbElectionType').hide(); 
+           }
+       }); 
+   });
+function doCheck() {
+    $('#ContentPlaceHolder_PageContent_title_hdButtonType').val(""); 
+    $('#ContentPlaceHolder_PageContent_title_hdDoQuery').val("2"); 
+}
+function changeOrder(orderFlag){
+    $('#ContentPlaceHolder_PageContent_title_hdOrderFlag').val(orderFlag);   
+	if(isNaN(parseInt(window.name)))   {   
+	      window.name=0;   
+	  }   	 
+	window.name=parseInt(window.name)+1; //計算網頁被reload的次數，以此數字%2得到0或1，讓前台在同一個欄位被點第二次時，可以不同方向排序。
+	$('#ContentPlaceHolder_PageContent_title_hdOrderTimes').val(window.name % 2);
+    
+    $('#ContentPlaceHolder_PageContent_title_btnSend').click(); 
+}
+function changeTitle(type) { 
+    //1:許可設立 2:已廢止 3:會計報告書 4:依選舉類別
+    if (type == "1") {
+        $('#ContentPlaceHolder_PageContent_title_hdButtonType').val("1");  
+    } else if (type == "2") {
+        $('#ContentPlaceHolder_PageContent_title_hdButtonType').val("2");
+    } else if (type == "3") {
+        $('#ContentPlaceHolder_PageContent_title_hdButtonType').val("3");  
+    } 
+    $('#ContentPlaceHolder_PageContent_title_hdOrderTimes').val('');
+    $('#ContentPlaceHolder_PageContent_title_hdOrderFlag').val('');   
+        }
+        $(function ()
+        {
+            $(document).on("click keypress", "a.order-column", function (e) {
+
+                if (e.type === "keypress" && !(e.which === 13 || e.which === 32)) {
+                    return;
+                }
+                e.preventDefault();
+                var col = $(this).data("column");
+                changeOrder(col);
+            });
+        });
+    </script>
+    <style>
+        #ContentPlaceHolder_PageContent_title_ddlElectionType{
+            max-width: 500px;
+        }
+
+    </style>
+<script  src='/Scripts/Chart/modules/export-data.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> <script  src='/Scripts/Chart/modules/exporting.js' nonce="UKDk8euUAEawMIckCi1JMA=="></script> 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-20814396-7" nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+<script nonce="UKDk8euUAEawMIckCi1JMA==">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-20814396-7',{cookie_flags: 'secure;SameSite=Strict;'});
+</script><meta property="og:title" content="政治獻金專戶公告資料 " >
+<meta property="og:type" content="article" >
+<meta property="og:url" content="http://sunshine.cy.gov.tw/PAQuery.aspx?n=21&sms=0" >
+<meta property="og:site_name" content="陽光法令主題網中文版" >
+</head>
+<body id="Formbody" data-js="false"><div class="for_accessibility">
+    <style>
+        .for_accessibility a {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 99;
+            width: 1px;
+            height: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #000;
+        }
+            .for_accessibility a:focus {
+                width: auto;
+                height: auto;
+                padding: 6px;
+                background-color: #fff;
+            }
+        .for_accessibility div {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: transparent;
+            opacity: .1
+        }
+    </style>
+    <a href="#CCMS_Content" class="" title="跳到主要內容區塊">跳到主要內容區塊</a>    <script nonce="UKDk8euUAEawMIckCi1JMA==">
+        var $a = $('.for_accessibility a');
+        $a.on('click', function (evt) {
+            var $href = $($(this).attr('href')),
+                $target = $href.find('a').eq(0).get(0);
+            setTimeout(function () { try { $target.focus(); } catch (e) { } }, 0);
+        });
+    </script>
+</div>
+<script nonce="UKDk8euUAEawMIckCi1JMA=="> document.body.setAttribute("data-js", "true");</script>
+    
+
+
+    <form method="post" action="./PAQuery.aspx?n=21&amp;sms=0" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+        <!--主選單 結束-->
+        <!--標題-->
+
+        <div class="title">
+            
+
+        </div>
+        
+        
+        
+        
+     <div class="group sys-root" data-func="{&#39;datePicker&#39;:{&#39;autoClose&#39;:true,&#39;language&#39;:&#39;zh-tw&#39;,&#39;navTitles&#39;:{&#39;days&#39;:&#39;&lt;i&amp;gt;民國 rrr 年&lt;/i&amp;gt; &amp;nbsp; MM&#39;,&#39;months&#39;:&#39;民國 rrr 年&#39;,&#39;years&#39;:&#39;民國 rrr1 至 rrr2 年&#39;}}}" data-nojs="您的瀏覽器似乎不支援 JavaScript 語法，但沒關係，這並不會影響到內容的陳述。如需要選擇適合您的字級大小，可利用鍵盤 Ctrl + (+)放大 (-)縮小。如需要回到上一頁，可使用瀏覽器提供的 Alt + 左方向鍵(←)。如需要列印，可利用鍵盤 Ctrl + p 使用瀏覽器提供的列印功能。若網頁功能無法正常使用時，請開啟瀏覽器JavaScript狀態。" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="group base-mobile" data-func="{&#39;toggleBtn&#39;:{&#39;blankTitle&#39;:true,&#39;addHd&#39;:true},&#39;pathFilter&#39;:{}}" data-index="1" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a    title="手機版選單"    >手機版選單</a> </span></div></div></div><div class="ct"><div class="in"> <div class="area-form search" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="search"    >search</a> </span></div></div></div><div class="ct"><div class="in"><div class="fieldset">
+  <span class="search"><input data-search="btn_a96584f81c6549fb91705d3400499fbd" type="search" placeholder="請輸入欲查詢文字" title="搜尋"></span>
+  <span class="submit"><a href="#" class='CCMS_SearchBtn' data-search="btn_a96584f81c6549fb91705d3400499fbd" >搜尋</a></span>
+</div>
+<div class="list">
+  <ul data-index="1" data-child="1">
+    <li data-index="1"><span><a href="#">陽光法案</a></span></li>
+  </ul>
+</div>
+<script  nonce="UKDk8euUAEawMIckCi1JMA==">
+$(function () {
+    $('[data-search="a96584f81c6549fb91705d3400499fbd"]').on("keydown", function (event) {
+        if (event.which == 13) {
+             doSearch($('#btn_a96584f81c6549fb91705d3400499fbd'));
+            return false;
+        }
+    });
+});
+</script>
+</div></div><div class="ft"><div class="in"><ul data-index="1" data-child="1">
+  <li data-index="1" class="advanced"><span><a target="_blank" href="https://www.google.com.tw/advanced_search?hl=zh-tw&as_sitesearch=https://sunshine.cy.gov.tw" title="進階搜尋[另開新視窗]">進階搜尋</a></span></li>
+</ul>
+</div></div></div></div> <div class="list-text share" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a   href="#"   title="分享"    >分享</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  class="facebook"  >		<span  ><a   href="#"  id = "toFacebook"  data-share="facebook" title="Share to Facebook[另開新視窗]"    >Facebook</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toFacebook").on("click keydown", "#toFacebook", function(e){    const facebookShareUrl = 'http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href));ShareTo(e, facebookShareUrl);});</script></span></li><li   data-index="2"  class="plurk"  >		<span  ><a   href="#"  id = "toPlurk"  title="Share to Plurk[另開新視窗]"    >Plurk</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toPlurk").on("click keydown", "#toPlurk", function(e){    const plurkShareUrl = 'http://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent(location.href));ShareTo(e, plurkShareUrl);});</script></span></li><li   data-index="3"  class="twitter"  >		<span  ><a   href="#"  id = "toTwitter" title="Share to twitter[另開新視窗]"    >Twitter</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toTwitter").on("click keydown", "#toTwitter", function(e){    const twitterShareUrl = 'http://twitter.com/home/?status='.concat(encodeURIComponent(document.title)) .concat(' ') .concat(encodeURIComponent(location.href));ShareTo(e, twitterShareUrl);});</script></span></li><li   data-index="4"  class="line"  >		<span  ><a   href="#"  id = "toLine" title="Share to line[另開新視窗]"    >line</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toLine").on("click keydown", "#toLine", function(e){    const lineShareUrl = 'http://line.naver.jp/R/msg/text/?'.concat(encodeURIComponent(location.href));ShareTo(e, lineShareUrl);});</script></span></li><li   data-index="5"  class="email"  >		<span  ><a   href="#"  id = "toEmail" title="Share to email[另開新視窗]"    >Email</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toEmail").on("click keydown", "#toEmail", function(e){    const emailShareUrl = 'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL);ShareTo(e, emailShareUrl);});</script></span></li></ul>
+</div></div></div></div> <div class="group-list nav" data-func="{&#39;majorNavStraight&#39;:{}}" data-index="3" data-type="4" data-child="4"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="4"><li data-index="1"> <div class="group nav" data-index="1" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=1"      title="認識公職人員財產申報處"    >認識公職人員財產申報處</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  >		<span  ><a   href="cp.aspx?n=5"      title="緣起 "    >緣起 </a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=6"      title="組織架構及職掌"    >組織架構及職掌</a> </span></li><li   data-index="3"  >		<span  ><a   href="cp.aspx?n=7"      title="未來展望"    >未來展望</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="2"> <div class="group nav" data-index="2" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=2"      title="便民服務"    >便民服務</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=13&sms=8858"      title="業務重要連結 (含網路申報系統)"    >業務重要連結 (含網路申報系統)</a> </span></li><li   data-index="2"  >		<span  ><a   href="News.aspx?n=8&sms=8855"      title="書表下載 "    >書表下載 </a> </span></li><li   data-index="3"  >		<span  ><a   href="News.aspx?n=334&sms=8986"      title="查(調)閱申請"    >查(調)閱申請</a> </span></li><li   data-index="4"  >		<span  ><a   href="cp.aspx?n=10"      title="聯絡窗口 "    >聯絡窗口 </a> </span></li><li   data-index="5"  >		<span  ><a   href="ActiveList.aspx?n=11&sms=8856"      title="活動報名 "    >活動報名 </a> </span></li><li   data-index="6"  >		<span  ><a   href="Message.aspx?n=12&sms=8857"      title="意見信箱"    >意見信箱</a> </span></li><li   data-index="7"  >		<span  ><a   href="News_Link.aspx?n=15&sms=8859"      title="相關網站連結"    >相關網站連結</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="3"> <div class="group nav" data-index="3" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=3"      title="公告園地"    >公告園地</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="6"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=16&sms=8860"      title="最新消息 "    >最新消息 </a> </span></li><li   data-index="2"  >		<span  ><a   href="News.aspx?n=17&sms=8861"      title="廉政專刊電子書"    >廉政專刊電子書</a> </span></li><li   data-index="3"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/baselist"      title="[另開新視窗]財產申報公告資料 "   target="_blank"  rel="noopener noreferrer" >財產申報公告資料 </a> </span></li><li   data-index="4"  >		<span  ><a   href="PAQuery.aspx?n=21&sms=0"      title="政治獻金專戶公告資料 "    >政治獻金專戶公告資料 </a> </span></li><li   data-index="5"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/finelist"      title="[另開新視窗]罰鍰處分確定名單"   target="_blank"  rel="noopener noreferrer" >罰鍰處分確定名單</a> </span></li><li   data-index="6"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/appeallist"      title="[另開新視窗]訴願決定書"   target="_blank"  rel="noopener noreferrer" >訴願決定書</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="4"> <div class="group nav" data-index="4" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=4"      title="業務資訊"    >業務資訊</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=24&sms=8862"      title="相關法令及函釋意旨"    >相關法令及函釋意旨</a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=25"      title="標準化流程 "    >標準化流程 </a> </span></li><li   data-index="3"  >		<span  ><a   href="News.aspx?n=26&sms=8863"      title="案例分享 "    >案例分享 </a> </span></li><li   data-index="4"  >		<span  ><a   href="News.aspx?n=27&sms=8864"      title="常用問答"    >常用問答</a> </span></li><li   data-index="5"  >		<span  ><a   href="cl.aspx?n=28"      title="宣導資料"    >宣導資料</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li></ul></div></div></div></div> <div class="list-text hot-key-word" data-index="4" data-type="0"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="熱門搜尋"    >熱門搜尋</a> </span></div></div></div><div class="ct"><div class="in"></div></div></div></div> <div class="list-text link" data-index="5" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="上方連結"    >上方連結</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="SiteMap.aspx"   title="網站導覽"    >網站導覽</a> </span></li><li   data-index="2"  >		<span  ><a   href="Default.aspx"   title="回首頁"    >回首頁</a> </span></li><li   data-index="3"  >		<span  ><a   href="http://sunshine.cy.gov.tw/en/"   title="[另開新視窗]ENGLISH"   target="_blank"  rel="noopener noreferrer" >ENGLISH</a> </span></li><li   data-index="4"  >		<span  ><a   href="https://www.cy.gov.tw"   title="[另開新視窗]前往監察院"   target="_blank"  rel="noopener noreferrer" >前往監察院</a> </span></li><li   data-index="5"  >		<span  ><a   href="/cp.aspx?n=10"   title="聯絡我們 "    >聯絡我們 </a> </span></li></ul>
+</div></div></div></div> <div class="list-text link" data-index="6" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="下方連結"    >下方連結</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="cp.aspx?n=748"   title="政府網站資料開放宣告"    >政府網站資料開放宣告</a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=46"   title="無障礙說明"    >無障礙說明</a> </span></li><li   data-index="3"  >		<span  ><a   href="cp.aspx?n=47"   title="資訊安全與隱私權政策"    >資訊安全與隱私權政策</a> </span></li><li   data-index="4"  >		<span  ><a   href="cp.aspx?n=48"   title="著作權聲明"    >著作權聲明</a> </span></li><li   data-index="5"  >		<span  ><a   href="cp.aspx?n=49"   title="位置圖"    >位置圖</a> </span></li></ul>
+</div></div></div></div></div></div></div></div> <div class="group base-extend" data-index="2" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="simple-text accesskey" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#Accesskey_U" id="Accesskey_U" accesskey="U" title="上方選單連結區，此區塊列有本網站的主要連結">:::</a></span></div></div></div></div> <div class="group default info" data-index="1" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="list-text link" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="上方連結"    >上方連結</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="SiteMap.aspx"   title="網站導覽"    >網站導覽</a> </span></li><li   data-index="2"  >		<span  ><a   href="Default.aspx"   title="回首頁"    >回首頁</a> </span></li><li   data-index="3"  >		<span  ><a   href="http://sunshine.cy.gov.tw/en/"   title="[另開新視窗]ENGLISH"   target="_blank"  rel="noopener noreferrer" >ENGLISH</a> </span></li><li   data-index="4"  >		<span  ><a   href="https://www.cy.gov.tw"   title="[另開新視窗]前往監察院"   target="_blank"  rel="noopener noreferrer" >前往監察院</a> </span></li><li   data-index="5"  >		<span  ><a   href="/cp.aspx?n=10"   title="聯絡我們 "    >聯絡我們 </a> </span></li></ul>
+</div></div></div></div> <div class="group default top-tool" data-index="1" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="group default area-customize aceb-tool" data-func="{&#39;toggleBtn&#39;:{&#39;btnOrangeText&#39;:&#39;關閉&#39;,&#39;btnActiveText&#39;:&#39;開啟&#39;,&#39;focusActive&#39;:false,&#39;btnTextRemove&#39;:true,&#39;blankTitle&#39;:true,&#39;clickToRemove&#39;:true},&#39;acebTools&#39;:{&#39;enTitle&#39;:&#39;Access Key&#39;}}" data-index="1" data-type="3" data-child="10"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a    title="無障礙快捷鍵"    >無障礙快捷鍵</a> </span></div></div></div><div class="ct"><div class="in"> <div data-func="{&#39;adhdTools&#39;:{&#39;enTitle&#39;:&#39;ADHD friendly interface&#39;}}" class="area-customize adhd-tool" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="ADHD友善介面"    >ADHD友善介面</a> </span></div></div></div><div class="ct"><div class="in"><div class="switch"><a href="#" role="button" title="ADHD友善介面">關閉</a><a class="en" href="#" role="button" title="ADHD friendly interface">Off</a></div></div></div></div></div> <div data-func="{&#39;acebToolSwitch&#39;:{&#39;eventName&#39;:&#39;light-on&#39;,&#39;enTitle&#39;:&#39;Link highlight interface&#39;}}" class="area-customize highlight-tool" data-index="2" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="連結高亮介面"    >連結高亮介面</a> </span></div></div></div><div class="ct"><div class="in"><div class="switch"><a href="#" role="button" title="連結高亮介面">關閉</a><a class="en" href="#" role="button" title="Link highlight interface">Off</a></div></div></div></div></div> <div data-func="{&#39;acebToolSwitch&#39;:{&#39;eventName&#39;:&#39;cursor-size&#39;,&#39;enTitle&#39;:&#39;Large cursor auxiliary interface&#39;}}" class="area-customize cursor-tool" data-index="3" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="大型游標輔助介面"    >大型游標輔助介面</a> </span></div></div></div><div class="ct"><div class="in"><div class="switch"><a href="#" role="button" title="大型游標輔助介面">關閉</a><a class="en" href="#" role="button" title="Large cursor auxiliary interface">Off</a></div></div></div></div></div> <div data-func="{&#39;acebToolSwitch&#39;:{&#39;eventName&#39;:&#39;grayscale-mode&#39;, &#39;limit&#39;:true,&#39;enTitle&#39;:&#39;Grayscale mode&#39;}}" class="area-customize grayscale-tool" data-index="4" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="灰階模式"    >灰階模式</a> </span></div></div></div><div class="ct"><div class="in"><div class="switch"><a href="#" role="button" title="灰階模式">關閉</a><a class="en" href="#" role="button" title="Grayscale mode">Off</a></div></div></div></div></div> <div data-func="{&#39;acebToolSwitch&#39;:{&#39;eventName&#39;:&#39;contrast-mode&#39;, &#39;limit&#39;:true,&#39;enTitle&#39;:&#39;High contrast mode&#39;}}" class="area-customize contrast-tool" data-index="5" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="高對比度模式"    >高對比度模式</a> </span></div></div></div><div class="ct"><div class="in"><div class="switch"><a href="#" role="button" title="高對比度模式">關閉</a><a class="en" href="#" role="button" title="High contrast mode">Off</a></div></div></div></div></div> <div data-func="{&#39;acebToolSwitch&#39;:{&#39;eventName&#39;:&#39;invert-mode&#39;, &#39;limit&#39;:true,&#39;enTitle&#39;:&#39;Inverted color mode&#39;}}" class="area-customize invert-tool" data-index="6" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="顏色反轉模式"    >顏色反轉模式</a> </span></div></div></div><div class="ct"><div class="in"><div class="switch"><a href="#" role="button" title="顏色反轉模式">關閉</a><a class="en" href="#" role="button" title="Inverted color mode">Off</a></div></div></div></div></div> <div class="list-text font-size" data-func="{&#39;fontSize&#39;:{&#39;accesskeyTool&#39;:true}}" data-index="7" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a   href="#"   title="字級"    >字級</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  class="small"  >		<span  ><a   href="#"   title="小"    >小</a> </span></li><li   data-index="2"  class="medium"  >		<span  ><a   href="#"   title="中"    >中</a> </span></li><li   data-index="3"  class="large"  >		<span  ><a   href="#"   title="大"    >大</a> </span></li></ul>
+</div></div></div></div> <div data-func="{&#39;textSettingTool&#39;:{&#39;defaultItem&#39;:&#39;lineheight-1&#39;, &#39;prefix&#39;:&#39;text-&#39;,&#39;enTitle&#39;:&#39;Adjust row height&#39;}}" class="list-text lineheight-tool" data-index="7" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="調整行高"    >調整行高</a> </span></div></div></div><div class="ct"><div class="in"><ul><li data-index="1" class="lineheight-1"><a href="#" role="button" title="預設行高">預設</a><a class="en" role="button" href="#" title="Line height">Default</a></li><li data-index="2" class="lineheight-2"><a href="#" role="button" title="拉高行高">1.5倍</a><a class="en" role="button" href="#" title="Increase line height by">1.5x</a></li><li data-index="3" class="lineheight-3"><a href="#" role="button" title="再拉高行高">2倍</a><a class="en" role="button" href="#" title="Increase line height by">2x</a></li></ul></div></div></div></div> <div data-func="{&#39;textSettingTool&#39;:{&#39;defaultItem&#39;:&#39;spacing-1&#39;, &#39;prefix&#39;:&#39;letter-&#39;,&#39;enTitle&#39;:&#39;Kerning&#39;}}" class="list-text lineheight-tool" data-index="8" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="調整字距"    >調整字距</a> </span></div></div></div><div class="ct"><div class="in"><ul><li data-index="1" class="spacing-1"><a role="button" href="#" title="目前字距">預設</a><a class="en" role="button" href="#" title="Letter Spacing">Default</a></li><li data-index="2" class="spacing-2"><a role="button" href="#" title="加寬字距">0.12倍</a><a class="en" role="button" href="#" title="Increase letter Spacing by">0.12x</a></li><li data-index="3" class="spacing-3"><a href="#" role="button" title="再加寬字距">0.14倍</a><a class="en" role="button" href="#" title="Increase letter Spacing by">0.14x</a></li></ul></div></div></div></div> <div data-func="{&#39;theme&#39;:{&#39;enTitle&#39;:&#39;Main colors of the website&#39;}}" class="list-text theme-tool" data-index="9" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="網站色彩工具"    >網站色彩工具</a> </span></div></div></div><div class="ct"><div class="in"><ul><li data-index="1" class="theme-3"><a role="button" href="#" title="版型主題3"><span>藍色</span><span class="en">Blue</span></a></li><li data-index="2" class="theme-2"><a role="button" href="#" title="版型主題2"><span>棕色</span><span class="en">Brown</span></a></li><li data-index="3" class="theme-1"><a role="button" href="#" title="版型主題1"><span>綠色</span><span class="en">Green</span></a></li></ul></div></div></div></div> <div class="reset-tool" data-index="10" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><div class="reset-btn"><a href="#" role="button" class="reset-aceb" title="點擊重置">重置設定</a><a class="button en" href="#" role="button" title="click to reset">Re-Settings</a></div></div></div></div></div></div></div></div></div> <div class="group default top-search" data-func="{&#39;toggleBtn&#39;:{&#39;btnOrangeText&#39;:&#39;關閉&#39;,&#39;btnActiveText&#39;:&#39;開啟&#39;,&#39;focusActive&#39;:false,&#39;btnTextRemove&#39;:true,&#39;blankTitle&#39;:true}}" data-index="2" data-type="3"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a    title="搜尋"    >搜尋</a> </span></div></div></div><div class="ct"><div class="in"> <div class="area-form search" data-func="{&#39;showDataList&#39;:{}}" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="search"    >search</a> </span></div></div></div><div class="ct"><div class="in"><div class="fieldset">
+  <span class="search"><input data-search="btn_d5b8f32a9ded4cc4982905157bcb0669" type="search" placeholder="請輸入欲查詢文字" title="搜尋"></span>
+  <span class="submit"><a href="#" class='CCMS_SearchBtn' data-search="btn_d5b8f32a9ded4cc4982905157bcb0669" >搜尋</a></span>
+</div>
+<div class="list">
+  <ul data-index="1" data-child="1">
+    <li data-index="1"><span><a href="#">陽光法案</a></span></li>
+  </ul>
+</div>
+<script  nonce="UKDk8euUAEawMIckCi1JMA==">
+$(function () {
+    $('[data-search="d5b8f32a9ded4cc4982905157bcb0669"]').on("keydown", function (event) {
+        if (event.which == 13) {
+             doSearch($('#btn_d5b8f32a9ded4cc4982905157bcb0669'));
+            return false;
+        }
+    });
+});
+</script>
+</div></div><div class="ft"><div class="in"><ul data-index="1" data-child="1">
+  <li data-index="1" class="advanced"><span><a target="_blank" href="https://www.google.com.tw/advanced_search?hl=zh-tw&as_sitesearch=https://sunshine.cy.gov.tw" title="進階搜尋[另開新視窗]">進階搜尋</a></span></li>
+</ul>
+</div></div></div></div> <div class="list-text hot-key-word" data-index="2" data-type="0"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="熱門搜尋"    >熱門搜尋</a> </span></div></div></div><div class="ct"><div class="in"></div></div></div></div></div></div></div></div> <div class="list-text share" data-func="{&#39;toggleBtn&#39;:{&#39;btnOrangeText&#39;:&#39;關閉&#39;,&#39;btnActiveText&#39;:&#39;開啟&#39;,&#39;focusActive&#39;:false,&#39;btnTextRemove&#39;:true,&#39;blankTitle&#39;:true,&#39;addHd&#39;:false}}" data-index="3" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a   href="#"   title="分享"    >分享</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  class="facebook"  >		<span  ><a   href="#"  id = "toFacebook"  data-share="facebook" title="Share to Facebook[另開新視窗]"    >Facebook</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toFacebook").on("click keydown", "#toFacebook", function(e){    const facebookShareUrl = 'http://www.facebook.com/share.php?u='.concat(encodeURIComponent(location.href));ShareTo(e, facebookShareUrl);});</script></span></li><li   data-index="2"  class="plurk"  >		<span  ><a   href="#"  id = "toPlurk"  title="Share to Plurk[另開新視窗]"    >Plurk</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toPlurk").on("click keydown", "#toPlurk", function(e){    const plurkShareUrl = 'http://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent(location.href));ShareTo(e, plurkShareUrl);});</script></span></li><li   data-index="3"  class="twitter"  >		<span  ><a   href="#"  id = "toTwitter" title="Share to twitter[另開新視窗]"    >Twitter</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toTwitter").on("click keydown", "#toTwitter", function(e){    const twitterShareUrl = 'http://twitter.com/home/?status='.concat(encodeURIComponent(document.title)) .concat(' ') .concat(encodeURIComponent(location.href));ShareTo(e, twitterShareUrl);});</script></span></li><li   data-index="4"  class="line"  >		<span  ><a   href="#"  id = "toLine" title="Share to line[另開新視窗]"    >line</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toLine").on("click keydown", "#toLine", function(e){    const lineShareUrl = 'http://line.naver.jp/R/msg/text/?'.concat(encodeURIComponent(location.href));ShareTo(e, lineShareUrl);});</script></span></li><li   data-index="5"  class="email"  >		<span  ><a   href="#"  id = "toEmail" title="Share to email[另開新視窗]"    >Email</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$(document).off("click keydown", "#toEmail").on("click keydown", "#toEmail", function(e){    const emailShareUrl = 'mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL);ShareTo(e, emailShareUrl);});</script></span></li></ul>
+</div></div></div></div></div></div></div></div></div></div></div></div> <div class="simple-text major-logo" data-index="2" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><h1><a href="Default.aspx" title="回首頁">陽光法令主題網中文版</a></h1></div></div></div></div> <div class="group-list nav" data-func="{&#39;hud&#39;:{},&#39;majorNavStraight&#39;:{&#39;clickExpand&#39;:false}}" data-index="3" data-type="4" data-child="4"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="4"><li data-index="1"> <div class="group nav" data-index="1" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=1"      title="認識公職人員財產申報處"    >認識公職人員財產申報處</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  >		<span  ><a   href="cp.aspx?n=5"      title="緣起 "    >緣起 </a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=6"      title="組織架構及職掌"    >組織架構及職掌</a> </span></li><li   data-index="3"  >		<span  ><a   href="cp.aspx?n=7"      title="未來展望"    >未來展望</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="2"> <div class="group nav" data-index="2" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=2"      title="便民服務"    >便民服務</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=13&sms=8858"      title="業務重要連結 (含網路申報系統)"    >業務重要連結 (含網路申報系統)</a> </span></li><li   data-index="2"  >		<span  ><a   href="News.aspx?n=8&sms=8855"      title="書表下載 "    >書表下載 </a> </span></li><li   data-index="3"  >		<span  ><a   href="News.aspx?n=334&sms=8986"      title="查(調)閱申請"    >查(調)閱申請</a> </span></li><li   data-index="4"  >		<span  ><a   href="cp.aspx?n=10"      title="聯絡窗口 "    >聯絡窗口 </a> </span></li><li   data-index="5"  >		<span  ><a   href="ActiveList.aspx?n=11&sms=8856"      title="活動報名 "    >活動報名 </a> </span></li><li   data-index="6"  >		<span  ><a   href="Message.aspx?n=12&sms=8857"      title="意見信箱"    >意見信箱</a> </span></li><li   data-index="7"  >		<span  ><a   href="News_Link.aspx?n=15&sms=8859"      title="相關網站連結"    >相關網站連結</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="3"> <div class="group nav" data-index="3" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=3"      title="公告園地"    >公告園地</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="6"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=16&sms=8860"      title="最新消息 "    >最新消息 </a> </span></li><li   data-index="2"  >		<span  ><a   href="News.aspx?n=17&sms=8861"      title="廉政專刊電子書"    >廉政專刊電子書</a> </span></li><li   data-index="3"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/baselist"      title="[另開新視窗]財產申報公告資料 "   target="_blank"  rel="noopener noreferrer" >財產申報公告資料 </a> </span></li><li   data-index="4"  >		<span  ><a   href="PAQuery.aspx?n=21&sms=0"      title="政治獻金專戶公告資料 "    >政治獻金專戶公告資料 </a> </span></li><li   data-index="5"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/finelist"      title="[另開新視窗]罰鍰處分確定名單"   target="_blank"  rel="noopener noreferrer" >罰鍰處分確定名單</a> </span></li><li   data-index="6"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/appeallist"      title="[另開新視窗]訴願決定書"   target="_blank"  rel="noopener noreferrer" >訴願決定書</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="4"> <div class="group nav" data-index="4" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=4"      title="業務資訊"    >業務資訊</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=24&sms=8862"      title="相關法令及函釋意旨"    >相關法令及函釋意旨</a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=25"      title="標準化流程 "    >標準化流程 </a> </span></li><li   data-index="3"  >		<span  ><a   href="News.aspx?n=26&sms=8863"      title="案例分享 "    >案例分享 </a> </span></li><li   data-index="4"  >		<span  ><a   href="News.aspx?n=27&sms=8864"      title="常用問答"    >常用問答</a> </span></li><li   data-index="5"  >		<span  ><a   href="cl.aspx?n=28"      title="宣導資料"    >宣導資料</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li></ul></div></div></div></div></div></div></div></div> <div class="group base-wrapper" data-index="3" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="group base-header" data-index="1" data-type="3"><div class="in"><div class="ct"><div class="in"></div></div></div></div> <div id="base-content" class="group base-content" data-index="2" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="group base-page-area" data-index="1" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="group base-section" data-index="1" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="simple-text accesskey" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#Accesskey_C" id="Accesskey_C" accesskey="C" title="中間主要內容區，此區塊呈現網頁的網頁內容">:::</a></span></div></div></div></div> <div class="group page-header" data-index="1" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="list-text breadcrumb" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  >		<span  ><a   href="Default.aspx"   title="首頁"   target="_self"   >首頁</a> </span></li><li   data-index="2"  >		<span  ><a   href="cl.aspx?n=3"   title="公告園地"   target="_self"   >公告園地</a> </span></li><li   data-index="3"  >		<span  ><a   href="PAQuery.aspx?n=21&sms=0"   title="政治獻金專戶公告資料 "   target="_self"   >政治獻金專戶公告資料 </a> </span></li></ul>
+</div></div></div></div> <div class="group default msg-tool" data-index="2" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="list-text user-tool" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a   href="javascript :return false;"   title="網頁功能"   target="_self"   >網頁功能</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="1"><li   data-index="1"  class="print"  >		<span  ><a   href="#"  id="printPage" title="列印內容"    >列印內容</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">$("#printPage").on("click keydown", function(e){ if (e.type === "click" || e.key === "Enter") {e.preventDefault();CCMS_Print(1);}});</script></span></li></ul>
+</div></div></div></div></div></div></div></div> <div class="group default info" data-index="3" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="simple-text heading" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><h2 id="h2_title"><span>政治獻金專戶公告資料 </span></h2></div></div></div></div></div></div></div></div></div></div></div></div> <div class="group page-content " id="CCMS_Content" data-func="{&#39;linkType&#39;:{&#39;domains&#39;:[&#39;https://www-ws.cy.gov.tw&#39;,&#39;https://www-ws.cy.gov.tw&#39;]}}" data-index="2" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in">
+    <input type="hidden" name="ctl00$ContentPlaceHolder_PageContent_title$hdDoQuery" id="ContentPlaceHolder_PageContent_title_hdDoQuery" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder_PageContent_title$hdOrderFlag" id="ContentPlaceHolder_PageContent_title_hdOrderFlag" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder_PageContent_title$hdOrderTimes" id="ContentPlaceHolder_PageContent_title_hdOrderTimes" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder_PageContent_title$hdButtonType" id="ContentPlaceHolder_PageContent_title_hdButtonType" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder_PageContent_title$hdElectionType" id="ContentPlaceHolder_PageContent_title_hdElectionType" />
+     
+    <div class="area-form page-search is-active" data-type="0" data-child="1" data-funclog="{'reset':{},'toggleBtn':{}}">
+        <div class="in">
+            <div class="ct">
+                <div class="in">
+                    <div class="fieldset">
+                        <label for='ContentPlaceHolder_PageContent_title_ddlAccountType'>請選擇專戶類別：</label>
+  
+                        <select name="ctl00$ContentPlaceHolder_PageContent_title$ddlAccountType" id="ContentPlaceHolder_PageContent_title_ddlAccountType">
+	<option selected="selected" value="擬參選人">擬參選人</option>
+	<option value="政黨">政黨</option>
+	<option value="政治團體">政治團體</option>
+
+</select>  
+                    </div>
+                    <div class="fieldset">  
+                        <input id="ContentPlaceHolder_PageContent_title_rbCategory" type="radio" name="ctl00$ContentPlaceHolder_PageContent_title$QType" value="rbCategory" checked="checked" /><label for="ContentPlaceHolder_PageContent_title_rbCategory"> 依專戶類別查詢，</label><label for='ContentPlaceHolder_PageContent_title_txtCategory'>專戶名稱：</label>&nbsp;<input name="ctl00$ContentPlaceHolder_PageContent_title$txtCategory" type="text" id="ContentPlaceHolder_PageContent_title_txtCategory" placeholder="請輸入專戶名稱" />&nbsp;<label id="lbElectionType" for='ContentPlaceHolder_PageContent_title_ddlElectionType'>選舉種類：</label>
+                        <select name="ctl00$ContentPlaceHolder_PageContent_title$ddlElectionType" id="ContentPlaceHolder_PageContent_title_ddlElectionType" style="display:;">
+	<option selected="selected" value="">請選擇選舉種類</option>
+	<option value="115116">115年直轄市山地原住民區長選舉</option>
+	<option value="115115">115年直轄市山地原住民區民代表選舉</option>
+	<option value="115109">115年村(里)長選舉</option>
+	<option value="115108">115年鄉(鎮、市)民代表選舉</option>
+	<option value="115107">115年鄉(鎮、市)長選舉</option>
+	<option value="115106">115年縣(市)議員選舉</option>
+	<option value="115105">115年直轄市議員選舉</option>
+	<option value="115104">115年直轄市市長選舉</option>
+	<option value="115103">115年縣(市)長選舉</option>
+	<option value="113102">113年立法委員選舉</option>
+	<option value="113101">113年總統、副總統選舉</option>
+	<option value="111201">第11屆嘉義市市長重行選舉</option>
+	<option value="111116">111年直轄市山地原住民區長選舉</option>
+	<option value="111115">111年直轄市山地原住民區民代表選舉</option>
+	<option value="111109">111年村(里)長選舉</option>
+	<option value="111108">111年鄉(鎮、市)民代表選舉</option>
+	<option value="111107">111年鄉(鎮、市)長選舉</option>
+	<option value="111106">111年縣(市)議員選舉</option>
+	<option value="111105">111年直轄市議員選舉</option>
+	<option value="111104">111年直轄市市長選舉</option>
+	<option value="111103">111年縣(市)長選舉</option>
+	<option value="109102">109年立法委員選舉</option>
+	<option value="109101">109年總統、副總統選舉</option>
+	<option value="107116">107年直轄市山地原住民區長選舉</option>
+	<option value="107115">107年直轄市山地原住民區民代表選舉</option>
+	<option value="107109">107年村(里)長選舉</option>
+	<option value="107108">107年鄉(鎮、市)民代表選舉</option>
+	<option value="107107">107年鄉(鎮、市)長選舉</option>
+	<option value="107106">107年縣(市)議員選舉</option>
+	<option value="107105">107年直轄市議員選舉</option>
+	<option value="107104">107年直轄市市長選舉</option>
+	<option value="107103">107年縣(市)長選舉</option>
+	<option value="105102">105年立法委員選舉</option>
+	<option value="105101">105年總統、副總統選舉</option>
+	<option value="104201">第17屆彰化縣線西鄉鄉長重行選舉</option>
+	<option value="103109">103年村(里)長選舉</option>
+	<option value="103108">103年鄉鎮市民代表選舉</option>
+	<option value="103107">103年鄉鎮市長選舉</option>
+	<option value="103106">103年縣(市)議員選舉</option>
+	<option value="103105">103年直轄市議員選舉</option>
+	<option value="103104">103年直轄市市長選舉</option>
+	<option value="103103">103年縣(市)長選舉</option>
+	<option value="101101">第13任總統、副總統選舉</option>
+	<option value="100102">第8屆立法委員選舉</option>
+	<option value="099112">99年直轄市里長選舉</option>
+	<option value="099109">99年村里長選舉</option>
+	<option value="099108">99年鄉鎮市民代表選舉</option>
+	<option value="099105">99年直轄市議員選舉</option>
+	<option value="099104">99年直轄市市長選舉</option>
+	<option value="098107">98年第16屆鄉鎮市長選舉</option>
+	<option value="098106">98年第17屆縣(市)議員選舉</option>
+	<option value="098103">98年第16屆縣(市)長選舉</option>
+	<option value="097101">第12任總統、副總統選舉</option>
+	<option value="096102">第7屆立法委員</option>
+	<option value="095207">95年臺灣省臺南縣大內鄉第15屆鄉長重行選舉</option>
+	<option value="095114">被調查者,未開立專戶</option>
+	<option value="095111">95年第10屆台北市里長選舉</option>
+	<option value="095110">95年第7屆高雄市里長選舉</option>
+	<option value="095109">95年台灣省第18屆村(里)長選舉</option>
+	<option value="095108">95年鄉(鎮、市)民代表選舉</option>
+	<option value="095105">95年直轄市議員選舉</option>
+	<option value="095104">95年第4屆直轄市長選舉</option>
+	<option value="094107">94年第15屆鄉(鎮、市)長選舉</option>
+	<option value="094106">94年第16屆縣(市)議員選舉</option>
+	<option value="094103">94年第15屆縣(市)長選舉</option>
+	<option value="093102">93年第6屆立法委員選舉</option>
+	<option value="114302">第19屆臺東縣蘭嶼鄉鄉長補選</option>
+	<option value="114301">第19屆南投縣草屯鎮鎮長補選</option>
+	<option value="113366">南投縣草屯鎮第19屆鎮長補選</option>
+	<option value="113320">雲林縣麥寮鄉第19屆鄉長補選</option>
+	<option value="113315">新北市三重區立德里第4屆里長補選</option>
+	<option value="113309">第19屆屏東縣長治鄉鄉長補選</option>
+	<option value="113308">第20屆臺東縣議員補選</option>
+	<option value="113307">第19屆臺東縣大武鄉鄉長補選</option>
+	<option value="113306">第4屆新北市三重區立德里里長補選</option>
+	<option value="113305">第12屆苗栗縣苗栗市市長補選</option>
+	<option value="113304">第20屆宜蘭縣議員補選</option>
+	<option value="113303">第4屆臺中市議員補選</option>
+	<option value="113302">第19屆雲林縣虎尾鎮鎮長補選</option>
+	<option value="113301">第19屆雲林縣麥寮鄉鄉長補選</option>
+	<option value="112305">第3屆桃園市復興區區長補選</option>
+	<option value="112304">第19屆彰化縣北斗鎮鎮長補選</option>
+	<option value="112303">第19屆花蓮縣富里鄉鄉長補選</option>
+	<option value="112302">第10屆南投縣立法委員補選</option>
+	<option value="112301">第10屆臺北市立法委員補選</option>
+	<option value="111301">第10屆臺中市立法委員補選</option>
+	<option value="109331">第21屆新竹市東區水源里里長補選</option>
+	<option value="109330">第2屆桃園市龜山區陸光里里長補選</option>
+	<option value="109329">第19屆新竹縣議員補選</option>
+	<option value="109328">第18屆屏東縣恆春鎮鎮長補選</option>
+	<option value="109327">第2屆臺中市和平區區長補選</option>
+	<option value="109326">第3屆高雄市市長補選</option>
+	<option value="109325">第18屆屏東縣崁頂鄉鄉長補選</option>
+	<option value="109324">第2屆桃園市中壢區復興里里長補選</option>
+	<option value="109323">嘉義市東區過溝里第10屆里長補選</option>
+	<option value="109304">第10屆嘉義市東區過溝里里長補選</option>
+	<option value="109303">第18屆花蓮縣豐濱鄉鄉長補選</option>
+	<option value="109302">第3屆高雄市苓雅區林靖里里長補選</option>
+	<option value="109301">第18屆新竹縣竹東鎮鎮長補選</option>
+	<option value="108334">花蓮縣議會第19屆議員第8選舉區缺額補選</option>
+	<option value="108308">第19屆花蓮縣議員補選</option>
+	<option value="108307">第3屆新北市三重區光正里里長補選</option>
+	<option value="108306">第9屆新北市立法委員補選</option>
+	<option value="108305">第9屆金門縣立法委員補選</option>
+	<option value="108304">第9屆彰化縣立法委員補選</option>
+	<option value="108303">第9屆臺南市立法委員補選</option>
+	<option value="108302">第9屆臺中市立法委員補選</option>
+	<option value="108301">第9屆臺北市立法委員補選</option>
+	<option value="105393">第2屆臺南市安南區塩田里里長補選</option>
+	<option value="105315">第2屆臺南市安南區塩田里里長補選</option>
+	<option value="105314">第2屆臺中市清水區裕嘉里里長補選</option>
+	<option value="105313">第20屆基隆市七堵區堵北里里長補選</option>
+	<option value="105312">第12屆臺北市文山區樟新里里長補選</option>
+	<option value="105311">第2屆新北市汐止區興福里里長補選</option>
+	<option value="105310">第17屆雲林縣口湖鄉鄉長補選</option>
+	<option value="105309">第17屆南投縣仁愛鄉鄉長補選</option>
+	<option value="105308">第12屆臺北市大安區黎和里里長補選</option>
+	<option value="105307">第17屆彰化縣田尾鄉鄉長補選</option>
+	<option value="105306">第17屆花蓮縣花蓮市市長補選</option>
+	<option value="105305">第2屆高雄市鳳山區國泰里里長補選</option>
+	<option value="105304">第18屆屏東縣議員補選</option>
+	<option value="105303">第17屆屏東縣里港鄉鄉長補選</option>
+	<option value="105302">第17屆屏東縣三地門鄉鄉長補選</option>
+	<option value="105301">第17屆苗栗縣獅潭鄉鄉長補選</option>
+	<option value="104324">第17屆屏東縣鹽埔鄉鄉長補選</option>
+	<option value="104323">第2屆新北市汐止區興福里里長補選</option>
+	<option value="104322">第20屆宜蘭縣宜蘭市孝廉里里長補選</option>
+	<option value="104321">第20屆苗栗縣通霄鎮內湖里里長補選</option>
+	<option value="104320">第1屆桃園市議員補選</option>
+	<option value="104319">第8屆新竹縣竹北市新崙里里長補選</option>
+	<option value="104308">第1屆桃園市中壢區仁德里里長補選</option>
+	<option value="104307">第17屆彰化縣永靖鄉鄉長補選</option>
+	<option value="104306">第20屆宜蘭縣頭城鎮鎮民代表補選</option>
+	<option value="104305">第8屆屏東縣立法委員補選</option>
+	<option value="104304">第8屆南投縣立法委員補選</option>
+	<option value="104303">第8屆苗栗縣立法委員補選</option>
+	<option value="104302">第8屆彰化縣立法委員補選</option>
+	<option value="104301">第8屆臺中市立法委員補選</option>
+	<option value="102304">102年苗栗縣第16屆竹南鎮鎮長補選</option>
+	<option value="102303">102年新竹縣第16屆橫山鄉鄉長補選</option>
+	<option value="102302">102年第8屆立法委員台中市第2選舉區補選</option>
+	<option value="101305">101年宜蘭縣第16屆三星鄉鄉長補選</option>
+	<option value="101304">101年宜蘭縣第16屆礁溪鄉鄉長補選</option>
+	<option value="101303">101年彰化縣鹿港鎮第16屆鎮長補選</option>
+	<option value="101302">第16屆彰化縣花壇鄉鄉長補選(第2次)</option>
+	<option value="101301">第16屆苗栗縣竹南鎮鎮長補選</option>
+	<option value="100306">彰化縣花壇鄉第16屆鄉長補選</option>
+	<option value="100305">第16屆彰化縣員林鎮鎮長補選</option>
+	<option value="100304">第9屆雲林縣斗六市市長補選</option>
+	<option value="100303">第16屆臺東縣達仁鄉鄉長補選</option>
+	<option value="100302">第7屆高雄市立法委員補選</option>
+	<option value="100015">屏東縣萬巒鄉第16屆鄉長出缺補選</option>
+	<option value="100003">苗栗縣三義鄉第16屆鄉長補選</option>
+	<option value="100002">苗栗縣頭屋鄉第16屆鄉長補選</option>
+	<option value="100001">第7屆立法委員臺南市第4選舉區缺額補選</option>
+	<option value="099308">第16屆屏東縣三地門鄉鄉長補選</option>
+	<option value="099307">99年第6屆桃園縣平鎮市平安里里長補選</option>
+	<option value="099306">第16屆南投縣草屯鎮鎮長補選</option>
+	<option value="099305">第16屆苗栗縣造橋鄉鄉長補選</option>
+	<option value="099304">99年第7屆立法委員新竹縣補選</option>
+	<option value="099303">99年第7屆立法委員桃園縣第3選舉區補選</option>
+	<option value="099302">99年第7屆立法委員花蓮縣選舉區缺額補選</option>
+	<option value="099301">99年第7屆立法委員嘉義縣第2選區缺額補選</option>
+	<option value="098339">第7屆立法委員桃園縣第2選舉區缺額補選</option>
+	<option value="098338">第7屆立法委員台東縣缺額補選</option>
+	<option value="098337">第7屆立法委員台中縣第3選舉區缺額補選</option>
+	<option value="098336">第7屆立法委員南投縣第1選舉區缺額補選</option>
+	<option value="098335">第7屆立法委員雲林縣第2選舉區缺額補選</option>
+	<option value="098334">第7屆立法委員苗栗縣第1選舉區缺額補選</option>
+	<option value="098333">第7屆立法委員台北市第6選舉區缺額補選</option>
+	<option value="097332">彰化縣鹿港鎮頂厝里第18屆里長補選</option>
+	<option value="097331">台北縣瑞芳鎮第15屆鎮長補選</option>
+	<option value="097330">台北縣烏來鄉第15屆鄉長補選</option>
+	<option value="096329">雲林縣斗六市第8屆市長補選</option>
+	<option value="096328">高雄縣鳥松鄉第15屆鄉長補選</option>
+	<option value="096327">台中縣清水鎮第15屆鎮長補選</option>
+	<option value="096326">台南市第18屆里長北區文元里補選</option>
+	<option value="096325">台北縣林口鄉第15屆鄉長補選</option>
+	<option value="096324">台北縣鶯歌鎮第15屆鎮長補選</option>
+	<option value="096323">彰化縣大城鄉山腳村第18屆村長補選</option>
+	<option value="096322">台中縣神岡鄉第15屆鄉長補選</option>
+	<option value="096321">96年南投縣仁愛鄉長第15屆鄉長補選</option>
+	<option value="096320">苗栗縣頭份鎮第15屆鎮長補選</option>
+	<option value="096319">彰化縣線西鄉第15屆鄉長補選</option>
+	<option value="096318">桃園縣蘆竹鄉第15屆鄉長補選</option>
+	<option value="096317">基隆市第15屆市長出缺補選</option>
+	<option value="096316">96年苗栗縣苑裡鎮第15屆鎮長補選</option>
+	<option value="096315">96年彰化縣議會第16屆議員第9選舉區缺額補選</option>
+	<option value="096313">96年高雄市第7屆左營區新下里里長補選</option>
+	<option value="096312">96年台中縣霧峰鄉第15屆鄉長補選</option>
+	<option value="096307">96年桃園縣觀音鄉第15屆鄉長補選</option>
+	<option value="095307">95年臺東縣成功鎮第15屆鎮長出缺補選</option>
+	<option value="095303">95年台灣省台東縣第15屆縣長出缺補選</option>
+	<option value="095302">95年嘉義市第6屆立法委員補選</option>
+	<option value="094311">94年第9屆台北市里長補選</option>
+	<option value="093308">93年第17屆宜蘭縣蘇澳鎮民代表補選</option>
+	<option value="093305">93年第6屆高雄市議員補選</option>
+
+</select>
+                    </div> 
+                    <div class="fieldset">  
+                        <input id="ContentPlaceHolder_PageContent_title_rbKeyword" type="radio" name="ctl00$ContentPlaceHolder_PageContent_title$QType" value="rbKeyword" /><label for="ContentPlaceHolder_PageContent_title_rbKeyword"> 關鍵字(全文檢索)查詢，</label><label for='ContentPlaceHolder_PageContent_title_txtKeyword'>關鍵字：</label>&nbsp;<input name="ctl00$ContentPlaceHolder_PageContent_title$txtKeyword" type="text" id="ContentPlaceHolder_PageContent_title_txtKeyword" disabled="disabled" class="aspNetDisabled" placeholder="請輸入關鍵字" /> &nbsp;<input type="submit" name="ctl00$ContentPlaceHolder_PageContent_title$btnSend" value="查詢" id="ContentPlaceHolder_PageContent_title_btnSend" />
+                    </div>
+                    <div class="fieldset" style="text-align: left;">
+                        <span class="PAQuery submit" style="width: 80%;">
+                            <input type="submit" name="ctl00$ContentPlaceHolder_PageContent_title$btnTitle1" value="許可設立/同意變更(0)" id="ContentPlaceHolder_PageContent_title_btnTitle1" />&nbsp;
+                            <input type="submit" name="ctl00$ContentPlaceHolder_PageContent_title$btnTitle2" value="已廢止(0)" id="ContentPlaceHolder_PageContent_title_btnTitle2" />&nbsp;
+                            <input type="submit" name="ctl00$ContentPlaceHolder_PageContent_title$btnTitle3" value="會計報告書之收支結算表(0)" id="ContentPlaceHolder_PageContent_title_btnTitle3" />
+                        </span>
+                        <script nonce="UKDk8euUAEawMIckCi1JMA==">
+                            $(function () {
+                                $('#ContentPlaceHolder_PageContent_title_btnSend').on('click', function () {
+                                    doCheck();
+                                })
+
+                                $('#ContentPlaceHolder_PageContent_title_btnTitle1').on('click', function () {
+                                    changeTitle(1);
+                                }).on('keypress', function (e) {
+                                    this.click();
+                                });
+
+                                $('#ContentPlaceHolder_PageContent_title_btnTitle2').on('click', function () {
+                                    changeTitle(2);
+                                }).on('keypress', function (e) {
+                                    this.click();
+                                });
+
+                                $('#ContentPlaceHolder_PageContent_title_btnTitle3').on('click', function () {
+                                    changeTitle(3);
+                                }).on('keypress', function (e) {
+                                    this.click();
+                                });
+
+                            });
+                        </script>
+                    </div>
+                    <div class="fieldset" style="text-align: left">
+                        <p>鑑於瀏覽裝置作業平臺之字碼設定不同，欲知悉未能正確呈現之罕用字，請逕洽承辦人林小姐(02-23413183分機156)。</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+
+        
+        </div></div></div></div> <div class="group page-footer" data-index="3" data-type="3" data-child="3"><div class="in"><div class="ct"><div class="in"> <div class="area-editor system-info" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in">依107年12月20日修正施行之政治獻金法第21條第4項規定，修法後依法公開之會計報告書，請至監察院政治獻金公開查閱平臺<u><a href="https://ardata.cy.gov.tw" title="政治獻金公開查閱平臺"><span style="color:#0000FF;">https://ardata.cy.gov.tw</span></a></u>查詢。</div></div></div></div> <div class="list-text detail" data-index="2" data-type="0"><div class="in"><div class="ct"><div class="in"></div></div></div></div> <div class="list-text jump-tool" data-index="3" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="2"><li   data-index="1"  class="back"  >		<span  ><a   href="javascript:void(0);"  id="prePage" title="回上一頁"   target="_self"   >回上一頁</a> <script nonce="UKDk8euUAEawMIckCi1JMA==">document.getElementById("prePage").addEventListener("click", function(){ history.back();});</script></span></li><li   data-index="2"  class="to-top"  >		<span  ><a   href="#Accesskey_U"   title="回最上面"   target="_self"   >回最上面</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div> <div class="group base-footer" data-func="{&#39;toggleBtn&#39;:{&#39;btnOrangeText&#39;:&#39;收合選單&#39;,&#39;btnActiveText&#39;:&#39;開啟選單&#39;,&#39;blankTitle&#39;:true,&#39;focusActive&#39;:false,&#39;btnTextRemove&#39;:true,&#39;expanded&#39;: true}}" data-index="3" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a    title="選單"    >選單</a> </span></div></div></div><div class="ct"><div class="in"> <div class="simple-text accesskey" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><span><a href="#Accesskey_Z" id="Accesskey_Z" accesskey="Z" title="下方選單連結區，此區塊列有[意見信箱]、[資訊安全政策]、[隱私權政策]等連結">:::</a></span></div></div></div></div> <div class="group-list nav" data-func="{&#39;setNavLen&#39;:{}}" data-index="1" data-type="4" data-child="4"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="4"><li data-index="1"> <div class="group nav" data-index="1" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=1"      title="認識公職人員財產申報處"    >認識公職人員財產申報處</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  >		<span  ><a   href="cp.aspx?n=5"      title="緣起 "    >緣起 </a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=6"      title="組織架構及職掌"    >組織架構及職掌</a> </span></li><li   data-index="3"  >		<span  ><a   href="cp.aspx?n=7"      title="未來展望"    >未來展望</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="2"> <div class="group nav" data-index="2" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=2"      title="便民服務"    >便民服務</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="7"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=13&sms=8858"      title="業務重要連結 (含網路申報系統)"    >業務重要連結 (含網路申報系統)</a> </span></li><li   data-index="2"  >		<span  ><a   href="News.aspx?n=8&sms=8855"      title="書表下載 "    >書表下載 </a> </span></li><li   data-index="3"  >		<span  ><a   href="News.aspx?n=334&sms=8986"      title="查(調)閱申請"    >查(調)閱申請</a> </span></li><li   data-index="4"  >		<span  ><a   href="cp.aspx?n=10"      title="聯絡窗口 "    >聯絡窗口 </a> </span></li><li   data-index="5"  >		<span  ><a   href="ActiveList.aspx?n=11&sms=8856"      title="活動報名 "    >活動報名 </a> </span></li><li   data-index="6"  >		<span  ><a   href="Message.aspx?n=12&sms=8857"      title="意見信箱"    >意見信箱</a> </span></li><li   data-index="7"  >		<span  ><a   href="News_Link.aspx?n=15&sms=8859"      title="相關網站連結"    >相關網站連結</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="3"> <div class="group nav" data-index="3" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=3"      title="公告園地"    >公告園地</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="6"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=16&sms=8860"      title="最新消息 "    >最新消息 </a> </span></li><li   data-index="2"  >		<span  ><a   href="News.aspx?n=17&sms=8861"      title="廉政專刊電子書"    >廉政專刊電子書</a> </span></li><li   data-index="3"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/baselist"      title="[另開新視窗]財產申報公告資料 "   target="_blank"  rel="noopener noreferrer" >財產申報公告資料 </a> </span></li><li   data-index="4"  >		<span  ><a   href="PAQuery.aspx?n=21&sms=0"      title="政治獻金專戶公告資料 "    >政治獻金專戶公告資料 </a> </span></li><li   data-index="5"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/finelist"      title="[另開新視窗]罰鍰處分確定名單"   target="_blank"  rel="noopener noreferrer" >罰鍰處分確定名單</a> </span></li><li   data-index="6"  >		<span  ><a   href="https://priso.cy.gov.tw/layout/appeallist"      title="[另開新視窗]訴願決定書"   target="_blank"  rel="noopener noreferrer" >訴願決定書</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li><li data-index="4"> <div class="group nav" data-index="4" data-type="3" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  class="headeH3"  >		<span  ><a   href="cl.aspx?n=4"      title="業務資訊"    >業務資訊</a> </span></div></div></div><div class="ct"><div class="in"> <div class="list-text nav" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="News.aspx?n=24&sms=8862"      title="相關法令及函釋意旨"    >相關法令及函釋意旨</a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=25"      title="標準化流程 "    >標準化流程 </a> </span></li><li   data-index="3"  >		<span  ><a   href="News.aspx?n=26&sms=8863"      title="案例分享 "    >案例分享 </a> </span></li><li   data-index="4"  >		<span  ><a   href="News.aspx?n=27&sms=8864"      title="常用問答"    >常用問答</a> </span></li><li   data-index="5"  >		<span  ><a   href="cl.aspx?n=28"      title="宣導資料"    >宣導資料</a> </span></li></ul>
+</div></div></div></div></div></div></div></div></li></ul></div></div></div></div> <div class="group default info" data-index="1" data-type="3" data-child="1"><div class="in"><div class="ct"><div class="in"> <div class="list-text link" data-index="1" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="下方連結"    >下方連結</a> </span></div></div></div><div class="ct"><div class="in"><ul data-index="1" data-child="5"><li   data-index="1"  >		<span  ><a   href="cp.aspx?n=748"   title="政府網站資料開放宣告"    >政府網站資料開放宣告</a> </span></li><li   data-index="2"  >		<span  ><a   href="cp.aspx?n=46"   title="無障礙說明"    >無障礙說明</a> </span></li><li   data-index="3"  >		<span  ><a   href="cp.aspx?n=47"   title="資訊安全與隱私權政策"    >資訊安全與隱私權政策</a> </span></li><li   data-index="4"  >		<span  ><a   href="cp.aspx?n=48"   title="著作權聲明"    >著作權聲明</a> </span></li><li   data-index="5"  >		<span  ><a   href="cp.aspx?n=49"   title="位置圖"    >位置圖</a> </span></li></ul>
+</div></div></div></div> <div class="area-editor address" data-func="{&#39;linkToMap&#39;:{&#39;bindClass&#39;:&#39;.map&#39;,&#39;linkClass&#39;:&#39;is-map&#39;}}" data-index="2" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><p>地址：100216臺北市忠孝東路一段二號‧<br>No.2, Sec. 1, Zhongxiao E. Rd., Taipei City 100216, Taiwan (R.O.C.)<br>總機：02-23413183</p></div></div></div></div> <div class="simple-text update-time" data-index="3" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="更新日期"    >更新日期</a> </span></div></div></div><div class="ct"><div class="in"><span>115-07-27</span></div></div></div></div> <div class="simple-text visit-count" data-index="4" data-type="0" data-child="1"><div class="in"><div class="hd"><div class="in"><div   data-index="0"  >		<span  ><a    title="瀏覽人次"    >瀏覽人次</a> </span></div></div></div><div class="ct"><div class="in"><span id="footer_visitcount_span">..</span></div></div></div></div> <div class="list-pic icon" data-index="1" data-type="0" data-child="1"><div class="in"><div class="ct"><div class="in"><ul data-index="1" data-child="3"><li   data-index="1"  class="E-Gov"  >		<span style="background-image: url('/images/egov.png');" ><a   href="//www.gov.tw/"   title="[另開新視窗]我的E政府"   target="_blank"  rel="noopener noreferrer" ><img src="/images/egov.png" alt="我的E政府"/></a> </span></li><li   data-index="2"  class="wcag"  >		<span style="background-image: url('/images/aplus.png');" ><a   href="https://accessibility.moda.gov.tw/Applications/Detail?category=20240926144747"   title="[另開新視窗]無障礙網站"   target="_blank"  rel="noopener noreferrer" ><img src="/images/aplus.png" alt="通過AA檢測等級無障礙網頁檢測"/></a> </span></li><li   data-index="3"  class="qrcode"  >		<span style="background-image: url('data:image/png;base64,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');" ><a    title="掃描QRcode後可連結至目前頁面"    ><img src="data:image/png;base64,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" alt="掃描QRcode後可連結至目前頁面"/></a> </span></li></ul>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D57BEBBA" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="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" />
+</div></form>
+    <script src="js/require.js" nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+    <script nonce="UKDk8euUAEawMIckCi1JMA==">        requirejs.config({ baseUrl: CCMS_WWWURL + '/js' });
+        requirejs(['main'], function (func) {
+            func();
+        });
+    </script>
+    <script src="/Scripts/jHandicapFree.js" nonce="UKDk8euUAEawMIckCi1JMA=="></script>
+
+
+
+
+
+</body>
+</html>

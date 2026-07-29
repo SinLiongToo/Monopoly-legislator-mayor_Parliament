@@ -47,7 +47,8 @@ flowchart TD
 
 ### 🔹 管道 A：監察院 PRISO 個人獨立 PDF 下載與專用解析手冊
 ```bash
-python download_priso_individual_pdfs.py
+# 全量下載或指定編號續傳 (如從第 645 位開始)
+python download_priso_individual_pdfs.py 645
 python parse_priso_individual_pdfs.py
 ```
 
@@ -59,7 +60,8 @@ python polite_scraper_parser.py
 
 ### 🔹 管道 C：中選會 (CEC) 全自動下載與解析手冊
 ```bash
-python fetch_cec_declarations.py
+# 全量下載或指定編號續傳 (如從第 645 位開始)
+python fetch_cec_declarations.py 645
 python parse_cec_declarations.py
 ```
 

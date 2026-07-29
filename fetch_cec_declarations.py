@@ -65,14 +65,14 @@ def download_cec_candidate_pdf(file_url: str, officer_name: str, county: str) ->
         print(f"    └─ ❌ [下載失敗] {filename}: {e}")
         return False
 
-def search_and_download_cec(officers: List[Dict[str, Any]]):
+def search_and_download_cec(officers: List[Dict[str, Any]], start_idx: int = 1):
     os.makedirs(DOWNLOAD_DIR, exist_ok=True)
     print(f"\n[步驟 1/2] 開始自中選會 (CEC) 全球資訊網暨選務資料庫搜尋 {len(officers)} 位民代申報資料...")
 
     success_count = 0
     skipped_count = 0
 
-    for idx, officer in enumerate(officers, 1):
+    for idx, officer in enumerate(officers[start_idx-1:], start_idx):
         name = officer.get("name", "")
         county = officer.get("county", "全台")
         
@@ -132,15 +132,24 @@ def main():
     with open(TARGET_OFFICERS_FILE, "r", encoding="utf-8") as f:
         officers = json.load(f)
 
-    specified_names = [arg for arg in sys.argv[1:] if not arg.startswith("-")]
+    start_idx = 1
+    specified_names = []
+    for arg in sys.argv[1:]:
+        if arg.startswith("-"):
+            continue
+        if arg.isdigit():
+            start_idx = int(arg)
+        else:
+            specified_names.append(arg)
+
     if specified_names:
         target_officers = [o for o in officers if any(n in o["name"] for n in specified_names)]
         print(f"\n[已指定查詢官員]: 找到 {len(target_officers)} 位包含: {', '.join(specified_names)}")
+        search_and_download_cec(target_officers, start_idx=1)
     else:
         target_officers = officers
-        print(f"\n[執行全量目標官員]: 總共 {len(target_officers)} 位")
-
-    search_and_download_cec(target_officers)
+        print(f"\n[執行全量目標官員]: 總共 {len(target_officers)} 位 (從第 {start_idx} 位開始)")
+        search_and_download_cec(target_officers, start_idx=start_idx)
 
 if __name__ == "__main__":
     main()

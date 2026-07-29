@@ -11,6 +11,11 @@ venv/
 # PDF Downloads Directory (Large PDF files)
 downloads/
 downloads_cec/
+downloads_priso/
+downloads_priso_back/
+
+# All PDF files
+*.pdf
 
 # Temporary Log & Debug Dump Files
 *.log
