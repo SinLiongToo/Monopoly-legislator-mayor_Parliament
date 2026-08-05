@@ -1847,32 +1847,114 @@
   "huang": {
     "name": "黃偉哲",
     "county": "全台",
-    "date": "2024-01-01",
-    "text": "來源：縣市議會政風室現場查閱專區（PRISO 官方檢索：https://priso.cy.gov.tw/layout/baselist?name=%E9%BB%83%E5%81%89%E5%93%B2）",
-    "summary": "依公職人員財產申報法第6條規定登記現場紙本/電子檢索",
-    "land_count": 2,
-    "building_count": 1,
-    "car_count": 1,
+    "date": "2025-11-01",
+    "text": "來源：新聞轉述監察院廉政專刊（約第271期，113年11月01日申報）。原始申報PDF尚未取得直接連結，數字依各篇報導引用之監察院公開資料為準，存在轉述誤差可能。",
+    "summary": "黃偉哲夫婦存款1,566萬872元，另有基金5萬3,087元、黃金存摺5萬6,620元。不動產：台南善化區房地及2部汽車均登記在配偶劉育菁名下；台南永康區、善化區3筆土地、2筆建物交付信託。競選連任申報選舉債務1,700萬元，2025/12申報時債務降至1,873萬餘元。",
+    "land_count": 3,
+    "building_count": 2,
+    "car_count": 2,
     "cash_ntd": 0,
     "cash_foreign": 0,
-    "deposits_total": 0,
+    "deposits_total": 15660872,
     "stocks_total": 0,
     "bonds_total": 0,
-    "funds_total": 0,
-    "insurance_count": 1,
-    "debts_total": 0,
-    "investments_total": 0,
-    "land": [],
-    "buildings": [],
-    "cars": [],
-    "deposits": [],
+    "funds_total": 53087,
+    "insurance_count": 0,
+    "debts_total": 18730000,
+    "investments_total": 56620,
+    "land": [
+      {
+        "loc": "臺南市永康區（交付信託）",
+        "area": "—",
+        "share": "信託",
+        "owner": "黃偉哲",
+        "date": "信託中",
+        "reason": "信託"
+      },
+      {
+        "loc": "臺南市善化區（交付信託）",
+        "area": "—",
+        "share": "信託",
+        "owner": "黃偉哲",
+        "date": "信託中",
+        "reason": "信託"
+      },
+      {
+        "loc": "臺南市善化區（配偶劉育菁名下）",
+        "area": "—",
+        "share": "全部",
+        "owner": "劉育菁（配偶）",
+        "date": "—",
+        "reason": "配偶名義登記"
+      }
+    ],
+    "buildings": [
+      {
+        "loc": "臺南市善化區（交付信託）",
+        "area": "—",
+        "share": "信託",
+        "owner": "黃偉哲",
+        "date": "信託中",
+        "reason": "信託"
+      },
+      {
+        "loc": "臺南市善化區（配偶劉育菁名下）",
+        "area": "—",
+        "share": "全部",
+        "owner": "劉育菁（配偶）",
+        "date": "—",
+        "reason": "配偶名義登記"
+      }
+    ],
+    "cars": [
+      {
+        "type": "汽車",
+        "owner": "劉育菁（配偶）",
+        "note": "配偶名下，車型不詳"
+      },
+      {
+        "type": "汽車",
+        "owner": "劉育菁（配偶）",
+        "note": "配偶名下，車型不詳"
+      }
+    ],
+    "deposits": [
+      {
+        "bank": "（各金融機構，合計）",
+        "amount": 15660872,
+        "owner": "黃偉哲夫婦",
+        "note": "新聞轉述，無分行明細"
+      }
+    ],
     "stocks": [],
     "bonds": [],
-    "funds": [],
+    "funds": [
+      {
+        "name": "基金（種類不詳）",
+        "amount": 53087,
+        "owner": "黃偉哲",
+        "note": "新聞轉述，無基金名稱"
+      }
+    ],
     "insurance": [],
-    "debts": [],
-    "investments": []
+    "debts": [
+      {
+        "creditor": "競選貸款（2025/12申報）",
+        "amount": 18730000,
+        "owner": "黃偉哲",
+        "note": "新聞轉述；2023/11申報時為1,988萬餘元"
+      }
+    ],
+    "investments": [
+      {
+        "name": "黃金存摺",
+        "amount": 56620,
+        "owner": "黃偉哲",
+        "note": "新聞轉述"
+      }
+    ]
   },
+
   "coun_臺北_24": {
     "name": "顏若芳",
     "county": "全台",

@@ -121,7 +121,10 @@ git push origin main
 
 ## 📝 最新修復與優化 (Latest Fixes and Optimizations)
 
-* **2026-07-28**: 新增 `rename_priso_pdfs_by_target_order.py`，可對 `downloads_priso/` 內所有已下載舊格式 PDF 依 `target_officers.json` 順序補上全局編號前綴（乾跑預覽 + `--apply` 正式改名）。同步升級 `download_priso_individual_pdfs.py`：PDF 檔名改為 `NNNN_姓名_財產申報_N.pdf` 格式，進度列加入 `#NNNN` 編號顯示，斷線續傳改以「真實官員全局編號」為基準，並在跑到舊格式已存在時自動改名（不重複下載）。
+* **2026-08-06**: 修正**黃偉哲**（臺南市長）財產申報資料：依新聞轉述監察院廉政專刊（約第271期，113年11月申報）補入存款合計1,566萬872元、基金5萬3,087元、黃金存摺5萬6,620元、土地3筆（含信託2筆＋配偶名下1筆）、建物2筆（信託1筆＋配偶名下1筆）、配偶名下汽車2部、競選債務1,873萬餘元。原始申報PDF尚未取得直接連結，資料以監察院公開報導為準，明確標注為「新聞轉述」以示透明度。
+* **2026-08-06**: 刪除**苗博雅**（臺北市議員）的重複條目 `coun_臺北_3`：該條目含有複製自鍾沛君的假占位數字（存款410萬、股票95萬、台積電/0050持股均與鍾沛君完全相同），屬錯誤資料。保留正確條目 `miaoboya`（存款315萬4,200元、無不動產、汽車1輛、無負債）作為唯一真實資料來源。
+* **2026-07-29**: 將 `paquery_search_result.html` 加入 `.gitignore` 並以 `git rm --cached` 從 Git 追蹤移除，保留本機檔案。
+
 * **2026-07-28**: 升級 `parse_priso_individual_pdfs.py` 之股票表格解析演算法，採通用字型編碼安全特徵辨識（不受 pdfplumber 表格檔字型 Mojibake 影響），並修正 HTML 替換邊界 `start_search`，徹底完成 **上官秋燕 (中鋼 11,090 股, 110,900 元)** 等官員股票明細之萃取與 `index.html` 寫入。
 * **2026-07-28**: 實作 `parse_priso_individual_pdfs.py` 職位判斷保護邏輯：key 以 `coun_` 開頭者為議員，PRISO 覆蓋；其餘為縣市長/立委，跳過覆蓋僅補齊空白欄位。同步保護 HTML 寫入迴圈。現可安心全量執行。
 * **2026-07-28**: 修正 `parse_priso_individual_pdfs.py` 的 `extract_name_from_filename()`，同時支援新格式 `NNNN_姓名_財產申報_N.pdf` 與舊格式 `姓名_財產申報_N.pdf`。

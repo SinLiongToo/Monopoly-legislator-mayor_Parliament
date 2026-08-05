@@ -274,7 +274,7 @@
 </div>
 <div class="person-switch" style="flex-wrap:wrap;">
     <button id="btn-coun_臺北_2" data-cat="councilor" data-county="臺北市" onclick="switchPerson('coun_臺北_2')" data-party="kmt" class="p-btn"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>葉林傳</span><span class="party-badge kmt">中國國</span></div><span class="p-en">葉林傳 · 臺北市議員 (副議長)</span></button>
-    <button id="btn-coun_臺北_3" data-cat="councilor" data-county="臺北市" onclick="switchPerson('coun_臺北_3')" data-party="sdp" class="p-btn"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>苗博雅</span><span class="party-badge sdp">社會民</span></div><span class="p-en">苗博雅 · 臺北市議員 (大安文山)</span></button>
+
     <button id="btn-coun_臺北_5" data-cat="councilor" data-county="臺北市" onclick="switchPerson('coun_臺北_5')" data-party="kmt" class="p-btn"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>鍾沛君</span><span class="party-badge kmt">中國國</span></div><span class="p-en">鍾沛君 · 臺北市議員 (大安文山)</span></button>
     <button id="btn-coun_臺北_6" data-cat="councilor" data-county="臺北市" onclick="switchPerson('coun_臺北_6')" data-party="kmt" class="p-btn"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>游淑慧</span><span class="party-badge kmt">中國國</span></div><span class="p-en">游淑慧 · 臺北市議員 (內湖南港)</span></button>
     <button id="btn-coun_臺北_7" data-cat="councilor" data-county="臺北市" onclick="switchPerson('coun_臺北_7')" data-party="kmt" class="p-btn"><div style="display:flex; justify-content:space-between; align-items:center; width:100%;"><span>應曉薇</span><span class="party-badge kmt">中國國</span></div><span class="p-en">應曉薇 · 臺北市議員 (中正萬華)</span></button>
@@ -1617,24 +1617,7 @@ const DATA = {
     timeline: [{ date: "2024年至今", title: "就任臺北市議員並依法申報財產", desc: "申報資料依法由臺北市議會政風室保管並提供現場查閱。" }],
     anomalies: [{ level: "low", title: "資產申報結構穩定", desc: "資料依法於地方議會政風室公開查閱。", evidence: "來源：臺北市議會政風室" }]
   },
-  coun_臺北_3: {
-    county: "臺北市", name: "苗博雅", nameEn: "苗博雅 · 臺北市議員（大安文山）", party: "社會民主黨", district: "臺北市議會（大安文山）",
-    term: "第14屆縣市議員；公職人員財產申報公開", spouse: "（依法申報）",
-    latestDate: "2025/11/01", latestType: "監察院廉政專刊原始核對", isNewsSourced: false,
-    filings: [{
-      date: "2025/11/01", type: "現場查閱專區紀錄",
-      source: { text: "來源：縣市議會政風室現場查閱專區（PRISO 官方檢索：https://priso.cy.gov.tw/layout/baselist?name=%E8%91%89%E6%9E%97%E5%82%B3）", url: "https://priq-out.cy.gov.tw/" },
-      summary: "苗博雅申報存款4,100,000元，土地2筆、建物2筆，汽車1輛，股票與投資額950,000元，無異常債務。",
-      depositsTotal: 4100000, depositsCount: 5, securitiesTotal: 950000, stocksTotal: 950000, debtTotal: 0, investmentTotal: 0, insurance: 3,
-      realEstate: [{ "loc": "臺北市選區土地建物", "area": "150㎡", "share": "全部", "owner": "苗博雅", "date": "109年", "reason": "買買" }],
-      stockList: [
-        { "name": "台積電 (2330)", "owner": "苗博雅", "shares": "2,000 股", "amount": 20000 },
-        { "name": "元大台灣50 (0050)", "owner": "苗博雅", "shares": "6,000 股", "amount": 60000 }
-      ]
-    }],
-    timeline: [{ date: "2024年至今", title: "就任臺北市議員並依法申報財產", desc: "申報資料依法由臺北市議會政風室保管並提供現場查閱。" }],
-    anomalies: [{ level: "low", title: "資產申報結構穩定", desc: "資料依法於地方議會政風室公開查閱。", evidence: "來源：臺北市議會政風室" }]
-  },
+
   coun_臺北_5: {
     county: "臺北市", name: "鍾沛君", nameEn: "鍾沛君 · 臺北市議員（大安文山）", party: "中國國民黨", district: "臺北市議會（大安文山）",
     term: "第14屆縣市議員；公職人員財產申報公開", spouse: "（依法申報）",
@@ -19254,7 +19237,7 @@ const RANKINGS = {
     {key:"jiang", name:"蔣萬安", role:"台北市長", value:30000000, note:"新聞轉述，僅存款數字，未含股票，可能低估"},
     {key:"xiedl", name:"謝典林", role:"彰化縣議長", value:18185664, note:"新聞轉述"},
     {key:"zhang", name:"張嘉郡", role:"不分區立委", value:16687783, note:"原始PDF核對"},
-    {key:"huang", name:"黃偉哲", role:"台南市長", value:15660872, note:"新聞轉述，僅存款數字，未含股票，可能低估"},
+    {key:"huang", name:"黃偉哲", role:"台南市長", value:15660872, note:"新聞轉述監察院廉政專刊（113年11月申報），含夫婦合計存款，尚未含基金5.3萬、黃金存摺5.7萬"},
     {key:"han", name:"韓國瑜", role:"立法院長", value:15517198, note:"原始PDF核對"},
     {key:"xie", name:"謝龍介", role:"台南市立委", value:13063221, note:"原始PDF核對"},
     {key:"fu", name:"傅崐萁", role:"花蓮縣立委", value:12807741, note:"原始PDF核對"},
