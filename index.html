@@ -1378,6 +1378,8 @@
     <div>
       <h2 style="margin:0; font-size:1.2rem; color:var(--amber);">💰 財富總額與動產排行榜 Wealth & Movable Asset Leaderboard</h2>
       <p class="empty-note" style="margin:4px 0 0 0;">彙整監察院申報之存款、股票/有價證券與事業投資。可切換預估淨財產或總申報資產，並按職位與22縣市進行交叉比對。</p>
+      <p class="empty-note" style="margin:4px 0 0 0; color:var(--amber); font-size:.78rem;">⚠️ <strong>注意：股票金額為法定票面額（每股10元），非市值。</strong>實際市值可能遠高於申報數字（例如台積電市價每股逾千元，申報僅以10元計）。</p>
+
     </div>
     <div style="display:flex; gap:6px;">
       <button id="wmode-net" onclick="setWealthSortMode('net')" class="cat-pill active" style="font-size:.8rem; padding:4px 10px; border-radius:6px; border:1px solid var(--amber); cursor:pointer;">💎 依淨財產排序（扣除債務）</button>
@@ -1480,7 +1482,9 @@
   <div style="margin-bottom:14px;">
     <h2 style="margin:0; font-size:1.2rem; color:var(--amber);">📈 熱門持股與台積電專題分析 Top Stocks Leaderboard</h2>
     <p class="empty-note" style="margin:4px 0 0 0;">已完整納入全站 202 位官員（23位縣市長、113位立法委員、65+位22縣市議員）之動產（股票/有價證券）申報數據。</p>
+    <p class="empty-note" style="margin:4px 0 0 0; color:var(--amber); font-size:.78rem;">⚠️ <strong>股票申報金額為法定票面額（每股10元計），非市場價值。</strong>實際持股市值可能遠高於此數字。</p>
   </div>
+
 
   <div class="rank-filter-bar" style="display:flex; gap:6px; flex-wrap:wrap; align-items:center; background:var(--card); padding:8px 12px; border-radius:12px; border:1px solid var(--border); margin-bottom:14px;">
     <span style="font-size:.78rem; color:var(--sub); font-weight:700;">職位分類：</span>
