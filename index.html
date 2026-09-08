@@ -23,7 +23,13 @@
     padding:26px 20px 16px; border-bottom:1px solid var(--border);
     display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:12px;
   }
-  .title-block h1{font-size:1.3rem; font-weight:700; letter-spacing:.02em;}
+  .title-block h1{font-size:1.3rem; font-weight:700; letter-spacing:.02em; display:flex; align-items:center; flex-wrap:wrap; gap:10px;}
+  .title-block .update-badge{
+    font-size:0.75rem; font-weight:600; color:var(--amber);
+    background:rgba(245,166,35,0.12); border:1px solid rgba(245,166,35,0.35);
+    padding:2px 10px; border-radius:12px; display:inline-flex; align-items:center; gap:4px;
+    letter-spacing:0;
+  }
   .title-block .en{font-size:.78rem; color:var(--sub); margin-top:2px;}
   .title-block .meta{font-size:.72rem; color:var(--amber); margin-top:8px;}
   .toggle-btn{
@@ -219,7 +225,10 @@
 
 <header>
   <div class="title-block">
-    <h1>🎲 官員（立法委員，縣市長，議員）財產申報資料大富翁</h1>
+    <h1>
+      <span>🎲 官員（立法委員，縣市長，議員）財產申報資料大富翁</span>
+      <span class="update-badge">📅 更新日期：2026/09/08</span>
+    </h1>
     <div class="en">Property Declaration Monopoly — Taiwan Officials (Legislators, Mayors/Magistrates, Councilors)</div>
     <div class="meta">資料來源：監察院公職人員財產申報公報（廉政專刊）／立委持股公開平台</div>
   </div>
