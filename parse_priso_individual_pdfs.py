@@ -306,28 +306,41 @@ def main():
             matching_keys = [f"officer_{name}"]
 
         for k in matching_keys:
-            # ── 覆蓋策略保護 ──────────────────────────────────────────────────────
-            # 議員的 key 以 "coun_" 開頭（如 coun_臺北_11），PRISO 個人 PDF 是最佳來源，允許全局覆蓋。
-            # 縣市長 / 立法委員的 key 為短英文縮寫（如 jiang, zhangsz），
-            # 廉政專刊已有較精細的財產細項，不得被 PRISO 索引摘要覆蓋。
-            is_councilor = k.startswith("coun_")
-
-            if not is_councilor:
-                # 縣市長 / 立委：僅在原資料為空時补齊，保留廉政專刊已寫入的好資料
-                existing = updated_declarations.get(k, {})
-                if existing.get("deposits_total", 0) == 0:
-                    existing["deposits_total"] = summary_info["depositsTotal"]
-                if existing.get("stocks_total", 0) == 0:
-                    existing["stocks_total"] = summary_info["stocksTotal"]
-                if existing.get("insurance_count", 0) == 0:
-                    existing["insurance_count"] = summary_info["insurance"]
-                if existing.get("debts_total", 0) == 0:
-                    existing["debts_total"] = summary_info["debtTotal"]
-                updated_declarations[k] = existing
-                skipped_protected += 1
-                if target_filter:
-                    print(f"  ⛔ [{name}] 縣市長/立委，保留廉政專刊資料，僅補齊空白欄位 (key={k})")
-                continue
+            # ── 覆蓋策略 ──────────────────────────────────────────────────────
+            # PRISO 個人 PDF 是官方原始專刊，有實際資料時全面更新
+            existing = updated_declarations.get(k, {})
+            existing.update({
+                "name": name,
+                "county": existing.get("county", summary_info.get("county", "中央/地方")),
+                "date": summary_info["latest_date"],
+                "text": summary_info["sourceText"],
+                "summary": summary_info["summary"],
+                "land_count": len(summary_info["realEstate"]),
+                "building_count": len(summary_info["realEstate"]),
+                "car_count": existing.get("car_count", 1),
+                "cash_ntd": existing.get("cash_ntd", 0),
+                "cash_foreign": existing.get("cash_foreign", 0),
+                "deposits_total": summary_info["depositsTotal"],
+                "stocks_total": summary_info["stocksTotal"],
+                "bonds_total": existing.get("bonds_total", 0),
+                "funds_total": existing.get("funds_total", 0),
+                "insurance_count": summary_info["insurance"],
+                "debts_total": summary_info["debtTotal"],
+                "investments_total": existing.get("investments_total", 0),
+                "land": summary_info["realEstate"],
+                "buildings": summary_info["realEstate"],
+                "cars": existing.get("cars", []),
+                "deposits": existing.get("deposits", []),
+                "stocks": summary_info["stockList"],
+                "bonds": existing.get("bonds", []),
+                "funds": existing.get("funds", []),
+                "insurance": summary_info["insuranceList"],
+                "debts": existing.get("debts", []),
+                "investments": existing.get("investments", [])
+            })
+            updated_declarations[k] = existing
+            parsed_count += 1
+            continue
             # ────────────────────────────────────────────────────────────────
 
             # 議員：PRISO 個人 PDF 為最高權威，全局覆蓋
@@ -385,15 +398,8 @@ def main():
 
         for name, data in parsed_data_map.items():
 
-            # ── 覆蓋策略保護（HTML）——與 JSON 寫入同步 ────────────────────────────
-            # 找到該官員對應的 key，判斷是否為議員（coun_ 開頭）
-            officer_key = next(
-                (k for k, v in updated_declarations.items() if v.get("name") == name),
-                None
-            )
-            if officer_key and not officer_key.startswith("coun_"):
-                # 縣市長 / 立委：跳過 HTML 寫入，保留廉政專刊資料
-                continue
+            # ── 覆蓋策略（HTML）────────────────────────────
+            # 凡 PRISO 有真實資料，一律寫入 HTML
             # ──────────────────────────────────────────────────────────────────
 
             pos = updated_html.find(f'name: "{name}"')
