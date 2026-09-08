@@ -112,6 +112,27 @@ def parse_priso_pdf_full(pdf_path: str) -> dict:
             if m_ins:
                 res["insuranceTotal"] = int(parse_amount(m_ins.group(1)))
 
+            # 股票總金額抽取
+            m_stk_hdr = re.search(r'(?:1\.股票|股\s*票|有\s*價\s*證\s*券)[^\n]{0,100}?總\s*(?:價|金)\s*額\s*[：:]\s*(?:新\s*臺\s*幣)?\s*([\d,]+)\s*元', full_text)
+            if m_stk_hdr:
+                parsed_stk = int(parse_amount(m_stk_hdr.group(1)))
+                if parsed_stk > res["stocksTotal"]:
+                    res["stocksTotal"] = parsed_stk
+
+            # 存款總金額抽取
+            m_dep_hdr = re.search(r'存\s*款[^\n]{0,100}?總\s*(?:金|價)\s*額\s*[：:]\s*(?:新\s*臺\s*幣)?\s*([\d,]+)\s*元', full_text)
+            if m_dep_hdr:
+                parsed_dep = int(parse_amount(m_dep_hdr.group(1)))
+                if parsed_dep > res["depositsTotal"]:
+                    res["depositsTotal"] = parsed_dep
+
+            # 債務總金額抽取
+            m_debt_hdr = re.search(r'債\s*務[^\n]{0,100}?總\s*(?:金|價)\s*額\s*[：:]\s*(?:新\s*臺\s*幣)?\s*([\d,]+)\s*元', full_text)
+            if m_debt_hdr:
+                parsed_debt = int(parse_amount(m_debt_hdr.group(1)))
+                if parsed_debt > res["debtsTotal"]:
+                    res["debtsTotal"] = parsed_debt
+
     except Exception as e:
         print(f"⚠️ 解析 {filename} 警示: {e}")
 

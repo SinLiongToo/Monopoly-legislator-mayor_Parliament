@@ -134,11 +134,36 @@ def parse_priso_pdf_full(pdf_path: str) -> dict:
                                             })
 
             # 股票總金額抽取 (包含 1.股票（總價額：新臺幣110,900元）與（八）有價證券...)
-            m_stk_hdr = re.search(r'(?:1\.股票|股票|有價證券)[^\n]*?總(?:價|金)額[：:\s]*(?:新臺幣)?\s*([\d,]+)\s*元', full_text)
+            m_stk_hdr = re.search(r'(?:1\.股票|股\s*票|有\s*價\s*證\s*券)[^\n]{0,100}?總\s*(?:價|金)\s*額\s*[：:]\s*(?:新\s*臺\s*幣)?\s*([\d,]+)\s*元', full_text)
             if m_stk_hdr:
                 parsed_stk = int(parse_amount(m_stk_hdr.group(1)))
                 if parsed_stk > res["stocksTotal"]:
                     res["stocksTotal"] = parsed_stk
+
+            # 存款總金額抽取（公報標準格式：例如（七）存款（指新臺幣、外幣之存款） （總金額：新臺幣17,053,540 元））
+            m_dep_hdr = re.search(r'存\s*款[^\n]{0,100}?總\s*(?:金|價)\s*額\s*[：:]\s*(?:新\s*臺\s*幣)?\s*([\d,]+)\s*元', full_text)
+            if m_dep_hdr:
+                parsed_dep = int(parse_amount(m_dep_hdr.group(1)))
+                if parsed_dep > res["depositsTotal"]:
+                    res["depositsTotal"] = parsed_dep
+
+            # 債務總金額抽取（例如：（十一）債務（總金額：新臺幣 4,363,043 元））
+            m_debt_hdr = re.search(r'債\s*務[^\n]{0,100}?總\s*(?:金|價)\s*額\s*[：:]\s*(?:新\s*臺\s*幣)?\s*([\d,]+)\s*元', full_text)
+            if m_debt_hdr:
+                parsed_debt = int(parse_amount(m_debt_hdr.group(1)))
+                if parsed_debt > res["debtsTotal"]:
+                    res["debtsTotal"] = parsed_debt
+
+            # 全文申報日與類別補漏
+            if not res["filing_date"]:
+                m_date_ft = re.search(r'申\s*報\s*日\s*[:：\s]*(\d+\s*年\s*\d+\s*月\s*\d+\s*日)', full_text)
+                if m_date_ft:
+                    res["filing_date"] = re.sub(r'\s+', '', m_date_ft.group(1))
+
+            if not res["filing_type"]:
+                m_type_ft = re.search(r'申\s*報\s*類\s*別\s*[:：\s]*([^\s\n]+)', full_text)
+                if m_type_ft:
+                    res["filing_type"] = m_type_ft.group(1).strip()
 
     except Exception as e:
         print(f"⚠️ 解析 {filename} 時警示: {e}")
@@ -219,11 +244,13 @@ def consolidate_officer_parsed_data(pdf_paths: list) -> dict:
 def main():
     target_filter = sys.argv[1].strip() if len(sys.argv) > 1 else None
 
-    all_pdf_files = glob.glob(os.path.join(PRISO_DOWNLOAD_DIR, "*.pdf"))
     if target_filter:
-        pdf_files = [p for p in all_pdf_files if target_filter in os.path.basename(p)]
+        pdf_files = glob.glob(os.path.join(PRISO_DOWNLOAD_DIR, f"*{target_filter}*.pdf"))
+        if not pdf_files:
+            all_pdf_files = glob.glob(os.path.join(PRISO_DOWNLOAD_DIR, "*.pdf"))
+            pdf_files = [p for p in all_pdf_files if target_filter in os.path.basename(p)]
     else:
-        pdf_files = all_pdf_files
+        pdf_files = glob.glob(os.path.join(PRISO_DOWNLOAD_DIR, "*.pdf"))
 
     print("==========================================================")
     print(" ⚙️ 監察院 PRISO 個人獨立 PDF 專用全欄位解析與寫入引擎")
@@ -240,6 +267,31 @@ def main():
         if n:
             officer_pdf_map.setdefault(n, []).append(p)
 
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    officer_items = list(officer_pdf_map.items())
+    total_officers = len(officer_items)
+    print(f"🚀 開始解析 {total_officers} 位官員的申報文件（並行加速中）...")
+
+    parsed_data_map = {}
+    completed = 0
+    max_workers = 6 if not target_filter else 1
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_name = {
+            executor.submit(consolidate_officer_parsed_data, pdf_list): name
+            for name, pdf_list in officer_items
+        }
+        for future in as_completed(future_to_name):
+            name = future_to_name[future]
+            try:
+                data = future.result()
+                parsed_data_map[name] = data
+                completed += 1
+                if completed % 25 == 0 or completed == total_officers:
+                    print(f"  ⏳ 進度: [{completed}/{total_officers}] ({(completed/total_officers)*100:.1f}%)")
+            except Exception as e:
+                print(f"⚠️ 解析 {name} 時發生異常: {e}")
+
     if os.path.exists(UPDATED_DECLARATIONS_FILE):
         with open(UPDATED_DECLARATIONS_FILE, "r", encoding="utf-8") as f:
             updated_declarations = json.load(f)
@@ -248,8 +300,7 @@ def main():
 
     parsed_count = 0
     skipped_protected = 0
-    for name, pdf_list in officer_pdf_map.items():
-        summary_info = consolidate_officer_parsed_data(pdf_list)
+    for name, summary_info in parsed_data_map.items():
         matching_keys = [k for k, v in updated_declarations.items() if v.get("name") == name]
         if not matching_keys:
             matching_keys = [f"officer_{name}"]
@@ -274,7 +325,8 @@ def main():
                     existing["debts_total"] = summary_info["debtTotal"]
                 updated_declarations[k] = existing
                 skipped_protected += 1
-                print(f"  ⛔ [{name}] 縣市長/立委，保留廉政專刊資料，僅補齊空白欄位 (key={k})")
+                if target_filter:
+                    print(f"  ⛔ [{name}] 縣市長/立委，保留廉政專刊資料，僅補齊空白欄位 (key={k})")
                 continue
             # ────────────────────────────────────────────────────────────────
 
@@ -310,11 +362,9 @@ def main():
             }
             parsed_count += 1
 
-        stk_str = f", 股票/有價證券: {summary_info['stocksTotal']:,}元 ({len(summary_info['stockList'])}筆)" if summary_info['stocksTotal'] > 0 else ""
-        print(f"  🎉 [{name}] 全欄位解析完成：共彙整 {summary_info['total_files']} 份 PDF 申報檔")
-        print(f"     └─ 存款: {summary_info['depositsTotal']:,}元{stk_str}, 保險: {summary_info['insurance']}件, 不動產: {len(summary_info['realEstate'])}筆")
-        if summary_info['stockList']:
-            print(f"        └─ 股票明細: {summary_info['stockList']}")
+        if target_filter or summary_info['depositsTotal'] > 0:
+            stk_str = f", 股票/有價證券: {summary_info['stocksTotal']:,}元 ({len(summary_info['stockList'])}筆)" if summary_info['stocksTotal'] > 0 else ""
+            print(f"  🎉 [{name}] 解析完成：共彙整 {summary_info['total_files']} 份申報檔 └─ 存款: {summary_info['depositsTotal']:,}元{stk_str}, 債務: {summary_info['debtTotal']:,}元, 保險: {summary_info['insurance']}件, 不動產: {len(summary_info['realEstate'])}筆")
 
     with open(UPDATED_DECLARATIONS_FILE, "w", encoding="utf-8") as f:
         json.dump(updated_declarations, f, ensure_ascii=False, indent=2)
@@ -323,17 +373,17 @@ def main():
     if skipped_protected > 0:
         print(f"⛔ [保護] 跳過 {skipped_protected} 位縣市長/立委之覆蓋，廉政專刊資料完好保留。")
 
-    # 同步寫入 index.html
-    if os.path.exists(INDEX_HTML_FILE):
-        print(f"🔄 準備同步寫入 HTML 網頁全欄位數據：{INDEX_HTML_FILE}...")
-        with open(INDEX_HTML_FILE, "r", encoding="utf-8") as f:
+    # 同步寫入 HTML 網頁全欄位數據 (index.html 及 legislator-assets-compare.html)
+    html_targets = [f for f in [INDEX_HTML_FILE, "legislator-assets-compare.html"] if os.path.exists(f)]
+    for target_html_file in html_targets:
+        print(f"🔄 準備同步寫入 HTML 網頁全欄位數據：{target_html_file}...")
+        with open(target_html_file, "r", encoding="utf-8") as f:
             html_content = f.read()
 
         updated_html = html_content
         changes = 0
 
-        for name, pdf_list in officer_pdf_map.items():
-            data = consolidate_officer_parsed_data(pdf_list)
+        for name, data in parsed_data_map.items():
 
             # ── 覆蓋策略保護（HTML）——與 JSON 寫入同步 ────────────────────────────
             # 找到該官員對應的 key，判斷是否為議員（coun_ 開頭）
@@ -356,12 +406,6 @@ def main():
                 chunk = updated_html[start_search:end_search]
 
                 new_chunk = chunk
-
-                # ── 安全替換：一律用 lambda，避免反斜線/雙引號破壞 JS 語法 ──────────
-                # 問題根源：re.sub 的 replacement 字串中，反斜線會被當 backreference
-                # 解析（\1 \3 等），而 summary/sourceText 若含雙引號 " 會直接截斷
-                # JS 字串，導致整個 index.html 的 JavaScript 語法損壞、頁面全壞。
-                # 修法：lambda 回傳純字串（不經 re 二次解析），雙引號先做 JS 跳脫。
 
                 def _js(s: str) -> str:
                     """跳脫雙引號與反斜線，確保插入 JS 字串不破壞語法。"""
@@ -418,16 +462,15 @@ def main():
                     lambda m: f'stockList: {stock_json}',
                     new_chunk, count=1
                 )
-                # ──────────────────────────────────────────────────────────────────
 
                 if new_chunk != chunk:
                     updated_html = updated_html[:start_search] + new_chunk + updated_html[end_search:]
                     changes += 1
 
         if changes > 0:
-            with open(INDEX_HTML_FILE, "w", encoding="utf-8") as f:
+            with open(target_html_file, "w", encoding="utf-8") as f:
                 f.write(updated_html)
-            print(f"🎉 [成功] 已將 PRISO PDF 之真實存款/保險件數/不動產內容全量安全寫入 index.html！")
+            print(f"🎉 [成功] 已將 PRISO PDF 之真實存款/保險件數/不動產內容全量安全寫入 {target_html_file}！")
 
 if __name__ == "__main__":
     main()
