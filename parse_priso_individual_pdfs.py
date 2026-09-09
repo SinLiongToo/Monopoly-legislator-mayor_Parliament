@@ -235,6 +235,7 @@ def consolidate_officer_parsed_data(pdf_paths: list) -> dict:
         "debtTotal": max_debts,
         "insurance": ins_count,
         "insuranceTotal": max_ins_total,
+        "insuranceList": all_insurance,
         "realEstate": all_real_estate,
         "stockList": all_stocks,
         "summary": summary_str,
@@ -421,51 +422,51 @@ def main():
                 safe_src     = _js(data["sourceText"])
 
                 new_chunk = re.sub(
-                    r'(summary:\s*")([^"]+)(")',
+                    r'(["\']?summary["\']?:\s*")([^"]+)(")',
                     lambda m: m.group(1) + safe_summary + m.group(3),
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'(text:\s*")([^"]+)(")',
+                    r'(["\']?text["\']?:\s*")([^"]+)(")',
                     lambda m: m.group(1) + safe_src + m.group(3),
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'(depositsTotal:\s*)[\d.]+',
-                    lambda m: f'depositsTotal: {data["depositsTotal"]}',
+                    r'(["\']?depositsTotal["\']?:\s*)[\d.]+',
+                    lambda m: f'{m.group(1)}{data["depositsTotal"]}',
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'(securitiesTotal:\s*)[\d.]+',
-                    lambda m: f'securitiesTotal: {data["stocksTotal"]}',
+                    r'(["\']?securitiesTotal["\']?:\s*)[\d.]+',
+                    lambda m: f'{m.group(1)}{data["stocksTotal"]}',
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'(stocksTotal:\s*)[\d.]+',
-                    lambda m: f'stocksTotal: {data["stocksTotal"]}',
+                    r'(["\']?stocksTotal["\']?:\s*)[\d.]+',
+                    lambda m: f'{m.group(1)}{data["stocksTotal"]}',
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'(insurance:\s*)[\d.]+',
-                    lambda m: f'insurance: {data["insurance"]}',
+                    r'(["\']?insurance["\']?:\s*)[\d.]+',
+                    lambda m: f'{m.group(1)}{data["insurance"]}',
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'(debtTotal:\s*)[\d.]+',
-                    lambda m: f'debtTotal: {data["debtTotal"]}',
+                    r'(["\']?debtTotal["\']?:\s*)[\d.]+',
+                    lambda m: f'{m.group(1)}{data["debtTotal"]}',
                     new_chunk, count=1
                 )
 
                 re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
                 stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
                 new_chunk = re.sub(
-                    r'realEstate:\s*\[[\s\S]*?\]',
-                    lambda m: f'realEstate: {re_json}',
+                    r'["\']?realEstate["\']?:\s*\[[\s\S]*?\]',
+                    lambda m: f'"realEstate": {re_json}' if '"' in m.group(0) else f'realEstate: {re_json}',
                     new_chunk, count=1
                 )
                 new_chunk = re.sub(
-                    r'stockList:\s*\[[\s\S]*?\]',
-                    lambda m: f'stockList: {stock_json}',
+                    r'["\']?stockList["\']?:\s*\[[\s\S]*?\]',
+                    lambda m: f'"stockList": {stock_json}' if '"' in m.group(0) else f'stockList: {stock_json}',
                     new_chunk, count=1
                 )
 
