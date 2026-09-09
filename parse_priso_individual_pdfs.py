@@ -431,44 +431,64 @@ def main():
                     lambda m: m.group(1) + safe_src + m.group(3),
                     new_chunk, count=1
                 )
-                new_chunk = re.sub(
-                    r'(["\']?depositsTotal["\']?:\s*)[\d.]+',
-                    lambda m: f'{m.group(1)}{data["depositsTotal"]}',
-                    new_chunk, count=1
-                )
-                new_chunk = re.sub(
-                    r'(["\']?securitiesTotal["\']?:\s*)[\d.]+',
-                    lambda m: f'{m.group(1)}{data["stocksTotal"]}',
-                    new_chunk, count=1
-                )
-                new_chunk = re.sub(
-                    r'(["\']?stocksTotal["\']?:\s*)[\d.]+',
-                    lambda m: f'{m.group(1)}{data["stocksTotal"]}',
-                    new_chunk, count=1
-                )
-                new_chunk = re.sub(
-                    r'(["\']?insurance["\']?:\s*)[\d.]+',
-                    lambda m: f'{m.group(1)}{data["insurance"]}',
-                    new_chunk, count=1
-                )
-                new_chunk = re.sub(
-                    r'(["\']?debtTotal["\']?:\s*)[\d.]+',
-                    lambda m: f'{m.group(1)}{data["debtTotal"]}',
-                    new_chunk, count=1
-                )
-
-                re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
-                stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
-                new_chunk = re.sub(
-                    r'["\']?realEstate["\']?:\s*\[[\s\S]*?\]',
-                    lambda m: f'"realEstate": {re_json}' if '"' in m.group(0) else f'realEstate: {re_json}',
-                    new_chunk, count=1
-                )
-                new_chunk = re.sub(
-                    r'["\']?stockList["\']?:\s*\[[\s\S]*?\]',
-                    lambda m: f'"stockList": {stock_json}' if '"' in m.group(0) else f'stockList: {stock_json}',
-                    new_chunk, count=1
-                )
+                if re.search(r'["\']?depositsTotal["\']?:', new_chunk):
+                    new_chunk = re.sub(
+                        r'(["\']?depositsTotal["\']?:\s*)[\d.]+',
+                        lambda m: f'{m.group(1)}{data["depositsTotal"]}',
+                        new_chunk, count=1
+                    )
+                    new_chunk = re.sub(
+                        r'(["\']?securitiesTotal["\']?:\s*)[\d.]+',
+                        lambda m: f'{m.group(1)}{data["stocksTotal"]}',
+                        new_chunk, count=1
+                    )
+                    new_chunk = re.sub(
+                        r'(["\']?stocksTotal["\']?:\s*)[\d.]+',
+                        lambda m: f'{m.group(1)}{data["stocksTotal"]}',
+                        new_chunk, count=1
+                    )
+                    new_chunk = re.sub(
+                        r'(["\']?insurance["\']?:\s*)[\d.]+',
+                        lambda m: f'{m.group(1)}{data["insurance"]}',
+                        new_chunk, count=1
+                    )
+                    new_chunk = re.sub(
+                        r'(["\']?debtTotal["\']?:\s*)[\d.]+',
+                        lambda m: f'{m.group(1)}{data["debtTotal"]}',
+                        new_chunk, count=1
+                    )
+                    re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
+                    stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
+                    new_chunk = re.sub(
+                        r'["\']?realEstate["\']?:\s*\[[\s\S]*?\]',
+                        lambda m: f'"realEstate": {re_json}' if '"' in m.group(0) else f'realEstate: {re_json}',
+                        new_chunk, count=1
+                    )
+                    new_chunk = re.sub(
+                        r'["\']?stockList["\']?:\s*\[[\s\S]*?\]',
+                        lambda m: f'"stockList": {stock_json}' if '"' in m.group(0) else f'stockList: {stock_json}',
+                        new_chunk, count=1
+                    )
+                else:
+                    # filings[0] 缺少結構化數字欄位，直接在 summary 後方注入
+                    re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
+                    stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
+                    fields_to_inject = (
+                        f',\n        "depositsTotal": {data["depositsTotal"]},'
+                        f'\n        "depositsCount": 0,'
+                        f'\n        "securitiesTotal": {data["stocksTotal"]},'
+                        f'\n        "stocksTotal": {data["stocksTotal"]},'
+                        f'\n        "debtTotal": {data["debtTotal"]},'
+                        f'\n        "investmentTotal": 0,'
+                        f'\n        "insurance": {data["insurance"]},'
+                        f'\n        "realEstate": {re_json},'
+                        f'\n        "stockList": {stock_json}'
+                    )
+                    new_chunk = re.sub(
+                        r'((["\']?summary["\']?:\s*")[^"]+("))',
+                        r'\1' + fields_to_inject,
+                        new_chunk, count=1
+                    )
 
                 if new_chunk != chunk:
                     updated_html = updated_html[:start_search] + new_chunk + updated_html[end_search:]
