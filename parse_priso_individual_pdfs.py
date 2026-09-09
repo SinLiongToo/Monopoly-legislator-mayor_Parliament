@@ -339,42 +339,23 @@ def main():
                 "debts": existing.get("debts", []),
                 "investments": existing.get("investments", [])
             })
+            if summary_info["depositsTotal"] > 0:
+                existing["deposits"] = [{
+                    "bank": "（各金融機構，合計）",
+                    "amount": summary_info["depositsTotal"],
+                    "owner": name,
+                    "note": "監察院廉政專刊原始核對"
+                }]
+            if summary_info["debtTotal"] > 0:
+                existing["debts"] = [{
+                    "creditor": "金融機構借款／貸款",
+                    "amount": summary_info["debtTotal"],
+                    "owner": name,
+                    "note": "監察院廉政專刊原始核對"
+                }]
             updated_declarations[k] = existing
             parsed_count += 1
             continue
-            # ────────────────────────────────────────────────────────────────
-
-            # 議員：PRISO 個人 PDF 為最高權威，全局覆蓋
-            updated_declarations[k] = {
-                "name": name,
-                "county": updated_declarations.get(k, {}).get("county", "臺南市"),
-                "date": summary_info["latest_date"],
-                "text": summary_info["sourceText"],
-                "summary": summary_info["summary"],
-                "land_count": len(summary_info["realEstate"]),
-                "building_count": len(summary_info["realEstate"]),
-                "car_count": 1,
-                "cash_ntd": 0,
-                "cash_foreign": 0,
-                "deposits_total": summary_info["depositsTotal"],
-                "stocks_total": summary_info["stocksTotal"],
-                "bonds_total": 0,
-                "funds_total": 0,
-                "insurance_count": summary_info["insurance"],
-                "debts_total": summary_info["debtTotal"],
-                "investments_total": 0,
-                "land": summary_info["realEstate"],
-                "buildings": summary_info["realEstate"],
-                "cars": [],
-                "deposits": [],
-                "stocks": [],
-                "bonds": [],
-                "funds": [],
-                "insurance": [],
-                "debts": [],
-                "investments": []
-            }
-            parsed_count += 1
 
         if target_filter or summary_info['depositsTotal'] > 0:
             stk_str = f", 股票/有價證券: {summary_info['stocksTotal']:,}元 ({len(summary_info['stockList'])}筆)" if summary_info['stocksTotal'] > 0 else ""
@@ -384,8 +365,6 @@ def main():
         json.dump(updated_declarations, f, ensure_ascii=False, indent=2)
 
     print(f"\n🎉 [成功] 已完成解析並更新 {parsed_count} 位議員之 PRISO 全欄位申報數據至 【{UPDATED_DECLARATIONS_FILE}】！")
-    if skipped_protected > 0:
-        print(f"⛔ [保護] 跳過 {skipped_protected} 位縣市長/立委之覆蓋，廉政專刊資料完好保留。")
 
     # 同步寫入 HTML 網頁全欄位數據 (index.html 及 legislator-assets-compare.html)
     html_targets = [f for f in [INDEX_HTML_FILE, "legislator-assets-compare.html"] if os.path.exists(f)]
@@ -397,30 +376,52 @@ def main():
         updated_html = html_content
         changes = 0
 
+        data_start = updated_html.find('const DATA =')
+        if data_start == -1:
+            data_start = 0
+
         for name, data in parsed_data_map.items():
-
-            # ── 覆蓋策略（HTML）────────────────────────────
-            # 凡 PRISO 有真實資料，一律寫入 HTML
-            # ──────────────────────────────────────────────────────────────────
-
-            pos = updated_html.find(f'name: "{name}"')
+            pos = updated_html.find(f'"name": "{name}"', data_start)
             if pos == -1:
-                pos = updated_html.find(f'"name": "{name}"')
+                pos = updated_html.find(f'name: "{name}"', data_start)
 
             if pos != -1:
-                start_search = max(0, pos - 10)
-                end_search = min(len(updated_html), pos + 3000)
+                # 找到該官員資料區塊的邊界
+                next_officer_pos = updated_html.find('\n  "', pos)
+                if next_officer_pos == -1:
+                    next_officer_pos = updated_html.find('\n};', pos)
+                start_search = pos
+                end_search = next_officer_pos if next_officer_pos != -1 else min(len(updated_html), pos + 12000)
                 chunk = updated_html[start_search:end_search]
 
                 new_chunk = chunk
 
                 def _js(s: str) -> str:
-                    """跳脫雙引號與反斜線，確保插入 JS 字串不破壞語法。"""
                     return s.replace("\\", "\\\\").replace('"', '\\"')
 
                 safe_summary = _js(data["summary"])
                 safe_src     = _js(data["sourceText"])
 
+                # 1. 更新最新申報狀態標籤為原始核對
+                new_chunk = re.sub(
+                    r'(["\']?latestType["\']?:\s*")([^"]+)(")',
+                    lambda m: m.group(1) + "監察院廉政專刊原始核對" + m.group(3),
+                    new_chunk, count=1
+                )
+                # 2. 標記非新聞轉述
+                new_chunk = re.sub(
+                    r'(["\']?isNewsSourced["\']?:\s*)(?:true|false)',
+                    r'\g<1>false',
+                    new_chunk, count=1
+                )
+                # 3. 更新最新申報日期
+                if data.get("latest_date"):
+                    new_chunk = re.sub(
+                        r'(["\']?latestDate["\']?:\s*")([^"]+)(")',
+                        lambda m: m.group(1) + data["latest_date"] + m.group(3),
+                        new_chunk, count=1
+                    )
+                # 4. 更新 summary 與 text
                 new_chunk = re.sub(
                     r'(["\']?summary["\']?:\s*")([^"]+)(")',
                     lambda m: m.group(1) + safe_summary + m.group(3),
@@ -431,6 +432,11 @@ def main():
                     lambda m: m.group(1) + safe_src + m.group(3),
                     new_chunk, count=1
                 )
+
+                # 5. 更新或注入全欄位數據
+                re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
+                stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
+
                 if re.search(r'["\']?depositsTotal["\']?:', new_chunk):
                     new_chunk = re.sub(
                         r'(["\']?depositsTotal["\']?:\s*)[\d.]+',
@@ -457,8 +463,6 @@ def main():
                         lambda m: f'{m.group(1)}{data["debtTotal"]}',
                         new_chunk, count=1
                     )
-                    re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
-                    stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
                     new_chunk = re.sub(
                         r'["\']?realEstate["\']?:\s*\[[\s\S]*?\]',
                         lambda m: f'"realEstate": {re_json}' if '"' in m.group(0) else f'realEstate: {re_json}',
@@ -471,11 +475,9 @@ def main():
                     )
                 else:
                     # filings[0] 缺少結構化數字欄位，直接在 summary 後方注入
-                    re_json    = json.dumps(data["realEstate"], ensure_ascii=False)
-                    stock_json = json.dumps(data["stockList"],  ensure_ascii=False)
                     fields_to_inject = (
                         f',\n        "depositsTotal": {data["depositsTotal"]},'
-                        f'\n        "depositsCount": 0,'
+                        f'\n        "depositsCount": {1 if data["depositsTotal"] > 0 else 0},'
                         f'\n        "securitiesTotal": {data["stocksTotal"]},'
                         f'\n        "stocksTotal": {data["stocksTotal"]},'
                         f'\n        "debtTotal": {data["debtTotal"]},'
@@ -495,9 +497,11 @@ def main():
                     changes += 1
 
         if changes > 0:
-            with open(target_html_file, "w", encoding="utf-8") as f:
+            temp_file = target_html_file + ".tmp"
+            with open(temp_file, "w", encoding="utf-8") as f:
                 f.write(updated_html)
-            print(f"🎉 [成功] 已將 PRISO PDF 之真實存款/保險件數/不動產內容全量安全寫入 {target_html_file}！")
+            os.replace(temp_file, target_html_file)
+            print(f"🎉 [成功] 已將 PRISO PDF 之真實存款/保險件數/不動產內容全量安全寫入 {target_html_file}（共更新 {changes} 處）！")
 
 if __name__ == "__main__":
     main()
