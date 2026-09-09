@@ -8426,27 +8426,100 @@
   },
   "ko": {
     "name": "柯文哲",
-    "county": "全台",
-    "date": "2024-01-01",
-    "text": "來源：縣市議會政風室現場查閱專區（PRISO 官方檢索：https://priso.cy.gov.tw/layout/baselist?name=%E6%9F%AF%E6%96%87%E5%93%B2）",
-    "summary": "依公職人員財產申報法第6條規定登記現場紙本/電子檢索",
-    "land_count": 2,
+    "county": "臺北市/全國",
+    "date": "2023-11-20",
+    "text": "來源：中選會第16任總統副總統選舉候選人財產申報公開資料（監察院專刊因卸任逾1年依法下架）",
+    "summary": "柯文哲依《公職人員財產申報法》向中選會申報：存款24,644,212元（含台幣及外幣活存/定存），基金與有價證券954,063元，土地7筆、建物2筆，無任何房貸與金融債務。註：監察院PRISO因柯文哲卸任台北市長已逾1年依法下架不公開，本筆數據採用其登記參選總統時向中選會公開申報之核定檔。",
+    "land_count": 3,
     "building_count": 1,
     "car_count": 1,
     "cash_ntd": 0,
     "cash_foreign": 0,
-    "deposits_total": 0,
-    "stocks_total": 0,
+    "deposits_total": 24644212,
+    "stocks_total": 954063,
     "bonds_total": 0,
-    "funds_total": 0,
-    "insurance_count": 1,
+    "funds_total": 954063,
+    "insurance_count": 7,
     "debts_total": 0,
     "investments_total": 0,
-    "land": [],
-    "buildings": [],
+    "land": [
+      {
+        "loc": "臺北市大安區金華段三小段（自住房屋坐落基地）",
+        "area": "148㎡",
+        "share": "全部/共同持有",
+        "owner": "陳佩琪",
+        "date": "100年",
+        "reason": "買賣"
+      },
+      {
+        "loc": "臺北市大安區金華段三小段（自住房屋主建物）",
+        "area": "215㎡",
+        "share": "全部",
+        "owner": "陳佩琪",
+        "date": "100年",
+        "reason": "買賣"
+      },
+      {
+        "loc": "新竹市隆恩段（特定農業區農牧用地）",
+        "area": "2,309㎡",
+        "share": "持分5/24",
+        "owner": "柯文哲",
+        "date": "97年",
+        "reason": "買賣"
+      },
+      {
+        "loc": "澎湖縣馬公市文澳段（土地）",
+        "area": "34㎡",
+        "share": "全部",
+        "owner": "陳佩琪",
+        "date": "105年",
+        "reason": "繼承"
+      }
+    ],
+    "buildings": [
+      {
+        "loc": "臺北市大安區金華段三小段（自住房屋坐落基地）",
+        "area": "148㎡",
+        "share": "全部/共同持有",
+        "owner": "陳佩琪",
+        "date": "100年",
+        "reason": "買賣"
+      },
+      {
+        "loc": "臺北市大安區金華段三小段（自住房屋主建物）",
+        "area": "215㎡",
+        "share": "全部",
+        "owner": "陳佩琪",
+        "date": "100年",
+        "reason": "買賣"
+      },
+      {
+        "loc": "新竹市隆恩段（特定農業區農牧用地）",
+        "area": "2,309㎡",
+        "share": "持分5/24",
+        "owner": "柯文哲",
+        "date": "97年",
+        "reason": "買賣"
+      },
+      {
+        "loc": "澎湖縣馬公市文澳段（土地）",
+        "area": "34㎡",
+        "share": "全部",
+        "owner": "陳佩琪",
+        "date": "105年",
+        "reason": "繼承"
+      }
+    ],
     "cars": [],
     "deposits": [],
-    "stocks": [],
+    "stocks": [
+      {
+        "name": "富邦全球ESG綠色電力ETF等基金組合",
+        "owner": "陳佩琪",
+        "shares": "基金受益憑證",
+        "amount": 954063
+      }
+    ],
     "bonds": [],
     "funds": [],
     "insurance": [],
