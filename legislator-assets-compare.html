@@ -51079,313 +51079,43 @@ let currentPerson = "wan";
 
 function renderOverview(p){
   const d = DATA[p];
-  const latest = d.filings[0];
+  if(!d) return;
+  const latest = (d.filings && d.filings[0]) ? d.filings[0] : {};
   let cards = [];
-  if(p === "wan"){
+  
+  if(latest.depositsTotal !== undefined || (latest.realEstate && latest.realEstate.length > 0)){
+    const hasSecurities = latest.securitiesTotal !== undefined ? latest.securitiesTotal : (latest.stocksTotal || 0);
+    const depStr = latest.depositsTotal > 0 ? money(latest.depositsTotal) : "未達申報標準／本欄空白";
+    const depSub = latest.depositsTotal > 0 ? (latest.depositsCount ? latest.depositsCount + " 個帳戶" : "活期／定期儲蓄") : "依法未達100萬元門檻";
+    const secStr = hasSecurities > 0 ? money(hasSecurities) : "NT$ 0";
+    const secSub = hasSecurities > 0 ? ((latest.stockList && latest.stockList.length) ? latest.stockList.length + " 筆股票／基金" : "股票與基金投資") : "本欄空白無達標股票";
+    const debtStr = (latest.debtTotal && latest.debtTotal > 0) ? money(latest.debtTotal) : "NT$ 0";
+    const debtSub = (latest.debtTotal && latest.debtTotal > 0) ? "金融機構貸款／週轉金" : "本欄空白無負債";
+    const reCount = latest.realEstate ? latest.realEstate.length : (latest.land_count || 0);
+
     cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"股票申報", value: "NT$ 0", sub: "本欄空白"},
-      {label:"事業投資", value: money(latest.investmentTotal), sub: "傳洋有限公司（配偶）"},
-      {label:"債務", value: money(latest.debtTotal), sub: "配偶授信週轉"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "土地＋建物" }
-    ];
-  } else if(p === "xie"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋債券＋基金"},
-      {label:"應收債權", value: money(latest.receivableTotal), sub: "抵押放款2筆"},
-      {label:"債務", value: money(latest.debtTotal), sub: "本人＋配偶房貸等"},
-      {label:"不動產筆數", value: latest.realEstate.length + "+ 筆", sub: "土地＋建物（含日本）"}
-    ];
-  } else if(p === "huang"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: "活期／定期儲蓄"},
-      {label:"有價證券", value: money(latest.securitiesTotal), sub: "股票／基金／黃金存摺"},
-      {label:"債務", value: money(latest.debtTotal), sub: "購置不動產及週轉金"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "土地＋建物（台南善化、嘉義等）"},
-      {label:"資料完整度", value: "監察院原始核對", sub: "廉政專刊原始PDF逐欄核對"}
-    ];
-  } else if(p === "zhoucm"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: "活期／定期存款"},
-      {label:"有價證券", value: money(latest.securitiesTotal), sub: "股票 4 筆（台開、長谷）"},
-      {label:"債務", value: "NT$ 0", sub: "本欄空白無負債"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "均位於屏東縣屏東市"},
-      {label:"資料完整度", value: "監察院原始核對", sub: "廉政專刊原始PDF逐欄核對"}
-    ];
-  } else if(p === "yen"){
-    cards = [
-      {label:"最新公布日", value: "2026/03/31", sub: "監察院廉政專刊（新聞轉述）"},
-      {label:"存款", value: "NT$ 58,103,754", sub: "最新一期申報"},
-      {label:"股票", value: "NT$ 40,060,240", sub: "最新一期申報"},
-      {label:"不動產", value: "69筆土地＋23筆建物", sub: "均位於台中市"},
-      {label:"司法案件", value: "1件一審有罪＋1件行政裁罰", sub: "沙鹿莊園案7年10月／監院裁罰290萬"},
-      {label:"資料完整度", value: "新聞轉述", sub: "尚無原始PDF逐欄核對"}
-    ];
-  } else if(p === "fu"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"股票總額", value: money(latest.stocksTotal), sub: "29檔（多數信託中）"},
-      {label:"債務", value: money(latest.debtTotal), sub: "含私人借款1,400萬"},
-      {label:"司法案件", value: "2罪確定＋入獄服刑", sub: "2020年最高法院定讞"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "含8筆新繼承土地" }
-    ];
-  } else if(p === "weng"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.stocksTotal + 1081580), sub: "股票＋基金"},
-      {label:"債務／事業投資", value: "NT$ 0", sub: "均本欄空白"},
-      {label:"司法案件", value: "被告身分，一二審皆勝訴", sub: "曹興誠求償4098萬敗訴"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "土地＋建物（台北＋新北）" }
-    ];
-  } else if(p === "xieyf"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶（無配偶）"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋基金"},
-      {label:"債務／事業投資", value: "NT$ 0", sub: "均本欄空白"},
-      {label:"罷免結果", value: "連署未過門檻", sub: "差7,588份，未進入投票"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "土地＋建物（彰化＋台北）" }
-    ];
-  } else if(p === "ma"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"股票／有價證券", value: "未達申報標準", sub: "無申報金額"},
-      {label:"債務／事業投資", value: "NT$ 0", sub: "均本欄空白"},
-      {label:"罷免結果", value: "823投票未通過", sub: "續任立委"},
-      {label:"不動產筆數", value: latest.realEstate.length + "+ 筆", sub: "配偶繼承地佔多數" }
-    ];
-  } else if(p === "zhang"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋基金"},
-      {label:"債務", value: money(latest.debtTotal), sub: "高於存款總額"},
-      {label:"父親司法紀錄", value: "2案定讞入獄", sub: "本人未涉案"},
-      {label:"保單數量", value: "26張", sub: "本站收錄人物中最多" }
-    ];
-  } else if(p === "xiedl"){
-    cards = [
-      {label:"最新申報日", value: "2025/08/28", sub: "新聞轉述"},
-      {label:"存款總額", value: "NT$ 4,168,904", sub: "9筆保險"},
-      {label:"股票總值", value: "NT$ 14,016,760", sub: "多筆股票"},
-      {label:"債務", value: "NT$ 34,651,798", sub: "其中約1,887萬為週轉金"},
-      {label:"身分", value: "彰化縣議長", sub: "第16–19屆連任"},
-      {label:"近期爭議", value: "籃協財務缺口約5,000萬", sub: "卸任理事長後爆出" }
-    ];
-  } else if(p === "jiang"){
-    cards = [
-      {label:"最新申報日", value: "2026年（新聞轉述）", sub: "監察院最新一期廉政專刊"},
-      {label:"存款總額", value: "NT$ 30,000,000+", sub: "較前次申報減少約312萬元"},
-      {label:"現職", value: "臺北市長", sub: "第14任，2022年就任"},
-      {label:"司法案件", value: "無（本人非被告）", sub: "京華城案被告為柯文哲"},
-      {label:"家族背景", value: "蔣中正曾孫", sub: "生父章孝嚴2005年改姓蔣"},
-      {label:"資料完整度", value: "新聞轉述", sub: "尚無原始PDF逐欄核對" }
-    ];
-  } else if(p === "han"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋基金"},
-      {label:"債務", value: money(latest.debtTotal), sub: "2筆房貸"},
-      {label:"罷免紀錄", value: "史上首位被罷免直轄市長", sub: "2020年高雄市長任內解職"},
-      {label:"現職", value: "立法院長", sub: "第11屆不分區立委兼任" }
-    ];
-  } else if(p === "wang"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"股票申報金額", value: money(latest.securitiesTotal), sub: "市值估算約1.83億元"},
-      {label:"債務", value: money(latest.debtTotal), sub: "非自用房貸"},
-      {label:"司法案件", value: "傷害罪起訴", sub: "2026/02立院衝突案"},
-      {label:"持股排名", value: "市值排名第2", sub: "「立院股后」封號" }
-    ];
-  } else if(p === "xiegl"){
-    cards = [
-      {label:"最新申報日", value: "2026/05/29", sub: "新聞轉述"},
-      {label:"存款總額", value: "NT$ 5,947,357", sub: "1筆保險"},
-      {label:"事業投資", value: "NT$ 88,860,000", sub: "較前次增加近3,000萬"},
-      {label:"債務", value: "NT$ 12,643,075", sub: "2筆私人借款"},
-      {label:"罷免結果", value: "2024/10投票未通過", sub: "6.99萬同意 vs 8.60萬不同意"},
-      {label:"資料完整度", value: "新聞轉述", sub: "尚無原始PDF逐欄核對" }
-    ];
-  } else if(p === "huangkc"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款申報", value: "未達申報標準", sub: "依法未達 100 萬元門檻"},
-      {label:"有價證券", value: "未達申報標準", sub: "本欄空白無達標股票"},
-      {label:"債務", value: money(latest.debtTotal), sub: "購置不動產房貸等"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "土地建物申報"},
-      {label:"資料完整度", value: "監察院原始核對", sub: "廉政專刊原始PDF逐欄核對"}
-    ];
-  } else if(p === "linps"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋基金"},
-      {label:"債務", value: money(latest.debtTotal), sub: "2筆房貸"},
-      {label:"罷免結果", value: "726投票未通過", sub: "差1.09萬票"},
-      {label:"家族爭議", value: "資產跨兩代消失又出現", sub: "本站高關注案例" }
-    ];
-  } else if(p === "lu"){
-    cards = [
-      {label:"最新申報日", value: "2026/05/19", sub: "新聞轉述"},
-      {label:"存款總額", value: "NT$ 8,319,941", sub: "無不動產"},
-      {label:"黃金存摺", value: "NT$ 13,085,118", sub: "年增約470萬元（金價上漲）"},
-      {label:"債務", value: "NT$ 0", sub: "無負債"},
-      {label:"司法案件", value: "無", sub: "本人非任何案件被告"},
-      {label:"現職", value: "台中市長", sub: "第3、4屆，首位連任市長" }
-    ];
-  } else if(p === "zhangsz"){
-    cards = [
-      {label:"最新公布日", value: "2026/05/05", sub: "監察院第311期廉政專刊"},
-      {label:"存款＋股票等", value: "破億元", sub: "較前次增加3,471萬餘元"},
-      {label:"黃金條塊", value: "NT$ 6,883,453", sub: "較前次1,221萬餘元減少大半"},
-      {label:"債務", value: "NT$ 0", sub: "無負債"},
-      {label:"抄襲案認定", value: "農業部認定實質相似", sub: "受罰對象為宏碁公司"},
-      {label:"現職", value: "桃園市長", sub: "首任，曾任行政院長" }
-    ];
-  } else if(p === "houht"){
-    cards = [
-      {label:"最新申報日", value: "2025/11", sub: "新聞轉述（片段資訊）"},
-      {label:"配偶股票", value: "約 NT$ 18,335,000", sub: "95張長榮股票，市值估算"},
-      {label:"個人信貸", value: "NT$ 3,000,000", sub: "2026/06投入選戰"},
-      {label:"現職", value: "台北市議員", sub: "新黨籍，唯一地方民代"},
-      {label:"2017年爭議", value: "遭約談隔日釋放", sub: "違反國安法嫌疑，未見起訴紀錄"},
-      {label:"資料完整度", value: "極不完整", sub: "地方議員資料取得限制" }
-    ];
-  } else if(p === "liyx"){
-    cards = [
-      {label:"最新申報日", value: "2026/03/19", sub: "新聞轉述"},
-      {label:"存款總額", value: "NT$ 20,779,508", sub: "另有現金61萬"},
-      {label:"股票＋債券", value: "NT$ 29,674,560", sub: "股票225萬＋債券2,742萬"},
-      {label:"債務", value: "NT$ 14,769,125", sub: "購置不動產"},
-      {label:"監察院調查", value: "已立案，調查中", sub: "2025/02/12立案"},
-      {label:"不動產", value: "39筆土地＋21筆建物", sub: "美國、中國、台灣三地" }
-    ];
-  } else if(p === "luo"){
-    cards = [
-      {label:"最新資料", value: "2025/04本人受訪自述", sub: "非正式公報原始資料"},
-      {label:"存款", value: "約 NT$ 12,000,000", sub: "本人受訪列舉"},
-      {label:"不動產", value: "1戶自住宅", sub: "購入價約1,800萬元"},
-      {label:"債務", value: "約 NT$ 1,530,000", sub: "房屋貸款"},
-      {label:"罷免結果", value: "726投票未通過", sub: "續任立委"},
-      {label:"資料完整度", value: "不完整", sub: "非原始PDF逐欄核對" }
-    ];
-  } else if(p === "laisb"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋基金＋債券"},
-      {label:"債務／事業投資", value: "NT$ 0", sub: "均本欄空白"},
-      {label:"車禍爭議", value: "2024/07未禮讓行人撞傷2人", sub: "事故後配偶名下新增車輛"},
-      {label:"現職", value: "台北市立委", sub: "六連霸，現年73歲" }
-    ];
-  } else if(p === "xuqx"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋基金"},
-      {label:"債務", value: money(latest.debtTotal), sub: "配偶房貸"},
-      {label:"訴訟案件數", value: "10起以上", sub: "原告／被告身分交錯，本站最多"},
-      {label:"農業部誹謗案", value: "一審勝訴", sub: "2024/03/21判決免賠" }
-    ];
-  } else if(p === "zhengzq"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"現金＋存款", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "17檔股票"},
-      {label:"債務", value: money(latest.debtTotal), sub: "存款的32倍以上"},
-      {label:"司法狀態", value: "高檢署他字案被告", sub: "涉洩密給國台辦"},
-      {label:"罷免結果", value: "726投票未通過", sub: "差2.3萬票" }
-    ];
-  } else if(p === "luomc"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票＋債券＋基金"},
-      {label:"債務", value: money(latest.debtTotal), sub: "自用住宅房貸"},
-      {label:"家族背景", value: "父親潛逃中國通緝中", sub: "天道盟創辦人、前立委"},
-      {label:"罷免結果", value: "823投票未通過", sub: "同意4.99萬vs不同意9.67萬" }
-    ];
-  } else if(p === "suqq"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: "各金融機構存款"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票與基金投資"},
-      {label:"債務", value: money(latest.debtTotal), sub: "金融機構貸款"},
-      {label:"不動產筆數", value: latest.realEstate.length + " 筆", sub: "土地與建物"},
-      {label:"資料完整度", value: "監察院原始核對", sub: "廉政專刊原始PDF逐欄核對"}
-    ];
-  } else if(p === "chenjh"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "股票市值估算約1.44億"},
-      {label:"債務", value: money(latest.debtTotal), sub: "本站收錄人物中最高"},
-      {label:"個資法案", value: "二審緩刑確定", sub: "坦承犯行並已和解"},
-      {label:"國會衝突案", value: "提告故意傷害+性騷擾", sub: "對方已道歉但否認性騷擾" }
-    ];
-  } else if(p === "chenzz"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "市值估算約4,088萬"},
-      {label:"債務／事業投資", value: "NT$ 0", sub: "均本欄空白"},
-      {label:"留任爭議", value: "兩年條款生效仍留任", sub: "為推動代理孕母法案"},
-      {label:"財產申報狀態", value: "無明顯異常", sub: "本站核對後觀察" }
+      {label:"最新申報日", value: latest.date || d.latestDate, sub: latest.type || d.latestType},
+      {label:"存款總額（本人＋配偶）", value: depStr, sub: depSub},
+      {label:"有價證券總額", value: secStr, sub: secSub},
+      {label:"債務總額", value: debtStr, sub: debtSub},
+      {label:"不動產筆數", value: reCount + " 筆", sub: reCount > 0 ? "土地＋建物" : "本欄空白無登記"},
+      {label:"資料完整度", value: d.isNewsSourced ? "新聞轉述" : "監察院原始核對", sub: d.latestType || "廉政專刊原始申報"}
     ];
   } else if(p === "ko"){
     cards = [
-      {label:"一審判決", value: "17年徒刑", sub: "褫奪公權6年，2026/03/26宣判"},
-      {label:"罪名", value: "貪污、公益侵占、背信", sub: "4罪合併執行"},
-      {label:"交保金額", value: "NT$ 70,000,000", sub: "電子腳環＋科技監控中"},
-      {label:"上訴狀態", value: "已上訴二審", sub: "主張應改判無罪"},
-      {label:"財產申報", value: "本站尚未取得", sub: "無公職在身，資料闕如"},
-      {label:"現職", value: "無公職", sub: "已卸任市長、黨主席" }
-    ];
-  } else if(p === "kezhen"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"有價證券總額", value: money(latest.securitiesTotal), sub: "市值估算約3,145萬"},
-      {label:"債務", value: money(latest.debtTotal), sub: "購置不動產房貸"},
-      {label:"2026參選", value: "第2度挑戰高雄市長", sub: "對手為賴瑞隆"},
-      {label:"財產申報狀態", value: "無明顯異常", sub: "本站核對後觀察" }
-    ];
-  } else if(p === "jiangqc"){
-    cards = [
-      {label:"最新申報日", value: latest.date, sub: latest.type},
-      {label:"存款總額（本人＋配偶）", value: money(latest.depositsTotal), sub: latest.depositsCount + " 個帳戶"},
-      {label:"事業投資", value: money(latest.investmentTotal), sub: "6家建設公司，均配偶名下"},
-      {label:"債務", value: money(latest.debtTotal), sub: "購置不動產房貸"},
-      {label:"現職", value: "立法院副院長", sub: "曾任國民黨主席"},
-      {label:"罷免結果", value: "823投票未通過", sub: "與羅明才等同批" }
-    ];  } else if(latest && latest.depositsTotal !== undefined) {
-    cards = [
-      {label:"最新申報日", value: latest.date || d.latestDate, sub: latest.type || d.latestType},
-      {label:"存款總額", value: money(latest.depositsTotal), sub: latest.depositsCount ? latest.depositsCount + " 個帳戶" : "本人＋配偶"},
-      {label:"有價證券", value: latest.securitiesTotal !== undefined ? money(latest.securitiesTotal) : "NT$ 0", sub: "股票與基金"},
-      {label:"債務", value: latest.debtTotal !== undefined ? money(latest.debtTotal) : "NT$ 0", sub: "各類貸款"},
-      {label:"不動產筆數", value: (latest.realEstate ? latest.realEstate.length : 0) + " 筆", sub: "土地＋建物"},
-      {label:"資料完整度", value: d.isNewsSourced ? "新聞轉述" : "官方申報核對", sub: d.latestType || "申報公開"}
+      {label:"最新申報狀態", value: d.latestType || "現場查閱", sub: "依公職人員財產申報法"},
+      {label:"現職", value: "無公職", sub: "已卸任市長"},
+      {label:"申報書保管", value: "主管機關查閱專區", sub: "暫無電子專刊公布"}
     ];
   } else {
-    // Generic fallback for councilors / unindexed officials
     cards = [
       {label:"最新申報／公布日", value: (latest && latest.date) ? latest.date : d.latestDate, sub: (latest && latest.type) ? latest.type : d.latestType},
       {label:"黨籍", value: d.party, sub: ""},
-      {label:"現職", value: d.term.split('；')[0], sub: "詳見下方基本資料" },
+      {label:"現職", value: d.term ? d.term.split('；')[0] : "公職人員", sub: "詳見下方基本資料" },
       {label:"資料完整度", value: d.latestType === "議會政風室現場查閱" ? "議會現場查閱" : "待收錄／現場查閱", sub: d.latestType || "依法由政風機關保管" }
     ];
   }
+
   document.getElementById('summaryCards').innerHTML = cards.map(c=>`
     <div class="card"><div class="label">${c.label}</div><div class="value">${c.value}</div><div class="sub">${c.sub}</div></div>
   `).join('');
@@ -51407,10 +51137,11 @@ function renderOverview(p){
 
 function renderFilings(p){
   const d = DATA[p];
+  if(!d) return;
   const el = document.getElementById('filings');
   el.innerHTML = d.filings.map(f => {
     let body = "";
-    const isOfflineFiling = f.type === '議會政風室現場查閱' || (f.summary && f.summary.includes('公職人員財產申報法第6條'));
+    const isOfflineFiling = f.latestType === '議會政風室現場查閱' || (f.summary && f.summary.includes('公職人員財產申報法第6條'));
     if(isOfflineFiling){
       body += `
       <div style="background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:8px; padding:16px; margin:12px 0;">
@@ -51427,65 +51158,65 @@ function renderFilings(p){
       </div>`;
       return `<div class="filing-block">
         <h3>${f.date}　${f.type}</h3>
+        <div class="filing-meta">來源：<a href="${f.source ? f.source.url : 'https://priq-out.cy.gov.tw/'}" target="_blank" style="color:var(--sage)">${f.source ? f.source.text : '各縣市議會政風室現場查閱專區'} ↗</a></div>
         ${body}
       </div>`;
     }
-    if(f.realEstate){
-      body += `<h4 style="font-size:.85rem;margin:10px 0 6px;color:var(--sage)">不動產</h4>
+
+    // 1. 不動產
+    if(f.realEstate && f.realEstate.length > 0){
+      body += `<h4 style="font-size:.85rem;margin:10px 0 6px;color:var(--sage)">不動產（共 ${f.realEstate.length} 筆）</h4>
       <table><tr><th>坐落/標示</th><th>面積</th><th>持分</th><th>所有人</th><th>取得時間</th><th>原因</th></tr>
       ${f.realEstate.map(r=>`<tr><td>${r.loc}</td><td>${r.area}</td><td>${r.share}</td><td>${r.owner}</td><td>${r.date}</td><td>${r.reason}${r.amount?'（'+r.amount+'）':''}</td></tr>`).join('')}
       </table>`;
-      if(f.vehicle) body += `<p class="empty-note">車輛：${f.vehicle}</p>`;
-      body += `<h4 style="font-size:.85rem;margin:10px 0 6px;color:var(--sage)">存款 / 有價證券 / 保險 / 債權 / 債務 / 事業投資</h4>
+    } else if(f.depositsTotal !== undefined){
+      body += `<p class="empty-note">不動產：本申報期無登記（本欄空白）</p>`;
+    }
+
+    if(f.vehicle) body += `<p class="empty-note">車輛：${f.vehicle}</p>`;
+
+    // 2. 存款、有價證券、債務等結構化表格
+    if(f.depositsTotal !== undefined || f.securitiesTotal !== undefined || f.debtTotal !== undefined){
+      body += `<h4 style="font-size:.85rem;margin:10px 0 6px;color:var(--sage)">存款 / 有價證券 / 保險 / 債務 / 事業投資</h4>
       <table>
-        <tr><th>存款總額</th><td>${money(f.depositsTotal)}（${f.depositsCount}個帳戶，本人＋配偶）</td></tr>`;
-      if(f.securitiesTotal !== undefined){
-        body += `<tr><th>有價證券</th><td>${money(f.securitiesTotal)}（股票${money(f.stocksTotal||0)}＋債券${money(f.bondsTotal||0)}＋基金${money(f.fundTotal||0)}）</td></tr>`;
-      } else if(f.stocksTotal !== undefined){
-        body += `<tr><th>股票總額</th><td>${money(f.stocksTotal)}</td></tr>`;
-      } else if(f.stocks){
-        body += `<tr><th>股票</th><td>${f.stocks}</td></tr>`;
+        <tr><th>存款總額</th><td>${f.depositsTotal > 0 ? money(f.depositsTotal) + (f.depositsCount ? '（' + f.depositsCount + '個帳戶，本人＋配偶）' : '（活期／定期儲蓄，本人＋配偶）') : '本欄空白／未達申報標準'}</td></tr>`;
+      
+      const secVal = f.securitiesTotal !== undefined ? f.securitiesTotal : (f.stocksTotal || 0);
+      if(secVal > 0){
+        body += `<tr><th>有價證券</th><td>${money(secVal)}（股票${money(f.stocksTotal||0)}＋債券${money(f.bondsTotal||0)}＋基金${money(f.fundTotal||0)}）</td></tr>`;
+      } else {
+        body += `<tr><th>有價證券</th><td>NT$ 0（本欄空白／未達申報標準）</td></tr>`;
       }
-      body += `<tr><th>保單件數</th><td>${f.insurance} 張</td></tr>`;
+
+      body += `<tr><th>保單件數</th><td>${f.insurance || 0} 件</td></tr>`;
       if(f.receivableTotal){
         body += `<tr><th>債權</th><td>${money(f.receivableTotal)}｜${f.receivableDetail}</td></tr>`;
       }
-      body += `<tr><th>債務</th><td>${money(f.debtTotal)}${f.debtDetail?'｜'+f.debtDetail:''}</td></tr>
-        <tr><th>事業投資</th><td>${money(f.investmentTotal)}${f.investmentDetail?'｜'+f.investmentDetail:''}</td></tr>
+      body += `<tr><th>債務</th><td>${(f.debtTotal && f.debtTotal > 0) ? money(f.debtTotal) + (f.debtDetail ? '｜' + f.debtDetail : '') : 'NT$ 0（本欄空白無負債）'}</td></tr>
+        <tr><th>事業投資</th><td>${(f.investmentTotal && f.investmentTotal > 0) ? money(f.investmentTotal) + (f.investmentDetail ? '｜' + f.investmentDetail : '') : 'NT$ 0（本欄空白）'}</td></tr>
       </table>`;
-      if(f.stockList){
-        body += `<h4 style="font-size:.85rem;margin:10px 0 6px;color:var(--sage)">股票明細（部分）</h4>
-        <table><tr><th>名稱</th><th>持有人</th><th>股數</th><th>申報金額</th></tr>
-        ${f.stockList.map(s=>`<tr><td>${s.name}</td><td>${s.owner}</td><td>${s.shares}</td><td>${money(s.amount)}</td></tr>`).join('')}
-        </table>`;
-        if(f.stockNote) body += `<p class="empty-note">${f.stockNote}</p>`;
-      }
-      body += `<p class="empty-note">${f.note||''}</p>`;
-    } else if(f.changes || f.changesNote || f.stockChangeNote){
-      body += `<p class="filing-meta">變動期間：${f.period}</p>`;
-      if(f.changesNote) body += `<p class="empty-note">${f.changesNote}</p>`;
-      if(f.changes){
-        body += `<table><tr><th>坐落/標示</th><th>面積</th><th>持分</th><th>所有人</th><th>變動時間</th><th>原因</th></tr>
-        ${f.changes.map(r=>`<tr><td>${r.loc}</td><td>${r.area}</td><td>${r.share}</td><td>${r.owner}</td><td>${r.date}</td><td>${r.reason}${r.amount?'（'+r.amount+'）':''}</td></tr>`).join('')}
-        </table>`;
-      }
-      if(f.stockChangeNote){
-        body += `<p class="empty-note">${f.stockChangeNote}</p>`;
-      }
-      body += `<p class="empty-note" style="color:var(--amber)">${f.note||''}</p>`;
-    } else if(f.summary){
+    }
+
+    // 3. 股票明細
+    if(f.stockList && f.stockList.length > 0){
+      body += `<h4 style="font-size:.85rem;margin:10px 0 6px;color:var(--sage)">股票明細（共 ${f.stockList.length} 筆）</h4>
+      <table><tr><th>名稱</th><th>持有人</th><th>股數</th><th>申報金額</th></tr>
+      ${f.stockList.map(s=>`<tr><td>${s.name}</td><td>${s.owner}</td><td>${s.shares}</td><td>${money(s.amount)}</td></tr>`).join('')}
+      </table>`;
+      if(f.stockNote) body += `<p class="empty-note">${f.stockNote}</p>`;
+    }
+
+    if(f.summary && !body){
       body += `<p>${f.summary}</p>`;
     }
-    if(f.summary){
-      return `<div class="filing-block">
-        <h3>${f.date}　${f.type}</h3>
-        <div class="filing-meta">來源：<a href="${f.source.url}" target="_blank" style="color:var(--sage)">${f.source.text} ↗</a></div>
-        ${body}
-      </div>`;
-    }
+    if(f.note) body += `<p class="empty-note">${f.note}</p>`;
+
+    const srcUrl = f.source ? (f.source.url || 'https://priq-out.cy.gov.tw/') : 'https://priq-out.cy.gov.tw/';
+    const srcText = f.source ? f.source.text : '監察院廉政專刊官方申報書';
+
     return `<div class="filing-block">
-      <h3>${f.date}　${f.type}</h3>
-      <div class="filing-meta">申報日（民國）：${f.roc}　｜　來源：${f.issue}　<a href="${f.pdf}" target="_blank" style="color:var(--sage)">原始PDF ↗</a></div>
+      <h3>${f.date || d.latestDate}　${f.type || '定期申報'}</h3>
+      <div class="filing-meta">來源：<a href="${srcUrl}" target="_blank" style="color:var(--sage)">${srcText} ↗</a></div>
       ${body}
     </div>`;
   }).join('') + (d.note ? `<p class="empty-note" style="margin-top:8px;">${d.note}</p>` : '');
